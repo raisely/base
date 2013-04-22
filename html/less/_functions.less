@@ -1,0 +1,6 @@
+
+.column(@columns: 1, @offset: 0) {
+  float: left;
+  margin-left: (@columnWidth * @offset) + (@gutterWidth * (@offset - 1)) + (@gutterWidth * 2);
+  width: (@columnWidth * @columns) + (@gutterWidth * (@columns - 1));
+}
