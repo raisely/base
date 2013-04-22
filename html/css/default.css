@@ -125,21 +125,26 @@ a img {
 }
 h1 {
   font-size: 64px;
-  line-height: 64px;
+  line-height: 80px;
+  margin-top: 16px;
 }
 h2 {
   font-size: 48px;
-  line-height: 48px;
+  line-height: 64px;
+  margin-top: 16px;
 }
 h3 {
   font-size: 32px;
-  line-height: 32px;
+  line-height: 48px;
+  margin-top: 16px;
 }
 p {
   font-size: 16px;
+  line-height: 16px;
 }
 .baseline {
   background: url(../baseline.jpg);
+  background-size: 1px 16px;
 }
 article {
   float: left;
