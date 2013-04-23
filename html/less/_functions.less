@@ -1,6 +1,17 @@
+.container() {
+	width: @columnWidth * @columnCount + @gutterWidth * @columnCount;
+}
 
-.column(@columns: 1, @offset: 0) {
-  float: left;
-  margin-left: (@columnWidth * @offset) + (@gutterWidth * (@offset - 1)) + (@gutterWidth * 2);
-  width: (@columnWidth * @columns) + (@gutterWidth * (@columns - 1));
+.column(@columns: 1) when (@columnCount >= @columns) {
+  	float: left;
+	margin: 0 @gutterWidth/2;
+  	@consideredColumns: (@columnCount * @columns) / @columnCount;
+	width: (@columnWidth * @consideredColumns) + (@gutterWidth * (@consideredColumns - 1));
+}
+
+.column(@columns: 1) when (@columnCount < @columns) {
+  	float: left;
+  	margin: 0 @gutterWidth/2;
+  	@consideredColumns: (@columnCount * @columns) / @columns;
+	width: (@columnWidth * @consideredColumns) + (@gutterWidth * (@consideredColumns - 1));
 }

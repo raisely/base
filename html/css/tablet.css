@@ -1,0 +1,29 @@
+@media (min-width: 768px) and (max-width: 959px) {
+  body {
+    width: 384px;
+    margin: 0 auto;
+  }
+  article {
+    float: left;
+    margin: 0 7.5px;
+    width: 369px;
+  }
+  .span1 {
+    float: left;
+    margin: 0 7.5px;
+    width: 49px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .span3 {
+    float: left;
+    margin: 0 7.5px;
+    width: 177px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .span7 {
+    float: left;
+    margin: 0 7.5px;
+    width: 369px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+}

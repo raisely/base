@@ -520,6 +520,7 @@
 	},
 	"file_history":
 	[
+		"/Users/zug/Sites/base.dev/base.sublime-project",
 		"/etc/hosts",
 		"/Users/solothurn/Sites/vhosts.conf",
 		"/Users/solothurn/Sites/base.dev/html/less/base.less",
@@ -646,8 +647,7 @@
 		"/Users/scottsanders/Desktop/widgets.html",
 		"/Users/scottsanders/Sites/movement.dev/html/sites/all/themes/movement/template.php",
 		"/Users/scottsanders/Sites/movement.dev/html/sites/all/themes/movement/assets/less/variables.less",
-		"/Users/scottsanders/Sites/movement.dev/html/sites/all/themes/movement/templates/html.tpl.php",
-		"/Users/scottsanders/Sites/movement.dev/html/sites/all/themes/movement/assets/js/script.js"
+		"/Users/scottsanders/Sites/movement.dev/html/sites/all/themes/movement/templates/html.tpl.php"
 	],
 	"find":
 	{

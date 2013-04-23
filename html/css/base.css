@@ -15,7 +15,6 @@ html,
 body {
   border: 0;
   font-family: "Helvetica-Neue", "Helvetica", Arial, sans-serif;
-  line-height: 1.5;
   margin: 0;
   padding: 0;
 }
@@ -123,4 +122,54 @@ a img {
 }
 :focus {
   outline: 0;
+}
+h1 {
+  font-size: 64px;
+  line-height: 80px;
+  margin-top: 16px;
+}
+h2 {
+  font-size: 48px;
+  line-height: 64px;
+  margin-top: 16px;
+}
+h3 {
+  font-size: 32px;
+  line-height: 48px;
+  margin-top: 16px;
+}
+p {
+  font-size: 16px;
+  line-height: 16px;
+}
+.baseline {
+  background: url(../baseline.jpg);
+  background-size: 1px 16px;
+}
+body {
+  width: 960px;
+  margin: 0 auto;
+}
+article {
+  float: left;
+  margin: 0 10px;
+  width: 460px;
+}
+.span1 {
+  float: left;
+  margin: 0 10px;
+  width: 60px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.span3 {
+  float: left;
+  margin: 0 10px;
+  width: 220px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.span7 {
+  float: left;
+  margin: 0 10px;
+  width: 540px;
+  background: rgba(0, 0, 0, 0.1);
 }
