@@ -5,25 +5,46 @@
   }
   article {
     float: left;
-    margin: 0 15px;
-    width: 570px;
+    margin: 0 15px 0 115px;
+    width: 420px;
+    padding-left: 25px;
+    padding-right: 25px;
+    col: 5;
   }
   .span1 {
     float: left;
-    margin: 0 15px;
+    margin: 0 15px 0 15px;
     width: 70px;
+    padding-left: 0px;
+    padding-right: 0px;
+    col: 1;
     background: rgba(0, 0, 0, 0.1);
   }
-  .span3 {
+  .span2 {
     float: left;
-    margin: 0 15px;
-    width: 270px;
+    margin: 0 15px 0 15px;
+    width: 170px;
+    padding-left: 0px;
+    padding-right: 0px;
+    col: 2;
     background: rgba(0, 0, 0, 0.1);
   }
   .span7 {
     float: left;
-    margin: 0 15px;
+    margin: 0 15px 0 15px;
     width: 670px;
+    padding-left: 0px;
+    padding-right: 0px;
+    col: 7;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .span12 {
+    float: left;
+    margin: 0 15px 0 15px;
+    width: 1170px;
+    padding-left: 0px;
+    padding-right: 0px;
+    col: 12;
     background: rgba(0, 0, 0, 0.1);
   }
 }
