@@ -125,26 +125,23 @@ a img {
 }
 h1 {
   font-size: 64px;
-  line-height: 80px;
-  margin-top: 16px;
+  line-height: 96px;
 }
 h2 {
   font-size: 48px;
-  line-height: 64px;
-  margin-top: 16px;
+  line-height: 72px;
 }
 h3 {
   font-size: 32px;
   line-height: 48px;
-  margin-top: 16px;
 }
 p {
   font-size: 16px;
-  line-height: 16px;
+  line-height: 24px;
 }
 .baseline {
   background: url(../baseline.jpg);
-  background-size: 1px 16px;
+  background-size: 1px 24px;
 }
 body {
   width: 960px;

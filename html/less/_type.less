@@ -1,8 +1,9 @@
 @fontSize: 16px;
-h1 { font-size: @fontSize * 4; line-height: @fontSize * 5; margin-top: @fontSize; }
-h2 { font-size: @fontSize * 3; line-height: @fontSize * 4; margin-top: @fontSize; }
-h3 { font-size: @fontSize * 2; line-height: @fontSize * 3; margin-top: @fontSize; }
+@baseLine: @fontSize * 1.5;
+h1 { font-size: @fontSize * 4; line-height: @baseLine*4; }
+h2 { font-size: @fontSize * 3; line-height: @baseLine*3; }
+h3 { font-size: @fontSize * 2; line-height: @baseLine*2; }
 
-p { font-size: @fontSize; line-height: @fontSize; }
+p { font-size: @fontSize; line-height: @baseLine; }
 
-.baseline { background: url(../baseline.jpg); background-size: 1px @fontSize; }
+.baseline { background: url(../baseline.jpg); background-size: 1px @baseLine; }
