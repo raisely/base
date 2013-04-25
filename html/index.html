@@ -48,10 +48,13 @@
         <article>
 
             <h1>Placeholder</h1>
-            <p>jQuery plugin to support placeholders in older browsers, using the placeholder attribute. Adds a <code>.placeholder</code> class when field is not in focus to allow for placeholder text styling.</p>
+            <p>jQuery plugin to support placeholders in older browsers, using the placeholder attribute. </p>
+            <p>Adds a <code>.placeholder</code> class when field is not in focus, to allow for placeholder text styling.</p>
+            <p>Removes any <code>label</code> tags that are linked to the <code>id</code>, as the placeholder replaces the need for the label.</p>
 
             <form method="get">
-                <input placeholder="Email" name="email">
+                <label for="email">Email</label>
+                <input placeholder="Email" name="email" id="email">
                 <button type="submit">Submit</button>
             </form>
 

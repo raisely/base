@@ -10,6 +10,11 @@
         //set default placeholder
         element.val(placeholder).addClass("placeholder");
         
+        //remove any labels provided for non-js users
+        if(element.attr("id").length > 0){
+            $("label[for="+element.attr("id")+"]").remove();
+        }
+
         //show/hide placeholder on blur/focus
         element.focus(function(){
             if(element.val()==placeholder) 
