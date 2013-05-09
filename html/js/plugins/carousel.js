@@ -16,9 +16,6 @@
     
     return this.each(function() {
 
-        //basic dom setup + styling
-        element.find(options.slide).addClass('slide');
-
         //get the first slide
         element.find(options.slide+':first').addClass(options.active + ' ' + options.first);
 
