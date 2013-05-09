@@ -36,6 +36,28 @@
 }
 
 
+// Shortcuts
+// --------------------------
+
+.size(@height, @width) {
+    width: @width;
+    height: @height;
+}
+.hide-text() {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+}
+
+#font {
+    .shorthand(@size: 100%, @weight: normal, @lineHeight: 150%) {
+        font-size: @size;
+        font-weight: @weight;
+        line-height: @lineHeight;
+    }
+}
+
+
 // Browser Support
 // --------------------------
 
