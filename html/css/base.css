@@ -150,11 +150,13 @@ body {
 }
 article {
   float: left;
-  margin: 0 10px 0 90px;
-  width: 340px;
-  padding-left: 20px;
-  padding-right: 20px;
-  col: 5;
+  margin: 0 10px 0 10px;
+  width: 460px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+article img {
+  max-width: 100%;
 }
 .span1 {
   float: left;
@@ -162,8 +164,10 @@ article {
   width: 60px;
   padding-left: 0px;
   padding-right: 0px;
-  col: 1;
   background: rgba(0, 0, 0, 0.1);
+}
+.span1 img {
+  max-width: 100%;
 }
 .span2 {
   float: left;
@@ -171,8 +175,10 @@ article {
   width: 140px;
   padding-left: 0px;
   padding-right: 0px;
-  col: 2;
   background: rgba(0, 0, 0, 0.1);
+}
+.span2 img {
+  max-width: 100%;
 }
 .span7 {
   float: left;
@@ -180,8 +186,10 @@ article {
   width: 540px;
   padding-left: 0px;
   padding-right: 0px;
-  col: 7;
   background: rgba(0, 0, 0, 0.1);
+}
+.span7 img {
+  max-width: 100%;
 }
 .span12 {
   float: left;
@@ -189,6 +197,8 @@ article {
   width: 940px;
   padding-left: 0px;
   padding-right: 0px;
-  col: 12;
   background: rgba(0, 0, 0, 0.1);
+}
+.span12 img {
+  max-width: 100%;
 }

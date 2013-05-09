@@ -5,11 +5,13 @@
   }
   article {
     float: left;
-    margin: 0 7.5px 0 71.5px;
-    width: 265px;
-    padding-left: 20px;
-    padding-right: 20px;
-    col: 5;
+    margin: 0 7.5px 0 7.5px;
+    width: 369px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  article img {
+    max-width: 100%;
   }
   .span1 {
     float: left;
@@ -17,8 +19,10 @@
     width: 49px;
     padding-left: 0px;
     padding-right: 0px;
-    col: 1;
     background: rgba(0, 0, 0, 0.1);
+  }
+  .span1 img {
+    max-width: 100%;
   }
   .span2 {
     float: left;
@@ -26,8 +30,10 @@
     width: 113px;
     padding-left: 0px;
     padding-right: 0px;
-    col: 2;
     background: rgba(0, 0, 0, 0.1);
+  }
+  .span2 img {
+    max-width: 100%;
   }
   .span7 {
     float: left;
@@ -35,8 +41,10 @@
     width: 369px;
     padding-left: 0px;
     padding-right: 0px;
-    col: 6;
     background: rgba(0, 0, 0, 0.1);
+  }
+  .span7 img {
+    max-width: 100%;
   }
   .span12 {
     float: left;
@@ -44,7 +52,9 @@
     width: 369px;
     padding-left: 0px;
     padding-right: 0px;
-    col: 6;
     background: rgba(0, 0, 0, 0.1);
+  }
+  .span12 img {
+    max-width: 100%;
   }
 }

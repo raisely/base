@@ -43,6 +43,12 @@
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
+            <aside class="carousel">
+                <img src="tests/carousel1.jpg" />
+                <img src="tests/carousel2.jpg" />
+                <img src="tests/carousel3.jpg" />
+            </aside>
+
         </article>
 
         <article>
@@ -63,8 +69,13 @@
 
         <script src="js/vendor/jquery-1.9.1.min.js"></script>
         <script src="js/plugins/placeholder.js"></script>
+        <script src="js/plugins/carousel.js"></script>
         <script>
             $("input[placeholder!='']").placeholder();
+            $(".carousel").carousel({
+                slide: 'img',
+                transition: 'slide'
+            });
         </script>
 
     </body>

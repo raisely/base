@@ -6,10 +6,12 @@
   article {
     float: left;
     margin: 0 0 0 0%;
-    width: 90%;
-    padding-left: 5%;
-    padding-right: 5%;
-    col: 1;
+    width: 100%;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  article img {
+    max-width: 100%;
   }
   .span1 {
     float: left;
@@ -17,8 +19,10 @@
     width: 100%;
     padding-left: 0%;
     padding-right: 0%;
-    col: 1;
     background: rgba(0, 0, 0, 0.1);
+  }
+  .span1 img {
+    max-width: 100%;
   }
   .span2 {
     float: left;
@@ -26,8 +30,10 @@
     width: 100%;
     padding-left: 0%;
     padding-right: 0%;
-    col: 1;
     background: rgba(0, 0, 0, 0.1);
+  }
+  .span2 img {
+    max-width: 100%;
   }
   .span7 {
     float: left;
@@ -35,8 +41,10 @@
     width: 100%;
     padding-left: 0%;
     padding-right: 0%;
-    col: 1;
     background: rgba(0, 0, 0, 0.1);
+  }
+  .span7 img {
+    max-width: 100%;
   }
   .span12 {
     float: left;
@@ -44,7 +52,9 @@
     width: 100%;
     padding-left: 0%;
     padding-right: 0%;
-    col: 1;
     background: rgba(0, 0, 0, 0.1);
+  }
+  .span12 img {
+    max-width: 100%;
   }
 }
