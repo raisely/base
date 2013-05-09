@@ -7,45 +7,34 @@
     var defaults = {
         slide: 'img',
         transition: 'fade',
-        speed: 5000
+        speed: 5000,
+        active: 'active',
+        first: 'first',
+        last: 'last-active'
     };
     var options = $.extend(defaults, options);
-
-    //styles
-    var active = {
-        position: 'relative',
-        'z-index': 1,
-        opacity:1
-    }
-    var inactive = {
-        position: 'absolute',
-        'z-index': 0,
-        opacity:0,
-        top:0
-    }
-
     
     return this.each(function() {
 
         //basic dom setup + styling
-        element.css({
-            position: 'relative',
-        });
-        element.find(options.slide).addClass('slide').css(inactive);
+        element.find(options.slide).addClass('slide');
 
         //get the first slide
-        element.find(options.slide+':first').addClass('active first').css(active);
+        element.find(options.slide+':first').addClass(options.active + ' ' + options.first);
 
         //swap slides
         var swap = function() {
-            var next = element.find('.active').next(options.slide);
+            var next = element.find('.'+options.active).next(options.slide);
             
             //loop through slides
             if (!next.length > 0)
-                next = element.find('.first');
+                next = element.find('.'+options.first);
 
-            element.find('.active').removeClass('active').css(inactive);
-            next.addClass('active').css(active);
+            //add active class
+            element.find('.'+options.last).removeClass(options.last);
+            element.find('.'+options.active).removeClass(options.active).addClass(options.last);
+            next.addClass(options.active);
+
         }
 
         //run swap function
