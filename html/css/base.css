@@ -202,3 +202,9 @@ article img {
 .span12 img {
   max-width: 100%;
 }
+.carousel img {
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
