@@ -16,6 +16,9 @@
     
     return this.each(function() {
 
+        //css config
+        element.addClass('transition-'+options.transition);
+        
         //get the first slide
         element.find(options.slide+':first').addClass(options.active + ' ' + options.first);
 
