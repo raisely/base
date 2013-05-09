@@ -7,8 +7,7 @@
     var defaults = {
         slide: 'img',
         transition: 'fade',
-        speed: 5000,
-        animationSpeed: 500
+        speed: 5000
     };
     var options = $.extend(defaults, options);
 
