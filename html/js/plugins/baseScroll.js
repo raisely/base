@@ -25,8 +25,11 @@
 
 			$sectionLinks.each( function() {
 				
-				var anchor = $(this).attr('href').replace('/','');
+				var anchor = $(this).attr('href');
+
 				if (anchor.indexOf('#') >= 0) {
+
+					anchor = anchor.replace('/','');
 					
 					var offset = 0;
 					if ($(anchor).data('offset'))
@@ -76,7 +79,7 @@
 				   if (rscroll > $(document).height() - index[anchor] && scroll > index[getFirst(index)]){
 
 					   $(options.sectionLinks).parent().removeClass("active");
-					   $(options.sectionLinks+'[href=#'+anchor+']').parent().addClass("active");
+					   $(options.sectionLinks+'[href*=#'+anchor+']').parent().addClass("active");
 					   break;
 
 				   }
