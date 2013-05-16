@@ -14,7 +14,6 @@
 html,
 body {
   border: 0;
-  font-family: "Helvetica-Neue", "Helvetica", Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -124,25 +123,113 @@ a img {
   outline: 0;
 }
 h1 {
-  font-size: 64px;
-  line-height: 96px;
+  font-family: serif;
+  font-size: 70px;
+  line-height: 105%;
+  margin-top: 0;
+  margin-bottom: 17.5px;
+  font-weight: bold;
 }
 h2 {
-  font-size: 48px;
-  line-height: 72px;
+  font-family: serif;
+  font-size: 60px;
+  line-height: 105%;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 h3 {
-  font-size: 32px;
-  line-height: 48px;
+  font-family: serif;
+  font-size: 50px;
+  line-height: 105%;
+  margin-top: 25px;
+  margin-bottom: 12.5px;
+  font-weight: bold;
+}
+h4 {
+  font-family: serif;
+  font-size: 40px;
+  line-height: 105%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+h5 {
+  font-family: serif;
+  font-size: 30px;
+  line-height: 105%;
+  margin-top: 15px;
+  margin-bottom: 7.5px;
+  font-weight: bold;
+}
+h6 {
+  font-family: serif;
+  font-size: 20px;
+  line-height: 105%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 p {
-  font-size: 16px;
-  line-height: 24px;
-  margin-bottom: 24px;
+  font-family: serif;
+  font-size: 20px;
+  line-height: 140%;
+  margin: 20px 0;
 }
-.baseline {
-  background: url(../baseline.jpg);
-  background-size: 1px 24px;
+abbr,
+acronym {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+address {
+  font-family: serif;
+  font-size: 20px;
+  font-style: italic;
+}
+blockquote {
+  margin: 20px 0;
+  padding: 0 0 0 40px;
+}
+cite {
+  font-style: italic;
+}
+code {
+  font-size: 20px;
+}
+em,
+i {
+  font-style: italic;
+}
+strong,
+b {
+  font-weight: bold;
+}
+ul,
+ol {
+  margin: 20px 0;
+  padding: 0 0 0 40px;
+}
+ul li,
+ol li {
+  font-family: serif;
+  font-size: 20px;
+  line-height: 140%;
+  list-style-position: inside;
+}
+input,
+button {
+  font-family: serif;
+  font-size: 20px;
+}
+table {
+  font-family: serif;
+  font-size: 20px;
+  width: 100%;
+  margin: 20px 0;
+}
+table th,
+table td {
+  padding: 5px 10px 5px 0;
 }
 body {
   width: 960px;
@@ -150,7 +237,7 @@ body {
 }
 article {
   float: left;
-  margin: 0 10px 0 10px;
+  margin: 10px;
   width: 460px;
   padding-left: 0px;
   padding-right: 0px;
@@ -160,7 +247,7 @@ article img {
 }
 .span1 {
   float: left;
-  margin: 0 10px 0 10px;
+  margin: 10px;
   width: 60px;
   padding-left: 0px;
   padding-right: 0px;
@@ -171,7 +258,7 @@ article img {
 }
 .span2 {
   float: left;
-  margin: 0 10px 0 10px;
+  margin: 10px;
   width: 140px;
   padding-left: 0px;
   padding-right: 0px;
@@ -182,7 +269,7 @@ article img {
 }
 .span7 {
   float: left;
-  margin: 0 10px 0 10px;
+  margin: 10px;
   width: 540px;
   padding-left: 0px;
   padding-right: 0px;
@@ -193,7 +280,7 @@ article img {
 }
 .span12 {
   float: left;
-  margin: 0 10px 0 10px;
+  margin: 10px;
   width: 940px;
   padding-left: 0px;
   padding-right: 0px;
