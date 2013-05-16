@@ -231,7 +231,7 @@ table th,
 table td {
   padding: 5px 10px 5px 0;
 }
-body {
+.container {
   width: 960px;
   margin: 0 auto;
 }
