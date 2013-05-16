@@ -1,11 +1,11 @@
 @media (min-width: 1200px) {
-  body {
+  .container {
     width: 1200px;
     margin: 0 auto;
   }
   article {
     float: left;
-    margin: 0 15px 0 15px;
+    margin: 15px;
     width: 570px;
     padding-left: 0px;
     padding-right: 0px;
@@ -15,7 +15,7 @@
   }
   .span1 {
     float: left;
-    margin: 0 15px 0 15px;
+    margin: 15px;
     width: 70px;
     padding-left: 0px;
     padding-right: 0px;
@@ -26,7 +26,7 @@
   }
   .span2 {
     float: left;
-    margin: 0 15px 0 15px;
+    margin: 15px;
     width: 170px;
     padding-left: 0px;
     padding-right: 0px;
@@ -37,7 +37,7 @@
   }
   .span7 {
     float: left;
-    margin: 0 15px 0 15px;
+    margin: 15px;
     width: 670px;
     padding-left: 0px;
     padding-right: 0px;
@@ -48,7 +48,7 @@
   }
   .span12 {
     float: left;
-    margin: 0 15px 0 15px;
+    margin: 15px;
     width: 1170px;
     padding-left: 0px;
     padding-right: 0px;

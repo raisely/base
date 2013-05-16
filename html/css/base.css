@@ -144,13 +144,13 @@ p {
   background: url(../baseline.jpg);
   background-size: 1px 24px;
 }
-body {
+.container {
   width: 960px;
   margin: 0 auto;
 }
 article {
   float: left;
-  margin: 0 10px 0 10px;
+  margin: 10px;
   width: 460px;
   padding-left: 0px;
   padding-right: 0px;
@@ -160,7 +160,7 @@ article img {
 }
 .span1 {
   float: left;
-  margin: 0 10px 0 10px;
+  margin: 10px;
   width: 60px;
   padding-left: 0px;
   padding-right: 0px;
@@ -171,7 +171,7 @@ article img {
 }
 .span2 {
   float: left;
-  margin: 0 10px 0 10px;
+  margin: 10px;
   width: 140px;
   padding-left: 0px;
   padding-right: 0px;
@@ -182,7 +182,7 @@ article img {
 }
 .span7 {
   float: left;
-  margin: 0 10px 0 10px;
+  margin: 10px;
   width: 540px;
   padding-left: 0px;
   padding-right: 0px;
@@ -193,7 +193,7 @@ article img {
 }
 .span12 {
   float: left;
-  margin: 0 10px 0 10px;
+  margin: 10px;
   width: 940px;
   padding-left: 0px;
   padding-right: 0px;
