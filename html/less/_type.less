@@ -3,16 +3,159 @@
 // *********************************
 
 //
-// Baseline typography
+// Baseline Variables
 //
 
+@headingFont: serif;
+@paragraphFont: serif;
 @fontSize: 16px;
-@baseLine: @fontSize * 1.5;
+@lineHeight: 140%;
 
-h1 { font-size: @fontSize * 4; line-height: @baseLine*4; }
-h2 { font-size: @fontSize * 3; line-height: @baseLine*3; }
-h3 { font-size: @fontSize * 2; line-height: @baseLine*2; }
+//
+// Base Headings
+//
 
-p { font-size: @fontSize; line-height: @baseLine; margin-bottom: @baseLine; }
+h1 { 
+	@weighting: 3.5;
+	font-family: @headingFont;
+	font-size: @fontSize * @weighting;
+	line-height: @lineHeight * 0.75;
+	margin-top: 0;
+	margin-bottom: @fontSize * (@weighting/4);
+	font-weight: bold;
+}
+h2 { 
+	@weighting: 3;
+	font-family: @headingFont;
+	font-size: @fontSize * @weighting;
+	line-height: @lineHeight * 0.75;
+	margin-top: @fontSize * (@weighting/2);
+	margin-bottom: @fontSize * (@weighting/4);
+	font-weight: bold;
+}
+h3 { 
+	@weighting: 2.5;
+	font-family: @headingFont;
+	font-size: @fontSize * @weighting;
+	line-height: @lineHeight * 0.75;
+	margin-top: @fontSize * (@weighting/2);
+	margin-bottom: @fontSize * (@weighting/4);
+	font-weight: bold;
+}
+h4 {
+	@weighting: 2;
+	font-family: @headingFont;
+	font-size: @fontSize * @weighting;
+	line-height: @lineHeight * 0.75;
+	margin-top: @fontSize * (@weighting/2);
+	margin-bottom: @fontSize * (@weighting/4);
+	font-weight: bold;
+}
+h5 {
+	@weighting: 1.5;
+	font-family: @headingFont;
+	font-size: @fontSize * @weighting;
+	line-height: @lineHeight * 0.75;
+	margin-top: @fontSize * (@weighting/2);
+	margin-bottom: @fontSize * (@weighting/4);
+	font-weight: bold;
+}
+h6 {
+	@weighting: 1;
+	font-family: @headingFont;
+	font-size: @fontSize * @weighting;
+	line-height: @lineHeight * 0.75;
+	margin-top: @fontSize * (@weighting/2);
+	margin-bottom: @fontSize * (@weighting/4);
+	font-weight: bold;
+}
 
-.baseline { background: url(../baseline.jpg); background-size: 1px @baseLine; }
+//
+// Base Paragraphs
+//
+
+p {
+	font-family: @paragraphFont;
+	font-size: @fontSize;
+	line-height: @lineHeight;
+	margin: @fontSize 0;
+}
+
+//
+// Base Type Elements
+//
+
+abbr,
+acronym {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+address {
+	font-family: @paragraphFont;
+	font-size: @fontSize;
+	font-style: italic;
+}
+
+blockquote {
+	margin: @fontSize 0;
+	padding: 0 0 0 @fontSize*2;
+}
+
+cite {
+	font-style: italic;
+}
+
+code {
+	font-size: @fontSize;
+}
+
+em,
+i {
+	font-style: italic;
+}
+
+strong,
+b {
+	font-weight: bold;
+}
+
+ul,
+ol {
+	margin: @fontSize 0;
+	padding: 0 0 0 @fontSize*2;
+
+	li {
+		font-family: @paragraphFont;
+		font-size: @fontSize;
+		line-height: @lineHeight;
+		list-style-position: inside;
+	}
+}
+
+//
+// Base Inputs
+//
+
+input,
+button {
+	font-family: @paragraphFont;
+	font-size: @fontSize;
+}
+
+//
+// Base Tables
+//
+
+table {
+	font-family: @paragraphFont;
+	font-size: @fontSize;
+	width:100%;
+	margin: @fontSize 0;
+
+	th,
+	td {
+		padding:@fontSize/4 @fontSize/2 @fontSize/4 0;
+	}
+}
+
