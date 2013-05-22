@@ -28,7 +28,7 @@
 				var top = position.top;
 
 				$('html, body').animate({
-					scrollTop: top - options.offset,
+					scrollTop: top - options.offset + 30,
 				}, options.speed);
 
 				return false;
@@ -46,13 +46,15 @@
 
 					anchor = anchor.replace('/','');
 					
-					var position = $(anchor).offset();
-
-					if (!position == undefined)
+					if ( $(anchor).length > 0 ) {
+						
+						var position = $(anchor).offset();
 						var top = position.top - options.offset;
 
-					anchor = anchor.replace('#','');
-					index[anchor] = top;
+						anchor = anchor.replace('#','');
+						index[anchor] = top;
+
+					}
 
 				}
 
