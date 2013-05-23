@@ -6,44 +6,30 @@
 // Master CSS file / Standard Desktops 960px - 1200px
 //
 
+// Grid Variables
 @columnCount:   12;
 @columnWidth:   60px;
 @gutterWidth:   20px;
-@paddingRatio: 1;
+@paddingRatio:  1;
 
-@import "_functions.less";
-@import "_reset.less";
+// Type Variables
+@fontSize: 16px;
+@lineHeight: 140%;
 
-@import "_mixins.less";
+@import "_reset.less"; // basic css reset
 
-@import "_type.less";
-@import "_layout.less";
+@import "_functions.less"; // grid functions
+@import "_mixins.less"; // shorthand & standard mixins
+
+@import "_layout.less"; // site layouts
+@import "_type.less"; // site typography
+
+//
+// Add site-specific LESS below
+//
 
 .carousel {
 	img {
 		.transition(opacity 0.5s linear);
 	}
-}
-
-// Mountain Experiment
-
-.mountain-side1 {
-	.arrow-up( 300px, lightblue );
-	-webkit-perspective: 100px;
-	.transform( rotateY(80deg) rotateX(20deg) );
-	position: absolute;
-}
-.mountain-side2 {
-	.arrow-up( 300px, #eee );
-	-webkit-perspective: 100px;
-	.transform( rotateY(-70deg) rotateX(20deg) );
-	position: absolute;
-	left:20px;
-}
-.mountain-side3 {
-	.arrow-up( 300px, blue );
-	-webkit-perspective: 100px;
-	.transform( rotateY(-80deg) rotateX(20deg) );
-	position: absolute;
-	left:20px;
 }

@@ -122,6 +122,64 @@ a img {
 :focus {
   outline: 0;
 }
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+article {
+  float: left;
+  margin: 10px;
+  width: 460px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+article img {
+  max-width: 100%;
+}
+.span1 {
+  float: left;
+  margin: 10px;
+  width: 60px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.span1 img {
+  max-width: 100%;
+}
+.span2 {
+  float: left;
+  margin: 10px;
+  width: 140px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.span2 img {
+  max-width: 100%;
+}
+.span7 {
+  float: left;
+  margin: 10px;
+  width: 540px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.span7 img {
+  max-width: 100%;
+}
+.span12 {
+  float: left;
+  margin: 10px;
+  width: 940px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.span12 img {
+  max-width: 100%;
+}
 h1 {
   font-family: serif;
   font-size: 56px;
@@ -231,111 +289,9 @@ table th,
 table td {
   padding: 4px 8px 4px 0;
 }
-.container {
-  width: 960px;
-  margin: 0 auto;
-}
-article {
-  float: left;
-  margin: 10px;
-  width: 460px;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-article img {
-  max-width: 100%;
-}
-.span1 {
-  float: left;
-  margin: 10px;
-  width: 60px;
-  padding-left: 0px;
-  padding-right: 0px;
-  background: rgba(0, 0, 0, 0.1);
-}
-.span1 img {
-  max-width: 100%;
-}
-.span2 {
-  float: left;
-  margin: 10px;
-  width: 140px;
-  padding-left: 0px;
-  padding-right: 0px;
-  background: rgba(0, 0, 0, 0.1);
-}
-.span2 img {
-  max-width: 100%;
-}
-.span7 {
-  float: left;
-  margin: 10px;
-  width: 540px;
-  padding-left: 0px;
-  padding-right: 0px;
-  background: rgba(0, 0, 0, 0.1);
-}
-.span7 img {
-  max-width: 100%;
-}
-.span12 {
-  float: left;
-  margin: 10px;
-  width: 940px;
-  padding-left: 0px;
-  padding-right: 0px;
-  background: rgba(0, 0, 0, 0.1);
-}
-.span12 img {
-  max-width: 100%;
-}
 .carousel img {
   -webkit-transition: opacity 0.5s linear;
   -moz-transition: opacity 0.5s linear;
   -o-transition: opacity 0.5s linear;
   transition: opacity 0.5s linear;
-}
-.mountain-side1 {
-  width: 0;
-  height: 0;
-  border-left: 300px solid transparent;
-  border-right: 300px solid transparent;
-  border-bottom: 300px solid #add8e6;
-  -webkit-perspective: 100px;
-  -webkit-transform: rotateY(80deg) rotateX(20deg);
-  -moz-transform: rotateY(80deg) rotateX(20deg);
-  -ms-transform: rotateY(80deg) rotateX(20deg);
-  -o-transform: rotateY(80deg) rotateX(20deg);
-  transform: rotateY(80deg) rotateX(20deg);
-  position: absolute;
-}
-.mountain-side2 {
-  width: 0;
-  height: 0;
-  border-left: 300px solid transparent;
-  border-right: 300px solid transparent;
-  border-bottom: 300px solid #eeeeee;
-  -webkit-perspective: 100px;
-  -webkit-transform: rotateY(-70deg) rotateX(20deg);
-  -moz-transform: rotateY(-70deg) rotateX(20deg);
-  -ms-transform: rotateY(-70deg) rotateX(20deg);
-  -o-transform: rotateY(-70deg) rotateX(20deg);
-  transform: rotateY(-70deg) rotateX(20deg);
-  position: absolute;
-  left: 20px;
-}
-.mountain-side3 {
-  width: 0;
-  height: 0;
-  border-left: 300px solid transparent;
-  border-right: 300px solid transparent;
-  border-bottom: 300px solid #0000ff;
-  -webkit-perspective: 100px;
-  -webkit-transform: rotateY(-80deg) rotateX(20deg);
-  -moz-transform: rotateY(-80deg) rotateX(20deg);
-  -ms-transform: rotateY(-80deg) rotateX(20deg);
-  -o-transform: rotateY(-80deg) rotateX(20deg);
-  transform: rotateY(-80deg) rotateX(20deg);
-  position: absolute;
-  left: 20px;
 }

@@ -57,4 +57,113 @@
   .span12 img {
     max-width: 100%;
   }
+  h1 {
+    font-family: serif;
+    font-size: 63px;
+    line-height: 105%;
+    margin-top: 0;
+    margin-bottom: 15.75px;
+    font-weight: bold;
+  }
+  h2 {
+    font-family: serif;
+    font-size: 54px;
+    line-height: 105%;
+    margin-top: 27px;
+    margin-bottom: 13.5px;
+    font-weight: bold;
+  }
+  h3 {
+    font-family: serif;
+    font-size: 45px;
+    line-height: 105%;
+    margin-top: 22.5px;
+    margin-bottom: 11.25px;
+    font-weight: bold;
+  }
+  h4 {
+    font-family: serif;
+    font-size: 36px;
+    line-height: 105%;
+    margin-top: 18px;
+    margin-bottom: 9px;
+    font-weight: bold;
+  }
+  h5 {
+    font-family: serif;
+    font-size: 27px;
+    line-height: 105%;
+    margin-top: 13.5px;
+    margin-bottom: 6.75px;
+    font-weight: bold;
+  }
+  h6 {
+    font-family: serif;
+    font-size: 18px;
+    line-height: 105%;
+    margin-top: 9px;
+    margin-bottom: 4.5px;
+    font-weight: bold;
+  }
+  p {
+    font-family: serif;
+    font-size: 18px;
+    line-height: 140%;
+    margin: 18px 0;
+  }
+  abbr,
+  acronym {
+    border-bottom: 1px dotted;
+    cursor: help;
+  }
+  address {
+    font-family: serif;
+    font-size: 18px;
+    font-style: italic;
+  }
+  blockquote {
+    margin: 18px 0;
+    padding: 0 0 0 36px;
+  }
+  cite {
+    font-style: italic;
+  }
+  code {
+    font-size: 18px;
+  }
+  em,
+  i {
+    font-style: italic;
+  }
+  strong,
+  b {
+    font-weight: bold;
+  }
+  ul,
+  ol {
+    margin: 18px 0;
+    padding: 0 0 0 36px;
+  }
+  ul li,
+  ol li {
+    font-family: serif;
+    font-size: 18px;
+    line-height: 140%;
+    list-style-position: inside;
+  }
+  input,
+  button {
+    font-family: serif;
+    font-size: 18px;
+  }
+  table {
+    font-family: serif;
+    font-size: 18px;
+    width: 100%;
+    margin: 18px 0;
+  }
+  table th,
+  table td {
+    padding: 4.5px 9px 4.5px 0;
+  }
 }
