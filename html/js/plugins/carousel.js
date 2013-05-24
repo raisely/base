@@ -1,61 +1,78 @@
-(function($){
+(function ($) {
 
-  $.fn.carousel = function(options) {
+    $.fn.carousel = function (options) {
 
-    //variables
-    var element = $(this);
-    var defaults = {
-        slide: 'img',
-        slideClass: 'slide',
-        transition: 'fade',
-        speed: 5000,
-        active: 'active',
-        first: 'first',
-        last: 'last-active'
-    };
-    var options = $.extend(defaults, options);
-    
-    return this.each(function() {
+        //variables
+        var $element = $(this);
+        var defaults = {
+            transition: 'fade',
+            speed: 5000,
+            slide: 'img',
+            slideClass: 'slide',            
+            activeClass: 'active',
+            lastClass: 'last',
+            nextClass: 'next'
 
-        //css config
-        element.addClass('transition-'+options.transition);
-        element.find(options.slide).addClass(options.slideClass);
+        };
+        var options = $.extend(defaults, options);
         
-        //get the first slide
-        element.find(options.slide+':first').addClass(options.active + ' ' + options.first);
+        return this.each( function () {
 
-        //swap slides
-        var swap = function() {
-            var next = element.find('.'+options.active).next(options.slide);
+            //css config
+            $element.addClass('transition-' + options.transition);
+            $element.find(options.slide).addClass(options.slideClass);
             
-            //loop through slides
-            if (!next.length > 0)
-                next = element.find('.'+options.first);
+            //get the first slide
+            var $firstSlide = $element.find(options.slide + ':first');
+            $firstSlide.addClass(options.activeClass);
 
-            //add active class
-            element.find('.'+options.last).removeClass(options.last);
-            element.find('.'+options.active).removeClass(options.active).addClass(options.last);
-            next.addClass(options.active);
+            //set the board
+            $element.find(options.slide + ':last').addClass(options.lastClass);
+            $firstSlide.next(options.slide).addClass(options.nextClass);
 
-        }
+            //swap slides
+            var step = 0;
+            var swap = function() {
+                step = step + 1;
 
-        //run swap function
-        run = setInterval(function(){
-            swap();
-        }, options.speed);
+                var $next = $element.find('.' + options.activeClass).next(options.slide);                
 
-        //pause on hover
-        element.hover(function(){
-            clearInterval(run);
-        }, function() {
+                //loop through slides
+                if ($next.length == 0) {
+                    $next = $firstSlide;
+                    step = 0;
+                }
+
+                //add active class
+                $element.find('.' + options.lastClass).removeClass(options.lastClass);
+                $element.find('.' + options.nextClass).removeClass(options.nextClass);
+                $element.find('.' + options.activeClass).removeClass(options.activeClass).addClass(options.lastClass);
+                $next.addClass(options.activeClass);
+                
+                if ($next.next().length == 0) {
+                     $firstSlide.addClass(options.nextClass);
+                } else {
+                    $next.next().addClass(options.nextClass); 
+                }
+
+            }
+
+            //run swap function
             run = setInterval(function(){
                 swap();
             }, options.speed);
+
+            //pause on hover
+            $element.hover(function(){
+                clearInterval(run);
+            }, function() {
+                run = setInterval(function(){
+                    swap();
+                }, options.speed);
+            });
+
         });
 
-
-    });
-
-  };
+    };
 
 })(jQuery);

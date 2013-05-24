@@ -12,7 +12,7 @@
 	height: auto;
 	position: relative;
 
-	// basic swapping
+	//basic swapping
 	> .slide {
 		position: relative;
 		display: none;
@@ -21,7 +21,7 @@
 		display:block;
 	}
 
-	// fade transition
+	//fade transition
 	&.transition-fade {
 
 		> .slide {
@@ -30,19 +30,60 @@
 			height: 0;
 			.transition(opacity 1s);
 		}
-		> .active {
+		> .slide.active {
 			position: relative;
 			top: 0;
 			opacity: 1;
 			z-index: 0;
 			height: auto;
 		}
-		> .last-active {
+		> .slide.last {
 			position: absolute;
 			top: 0;
 			opacity: 0;
 			height: auto;
 			z-index: 1;
+		}
+
+	}
+
+	//slide transition
+	&.transition-slide {
+		position: relative;
+		white-space: nowrap;
+		width: 100%;
+		height: auto;
+		overflow: hidden;
+		margin: 0;
+		font-size: 0; //prevents the spacing between inline-block elements
+
+		> .slide {
+			vertical-align: top;
+			white-space: normal;
+			font-size: 100%;
+			display: none;
+		}
+		> .slide.active {
+			display: block;
+			position: relative;
+			left: 0;
+			z-index: 2;
+			.transition(left 2s ease);
+		}
+		> .slide.last {
+			display: block;
+			position: absolute;
+			left:-100%;
+			top: 0;
+			z-index: 1;
+			.transition(left 2s ease);
+		}
+		> .slide.next {
+			display: block;
+			position: absolute;
+			left:100%;
+			top: 0;
+			z-index: 0;
 		}
 
 	}
