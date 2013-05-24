@@ -18,32 +18,3 @@
 
 @import "_type.less";
 @import "_layout.less";
-
-.carousel {
-	img {
-		.transition(opacity 0.5s linear);
-	}
-}
-
-// Mountain Experiment
-
-.mountain-side1 {
-	.arrow-up( 300px, lightblue );
-	-webkit-perspective: 100px;
-	.transform( rotateY(80deg) rotateX(20deg) );
-	position: absolute;
-}
-.mountain-side2 {
-	.arrow-up( 300px, #eee );
-	-webkit-perspective: 100px;
-	.transform( rotateY(-70deg) rotateX(20deg) );
-	position: absolute;
-	left:20px;
-}
-.mountain-side3 {
-	.arrow-up( 300px, blue );
-	-webkit-perspective: 100px;
-	.transform( rotateY(-80deg) rotateX(20deg) );
-	position: absolute;
-	left:20px;
-}
