@@ -289,3 +289,38 @@ table th,
 table td {
   padding: 4px 8px 4px 0;
 }
+.carousel {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.carousel > .slide {
+  position: relative;
+  display: none;
+}
+.carousel > .slide.active {
+  display: block;
+}
+.carousel.transition-fade > .slide {
+  opacity: 0;
+  display: block;
+  height: 0;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+.carousel.transition-fade > .active {
+  position: relative;
+  top: 0;
+  opacity: 1;
+  z-index: 0;
+  height: auto;
+}
+.carousel.transition-fade > .last-active {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  height: auto;
+  z-index: 1;
+}

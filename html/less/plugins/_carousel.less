@@ -6,4 +6,45 @@
 // Basic, functionality only carousel styles
 //
 
+.carousel {
 
+	width: 100%;
+	height: auto;
+	position: relative;
+
+	// basic swapping
+	> .slide {
+		position: relative;
+		display: none;
+	}
+	> .slide.active {
+		display:block;
+	}
+
+	// fade transition
+	&.transition-fade {
+
+		> .slide {
+			opacity: 0;
+			display: block;
+			height: 0;
+			.transition(opacity 1s);
+		}
+		> .active {
+			position: relative;
+			top: 0;
+			opacity: 1;
+			z-index: 0;
+			height: auto;
+		}
+		> .last-active {
+			position: absolute;
+			top: 0;
+			opacity: 0;
+			height: auto;
+			z-index: 1;
+		}
+
+	}
+
+}

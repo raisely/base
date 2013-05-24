@@ -6,6 +6,7 @@
     var element = $(this);
     var defaults = {
         slide: 'img',
+        slideClass: 'slide',
         transition: 'fade',
         speed: 5000,
         active: 'active',
@@ -18,6 +19,7 @@
 
         //css config
         element.addClass('transition-'+options.transition);
+        element.find(options.slide).addClass(options.slideClass);
         
         //get the first slide
         element.find(options.slide+':first').addClass(options.active + ' ' + options.first);
