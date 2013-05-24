@@ -289,9 +289,3 @@ table th,
 table td {
   padding: 4px 8px 4px 0;
 }
-.carousel img {
-  -webkit-transition: opacity 0.5s linear;
-  -moz-transition: opacity 0.5s linear;
-  -o-transition: opacity 0.5s linear;
-  transition: opacity 0.5s linear;
-}
