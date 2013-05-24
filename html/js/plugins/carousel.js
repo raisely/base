@@ -7,6 +7,7 @@
         var defaults = {
             transition: 'fade',
             speed: 5000,
+            pauseOnHover: true,
             slide: 'img',
             slideClass: 'slide',            
             activeClass: 'active',
@@ -63,13 +64,15 @@
             }, options.speed);
 
             //pause on hover
-            $element.hover(function(){
-                clearInterval(run);
-            }, function() {
-                run = setInterval(function(){
-                    swap();
-                }, options.speed);
-            });
+            if (options.pauseOnHover) {
+                $element.hover(function(){
+                    clearInterval(run);
+                }, function() {
+                    run = setInterval(function(){
+                        swap();
+                    }, options.speed);
+                });
+            }
 
         });
 
