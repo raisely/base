@@ -338,6 +338,7 @@ table td {
   white-space: normal;
   font-size: 100%;
   display: none;
+  width: 100%;
 }
 .carousel.transition-slide > .slide.active {
   display: block;
