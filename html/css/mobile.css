@@ -135,6 +135,7 @@
   }
   code {
     font-size: 16px;
+    font-family: monospace;
   }
   em,
   i {
@@ -144,16 +145,26 @@
   b {
     font-weight: bold;
   }
-  ul,
+  ul {
+    margin: 16px 0;
+    padding: 0 0 0 32px;
+  }
+  ul li {
+    font-family: serif;
+    font-size: 16px;
+    line-height: 140%;
+    list-style: disc;
+    list-style-position: inside;
+  }
   ol {
     margin: 16px 0;
     padding: 0 0 0 32px;
   }
-  ul li,
   ol li {
     font-family: serif;
     font-size: 16px;
     line-height: 140%;
+    list-style: decimal;
     list-style-position: inside;
   }
   input,

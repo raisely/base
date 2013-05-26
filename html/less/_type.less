@@ -95,7 +95,7 @@ address {
 
 blockquote {
 	margin: @fontSize 0;
-	padding: 0 0 0 @fontSize*2;
+	padding: 0 0 0 @fontSize * 2;
 }
 
 cite {
@@ -104,6 +104,7 @@ cite {
 
 code {
 	font-size: @fontSize;
+	font-family: monospace;
 }
 
 em,
@@ -116,15 +117,28 @@ b {
 	font-weight: bold;
 }
 
-ul,
-ol {
+ul {
 	margin: @fontSize 0;
-	padding: 0 0 0 @fontSize*2;
+	padding: 0 0 0 @fontSize * 2;
 
 	li {
 		font-family: @paragraphFont;
 		font-size: @fontSize;
 		line-height: @lineHeight;
+		list-style: disc;
+		list-style-position: inside;
+	}
+}
+
+ol {
+	margin: @fontSize 0;
+	padding: 0 0 0 @fontSize * 2;
+
+	li {
+		font-family: @paragraphFont;
+		font-size: @fontSize;
+		line-height: @lineHeight;
+		list-style: decimal;
 		list-style-position: inside;
 	}
 }
