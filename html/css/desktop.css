@@ -5,8 +5,9 @@
   }
   article {
     float: left;
-    margin: 15px;
-    width: 570px;
+    width: 575px;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
     padding-left: 0px;
     padding-right: 0px;
   }
@@ -15,8 +16,9 @@
   }
   .span1 {
     float: left;
-    margin: 15px;
-    width: 70px;
+    width: 75px;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
     padding-left: 0px;
     padding-right: 0px;
     background: rgba(0, 0, 0, 0.1);
@@ -26,8 +28,9 @@
   }
   .span2 {
     float: left;
-    margin: 15px;
-    width: 170px;
+    width: 175px;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
     padding-left: 0px;
     padding-right: 0px;
     background: rgba(0, 0, 0, 0.1);
@@ -37,8 +40,9 @@
   }
   .span7 {
     float: left;
-    margin: 15px;
-    width: 670px;
+    width: 675px;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
     padding-left: 0px;
     padding-right: 0px;
     background: rgba(0, 0, 0, 0.1);
@@ -48,8 +52,9 @@
   }
   .span12 {
     float: left;
-    margin: 15px;
-    width: 1170px;
+    width: 1175px;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
     padding-left: 0px;
     padding-right: 0px;
     background: rgba(0, 0, 0, 0.1);

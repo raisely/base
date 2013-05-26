@@ -1,10 +1,10 @@
-// *********************************
-// MIXINS
-// *********************************
+//
+// Mixins & Shortcuts
+// --------------------------------------------------
 
 
-// Common Visual Elements
-// --------------------------
+// Useful Visual Elements
+// -------------------
 
 .arrow-up(@size: 5px, @color: #000) {
     width: 0; 
@@ -25,7 +25,7 @@
     height: 0; 
     border-top: @size solid transparent;
     border-bottom: @size solid transparent; 
-    border-right:@size solid @color; 
+    border-right: @size solid @color; 
 }
 .arrow-right(@size: 5px, @color: #000) {
     width: 0; 
@@ -37,7 +37,7 @@
 
 
 // Shortcuts
-// --------------------------
+// -------------------
 
 .size(@height, @width) {
     width: @width;
@@ -48,19 +48,11 @@
   color: transparent;
   text-shadow: none;
 }
-
-#font {
-    .shorthand(@size: 100%, @weight: normal, @lineHeight: 150%) {
-        font-size: @size;
-        font-weight: @weight;
-        line-height: @lineHeight;
-    }
+.font(@size: 100%, @weight: normal, @lineHeight: 150%) {
+    font-size: @size;
+    font-weight: @weight;
+    line-height: @lineHeight;
 }
-
-
-// Browser Support
-// --------------------------
-
 .inline-block() {
     display: inline-block;
     zoom: 1;
@@ -68,11 +60,10 @@
 }
 
 
-
 // CSS3 Prefixes
-// --------------------------
+// -------------------
 
-//Animation
+// Animation
 
 .animation(@args) {
     -webkit-animation: @args;
@@ -124,7 +115,7 @@
 }
 
 
-//Background Size
+// Background Size
 
 .background-size(@args) {
     -webkit-background-size: @args;
@@ -133,21 +124,7 @@
     background-size: @args;
 }
 
-
-//Border Radius
-
-.border-radius(@args) {
-    -webkit-border-radius: @args;
-    -moz-border-radius: @args;
-    border-radius: @args;
-
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-}
-
-
-//Box Shadows 
+// Box Shadows 
 
 .box-shadow(@args) {
     -webkit-box-shadow: @args;
@@ -158,8 +135,7 @@
     .box-shadow(inset @args);
 }
 
-
-//Box Sizing
+// Box Sizing
 
 .box-sizing(@args){
     -webkit-box-sizing: @args;
@@ -173,8 +149,7 @@
     .box-sizing(content-box);
 }
 
-
-//Columns
+// Columns
 
 .columns(@args){
     -webkit-columns: @args;
@@ -202,8 +177,7 @@
     column-rule: @rule;
 }
 
-
-//Gradients
+// Gradients
 
 #gradient {
     .horizontal(@startColor: #555, @endColor: #333) {
@@ -253,7 +227,7 @@
         background-image: -o-linear-gradient(@startColor, @midColor @colorStop, @endColor);
         background-image: linear-gradient(@startColor, @midColor @colorStop, @endColor);
         background-repeat: no-repeat;
-        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor))); // IE9 and down, gets no color-stop at all for proper fallback
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor))); // IE9 and down
     }
     .radial(@innerColor: #555, @outerColor: #333) {
         background-color: @outerColor;
@@ -263,25 +237,17 @@
         background-image: -o-radial-gradient(circle, @innerColor, @outerColor);
         background-repeat: no-repeat;
     }
-    .striped(@color: #555, @angle: 45deg) {
-        background-color: @color;
-        background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255,255,255,.15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,.15)), color-stop(.75, rgba(255,255,255,.15)), color-stop(.75, transparent), to(transparent));
-        background-image: -webkit-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-        background-image: -moz-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-        background-image: -o-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-        background-image: linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-    }
 }
 
 
-//Reset filters for IE
+// Reset IE Filters
 
 .reset-filter() {
     filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
 }
 
 
-//Opacity
+// Opacity
 
 .opacity(@factor){
     opacity: @factor;
@@ -289,15 +255,7 @@
     filter: alpha(opacity=@iefactor);
 }
 
-
-//Text Shadow
-
-.text-shadow(@args){
-    text-shadow: @args;
-}
-
-
-//Transforms
+// Transforms
 
 .transform(@args) {
     -webkit-transform: @args; 
@@ -324,8 +282,7 @@
     -moz-transform: translate3d(@x,@y,0);
 }
 
-
-//Transitions
+// Transitions
 
 .transition(@args:200ms) {
     -webkit-transition: @args;

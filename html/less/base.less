@@ -1,20 +1,27 @@
-// *********************************
-// BASE.LESS
-// *********************************
-
 //
-// Master CSS file / Standard Desktops 960px - 1200px
-//
+// Base CSS File - Standard Desktops ~960px
+// --------------------------------------------------
 
-//Grid Variables
-@columnCount:   12;
-@columnWidth:   60px;
-@gutterWidth:   20px;
-@paddingRatio:  1;
 
-//Type Variables
+
+// Grid Variables
+// -------------------
+
+@containerWidth: 960px;
+@columnCount:    12;
+@gutterRatio:    25%;
+@paddingRatio:   100%;
+
+
+// Type Variables
+// -------------------
+
 @fontSize: 16px;
 @lineHeight: 140%;
+
+
+// Base Styles
+// -------------------
 
 @import "_reset.less"; // basic css reset
 
@@ -24,9 +31,17 @@
 @import "_layout.less"; // site layouts
 @import "_type.less"; // site typography
 
-//Plugin Styles
+
+// Plugin Styles
+// -------------------
+
 @import "plugins/_carousel.less";
 
-//
-// Add site-specific LESS below
-//
+
+// Custom Styles
+// -------------------
+
+
+
+
+

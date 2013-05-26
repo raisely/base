@@ -1,17 +1,17 @@
-// *********************************
-// _TYPE.LESS
-// *********************************
+//
+// Typography
+// --------------------------------------------------
 
-//
-// Font Variables
-//
+
+
+// Font Faces
+// -------------------
 
 @headingFont: serif;
 @paragraphFont: serif;
 
-//
-// Base Headings
-//
+// Headings
+// -------------------
 
 h1 { 
 	@weighting: 3.5;
@@ -68,9 +68,8 @@ h6 {
 	font-weight: bold;
 }
 
-//
-// Base Paragraphs
-//
+// Paragraph
+// -------------------
 
 p {
 	font-family: @paragraphFont;
@@ -79,9 +78,8 @@ p {
 	margin: @fontSize 0;
 }
 
-//
-// Base Type Elements
-//
+// Basic Elements
+// -------------------
 
 abbr,
 acronym {
@@ -131,9 +129,8 @@ ol {
 	}
 }
 
-//
-// Base Inputs
-//
+// Inputs
+// -------------------
 
 input,
 button {
@@ -141,19 +138,18 @@ button {
 	font-size: @fontSize;
 }
 
-//
-// Base Tables
-//
+// Tables
+// -------------------
 
 table {
 	font-family: @paragraphFont;
 	font-size: @fontSize;
-	width:100%;
+	width: 100%;
 	margin: @fontSize 0;
 
 	th,
 	td {
-		padding:@fontSize/4 @fontSize/2 @fontSize/4 0;
+		padding: @fontSize/4 @fontSize/2 @fontSize/4 0;
 	}
 }
 

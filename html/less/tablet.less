@@ -1,26 +1,37 @@
-// *********************************
-// TABLET.LESS
-// *********************************
-
 //
-// Tablet Devices < 960px browsing width
-//
+// Responsive CSS File - Tablet ~768px
+// --------------------------------------------------
 
-@import "_functions.less";	
 
-//Grid Variables
-@columnCount:   12;
-@columnWidth:   49px;
-@gutterWidth:   15px;
-@paddingRatio:  1;
 
-//Type Variables
+// Grid Variables
+// -------------------
+
+@containerWidth: 768px;
+@columnCount:    12;
+@gutterRatio:    25%;
+@paddingRatio:   100%;
+
+
+// Type Variables
+// -------------------
+
 @fontSize: 14px;
 @lineHeight: 140%;
+
+
+// Base Styles
+// -------------------
+
+@import "_functions.less";	
 
 @media (min-width: 768px) and (max-width: 959px) {
 	
 	@import "_layout.less";
 	@import "_type.less";
+	
+
+	// Custom Styles
+	// -------------------
 
 }

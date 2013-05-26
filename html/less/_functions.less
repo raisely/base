@@ -1,10 +1,13 @@
-// *********************************
-// _FUNCTIONS.LESS
-// *********************************
+//
+// Functions (Mathematical Mixins)
+// --------------------------------------------------
 
-//
-// Function mixins, powers the grid.
-//
+
+// Grid
+// -------------------
+
+@columnWidth: (@containerWidth / @columnCount) * (1 - unit(@gutterRatio) / 100);
+@gutterWidth: (@containerWidth / @columnCount) - @columnWidth;
 
 .container() {
 	width: @columnWidth * @columnCount + @gutterWidth * @columnCount;
@@ -29,11 +32,11 @@
 	@unit: @columnWidth - @columnWidth;
 
 	float: left;
-  	margin: @gutterWidth/2;
-  	margin: @offsetWidth+@gutterWidth/2;
 	width: @width;
-	padding-left: @unit + @padding*@paddingRatio;
-	padding-right: @unit + @padding*@paddingRatio;
+	margin-left: @offsetWidth+@gutterWidth/2;
+  	margin-right: @gutterWidth/2;
+	padding-left: @unit + @padding * (unit(@paddingRatio) / 100);
+	padding-right: @unit + @padding * (unit(@paddingRatio) / 100);
 
 	//core supporting styles
 	img { max-width:100%; }

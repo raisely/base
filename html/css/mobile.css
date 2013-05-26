@@ -5,9 +5,9 @@
   }
   article {
     float: left;
-    margin: 0;
-    margin: 0%;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     padding-left: 0%;
     padding-right: 0%;
   }
@@ -16,9 +16,9 @@
   }
   .span1 {
     float: left;
-    margin: 0;
-    margin: 0%;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     padding-left: 0%;
     padding-right: 0%;
     background: rgba(0, 0, 0, 0.1);
@@ -28,9 +28,9 @@
   }
   .span2 {
     float: left;
-    margin: 0;
-    margin: 0%;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     padding-left: 0%;
     padding-right: 0%;
     background: rgba(0, 0, 0, 0.1);
@@ -40,9 +40,9 @@
   }
   .span7 {
     float: left;
-    margin: 0;
-    margin: 0%;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     padding-left: 0%;
     padding-right: 0%;
     background: rgba(0, 0, 0, 0.1);
@@ -52,9 +52,9 @@
   }
   .span12 {
     float: left;
-    margin: 0;
-    margin: 0%;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     padding-left: 0%;
     padding-right: 0%;
     background: rgba(0, 0, 0, 0.1);
@@ -64,29 +64,37 @@
   }
   h1 {
     font-family: serif;
-    font-size: 42px;
+    font-size: 56px;
     line-height: 105%;
     margin-top: 0;
-    margin-bottom: 10.5px;
+    margin-bottom: 14px;
     font-weight: bold;
   }
   h2 {
     font-family: serif;
-    font-size: 36px;
+    font-size: 48px;
     line-height: 105%;
-    margin-top: 18px;
-    margin-bottom: 9px;
+    margin-top: 24px;
+    margin-bottom: 12px;
     font-weight: bold;
   }
   h3 {
     font-family: serif;
-    font-size: 30px;
+    font-size: 40px;
     line-height: 105%;
-    margin-top: 15px;
-    margin-bottom: 7.5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     font-weight: bold;
   }
   h4 {
+    font-family: serif;
+    font-size: 32px;
+    line-height: 105%;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  h5 {
     font-family: serif;
     font-size: 24px;
     line-height: 105%;
@@ -94,27 +102,19 @@
     margin-bottom: 6px;
     font-weight: bold;
   }
-  h5 {
-    font-family: serif;
-    font-size: 18px;
-    line-height: 105%;
-    margin-top: 9px;
-    margin-bottom: 4.5px;
-    font-weight: bold;
-  }
   h6 {
     font-family: serif;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 105%;
-    margin-top: 6px;
-    margin-bottom: 3px;
+    margin-top: 8px;
+    margin-bottom: 4px;
     font-weight: bold;
   }
   p {
     font-family: serif;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 140%;
-    margin: 12px 0;
+    margin: 16px 0;
   }
   abbr,
   acronym {
@@ -123,18 +123,18 @@
   }
   address {
     font-family: serif;
-    font-size: 12px;
+    font-size: 16px;
     font-style: italic;
   }
   blockquote {
-    margin: 12px 0;
-    padding: 0 0 0 24px;
+    margin: 16px 0;
+    padding: 0 0 0 32px;
   }
   cite {
     font-style: italic;
   }
   code {
-    font-size: 12px;
+    font-size: 16px;
   }
   em,
   i {
@@ -146,29 +146,29 @@
   }
   ul,
   ol {
-    margin: 12px 0;
-    padding: 0 0 0 24px;
+    margin: 16px 0;
+    padding: 0 0 0 32px;
   }
   ul li,
   ol li {
     font-family: serif;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 140%;
     list-style-position: inside;
   }
   input,
   button {
     font-family: serif;
-    font-size: 12px;
+    font-size: 16px;
   }
   table {
     font-family: serif;
-    font-size: 12px;
+    font-size: 16px;
     width: 100%;
-    margin: 12px 0;
+    margin: 16px 0;
   }
   table th,
   table td {
-    padding: 3px 6px 3px 0;
+    padding: 4px 8px 4px 0;
   }
 }
