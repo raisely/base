@@ -1,6 +1,6 @@
 (function ($) {
 
-    $.fn.carousel = function (options) {
+    $.fn.carousel = function(options) {
 
         //variables
         var $element = $(this);
@@ -16,8 +16,14 @@
 
         };
         var options = $.extend(defaults, options);
+
+        var actions = {
+
+
+        }
         
-        return this.each( function () {
+        return this.each( function() {
+
 
             //css config
             $element.addClass('transition-' + options.transition);
