@@ -16,7 +16,8 @@
             transition: 'fade',
             speed: 3000,
             pauseOnHover: true,
-            slide: 'img'
+            slide: 'img',
+            transitionSpeed: 1000
         },
             plugin = this,
             $element = $(element),
@@ -38,7 +39,7 @@
         // take slider to a specific slide number
         plugin.slide = function (e, d) {
 
-            var i = $element.find(plugin.settings.slide + '.active').index, // get current position    
+            var i = $element.find(plugin.settings.slide + '.active').index(), // get current position    
                 $to = $element.find(plugin.settings.slide + ':nth-child(' + e + ')'),
                 $prev = ($to.prev('.slide').length === 0) ? $element.find('.slide:last') : $to.prev('.slide'),
                 $next = ($to.next('.slide').length === 0) ? $element.find('.slide:first') : $to.next('.slide');
@@ -56,6 +57,7 @@
                 $prev.addClass('right');
                 $next.addClass('left');
             }
+            plugin.settings.onSlide(d);
 
         };
 
@@ -104,6 +106,39 @@
                 plugin.run();
             });
 
+        };
+
+        // javascript animation fallbacks
+
+        var slideAnimation = function () {
+            
+            $element.find('.active').css('height','auto').animate({
+                left: '0%'
+
+            }, plugin.settings.transitionSpeed);
+
+            $element.find('.left').css('height','auto').animate({
+                left: '-100%'
+
+            }, plugin.settings.transitionSpeed, function () {
+                $(this).css('height','0');
+            });
+
+            $element.find('.right').css('height','auto').animate({
+                left: '100%'
+
+            }, plugin.settings.transitionSpeed, function () {
+                $(this).css('height','0');
+            });
+
+        };
+
+        defaults.onSlide = function () {
+            
+            if (!Modernizr.cssanimations && plugin.settings.transition === 'slide') {
+                slideAnimation();
+            }
+        
         };
 
         // external access: element.data('carousel').settings.propertyName
