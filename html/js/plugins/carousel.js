@@ -39,14 +39,20 @@
         // take slider to a specific slide number
         plugin.slide = function (e, d) {
 
-            var i = $element.find(plugin.settings.slide + '.active').index(), // get current position    
+            var i = $element.find(plugin.settings.slide + '.active').index(),
                 $to = $element.find(plugin.settings.slide + ':nth-child(' + e + ')'),
                 $prev = ($to.prev('.slide').length === 0) ? $element.find('.slide:last') : $to.prev('.slide'),
                 $next = ($to.next('.slide').length === 0) ? $element.find('.slide:first') : $to.next('.slide');
 
-            if (d === null) { d = (i < $to.index()); } // get direction
+            $(plugin.settings.slide).each( function (index) {
+                var position = (index + 1 - e);
+                console.log(e);
+                $(this).css('left', position * 100 + '%');
+                // $(this).animate({
+                //     'left': position * 100 + '%'
+                // }, plugin.settings.animationSpeed );
+            });
 
-            // change classes
             $element.find('.slide').removeClass('left active right');
             $to.addClass('active');
 
@@ -57,7 +63,8 @@
                 $prev.addClass('right');
                 $next.addClass('left');
             }
-            plugin.settings.onSlide(d);
+
+            plugin.settings.onSlide(d); // callback
 
         };
 
