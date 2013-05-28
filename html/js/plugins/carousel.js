@@ -1,6 +1,14 @@
 // Base Carousel
 // A basic carousel script
 
+/*
+Todo:
+pause on hover + function
+arrows
+dots
+test
+*/
+
 (function($) {
 
     "use strict";
@@ -11,10 +19,11 @@
             transition: 'fade',
             speed: 3000,
             pauseOnHover: true,
-            slide: 'img'
+            slide: 'img',
         },
             plugin = this,
-            $element = $(element);
+            $element = $(element),
+            interval;
 
         // external access: element.data('carousel').settings.propertyName
         plugin.settings = {};
@@ -24,6 +33,9 @@
             plugin.settings = $.extend({}, defaults, options);
 
             plugin.create();
+
+            // private methods
+            pauseOnHover();
 
         };
 
@@ -97,7 +109,7 @@
         plugin.run = function () {
 
             // run carousel
-            setInterval( function () {
+            interval = setInterval( function () {
                 plugin.next();
             }, plugin.settings.speed);
 
@@ -105,10 +117,20 @@
 
         plugin.pause = function () {
 
+            clearInterval(interval);
+
         };
 
-        var carousel_private = function() {
+        var pauseOnHover = function() {
 
+            if (!plugin.settings.pauseOnHover) return
+
+            $element.hover( function () {
+                plugin.pause();
+            }, function() {
+                plugin.run();
+            });
+        
         };
 
         plugin.init();
