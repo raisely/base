@@ -1,13 +1,10 @@
 // Base Carousel
 // A basic carousel script
 
-/*
-Todo:
-pause on hover + function
-arrows
-dots
-test
-*/
+// TODO
+// arrows
+// dots
+// test
 
 (function($) {
 
@@ -19,25 +16,11 @@ test
             transition: 'fade',
             speed: 3000,
             pauseOnHover: true,
-            slide: 'img',
+            slide: 'img'
         },
             plugin = this,
             $element = $(element),
             interval;
-
-        // external access: element.data('carousel').settings.propertyName
-        plugin.settings = {};
-
-        plugin.init = function() {
-
-            plugin.settings = $.extend({}, defaults, options);
-
-            plugin.create();
-
-            // private methods
-            pauseOnHover();
-
-        };
 
         // add the basic css classes
         plugin.create = function () {
@@ -56,25 +39,15 @@ test
         plugin.slide = function (e, d) {
 
             var i = $element.find(plugin.settings.slide + '.active').index, // get current position    
-                $new = $element.find(plugin.settings.slide + ':nth-child(' + e + ')');
+                $to = $element.find(plugin.settings.slide + ':nth-child(' + e + ')'),
+                $prev = ($to.prev('.slide').length === 0) ? $element.find('.slide:last') : $to.prev('.slide'),
+                $next = ($to.next('.slide').length === 0) ? $element.find('.slide:first') : $to.next('.slide');
 
-            // get prev slide
-            if ($new.prev('.slide').length === 0)
-                var $prev = $element.find('.slide:last');
-            else
-                var $prev = $new.prev('.slide');
-
-            // get next slide
-            if ($new.next('.slide').length === 0)
-                var $next = $element.find('.slide:first');
-            else
-                var $next = $new.next('.slide');
-
-            if (d == null) var d = (i < $new.index()); // get direction
+            if (d === null) { d = (i < $to.index()); } // get direction
 
             // change classes
             $element.find('.slide').removeClass('left active right');
-            $new.addClass('active');
+            $to.addClass('active');
 
             if (d) {
                 $prev.addClass('left');
@@ -88,9 +61,9 @@ test
 
         // call next slide from current slide
         plugin.next = function () {
-          
+
             var next = $element.find('.active').next('.slide').length,
-                e = (next == 0) ? 0 : $element.find('.active').index() + 1;
+                e = (next === 0) ? 0 : $element.find('.active').index() + 1;
 
             plugin.slide((e + 1), true);
 
@@ -100,7 +73,7 @@ test
         plugin.prev = function () {
 
             var prev = $element.find('.active').prev('.slide').length,
-                e = (prev == 0) ? $element.find('.slide:last').index() + 1 : $element.find('.active').index();
+                e = (prev === 0) ? $element.find('.slide:last').index() + 1 : $element.find('.active').index();
 
             plugin.slide(e, false);
 
@@ -109,7 +82,7 @@ test
         plugin.run = function () {
 
             // run carousel
-            interval = setInterval( function () {
+            interval = setInterval(function () {
                 plugin.next();
             }, plugin.settings.speed);
 
@@ -123,26 +96,39 @@ test
 
         var pauseOnHover = function() {
 
-            if (!plugin.settings.pauseOnHover) return
+            if (!plugin.settings.pauseOnHover) { return false; }
 
-            $element.hover( function () {
+            $element.hover(function () {
                 plugin.pause();
             }, function() {
                 plugin.run();
             });
-        
+
         };
 
+        // external access: element.data('carousel').settings.propertyName
+        plugin.settings = {};
+
+        plugin.init = function() {
+
+            plugin.settings = $.extend({}, defaults, options);
+
+            plugin.create();
+
+            // private methods
+            pauseOnHover();
+
+        };
         plugin.init();
 
-    }
+    };
 
     // add to the jQuery object
     $.fn.carousel = function (options) {
 
         return this.each(function () {
 
-            if (undefined == $(this).data('carousel')) {
+            if (undefined === $(this).data('carousel')) {
 
                 var plugin = new $.carousel(this, options);
 
@@ -154,6 +140,6 @@ test
 
         });
 
-    }
+    };
 
 })(jQuery);
