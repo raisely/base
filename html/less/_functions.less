@@ -28,7 +28,7 @@
 
 .newColumn() {
 	@offsetWidth: @columnWidth * @offset + @gutterWidth * @offset;
-	@width: (@columnWidth * @consideredColumns) + (@gutterWidth * (@consideredColumns - 1)) - ((@padding*@paddingRatio)*2);
+	@width: (@columnWidth * @consideredColumns) + (@gutterWidth * (@consideredColumns - 1)) - ((@padding * (unit(@paddingRatio) / 100)) * 2);
 	@unit: @columnWidth - @columnWidth;
 
 	float: left;
