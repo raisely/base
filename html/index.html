@@ -113,10 +113,20 @@
                     <img src="tests/carousel1.jpg" />
                     <img src="tests/carousel2.jpg" />
                     <img src="tests/carousel3.jpg" />
-                    <img src="tests/carousel1.jpg" />
-                    <img src="tests/carousel2.jpg" />
                     <img src="tests/carousel3.jpg" />
                 </aside>
+                <p>
+                    <a href="#" data-carousel="prev">Prev</a>
+                    <a href="#" data-carousel="pause">Pause</a>
+                    <a href="#" data-carousel="next">Next</a>
+                </p>
+                <p>
+                    <a href="#1" data-carousel="jump">1</a>
+                    <a href="#2" data-carousel="jump">2</a>
+                    <a href="#3" data-carousel="jump">3</a>
+                    <a href="#4" data-carousel="jump">4</a>
+                </p>
+
 
                 <h1>Placeholder</h1>
                 <p>jQuery plugin to support placeholders in older browsers, using the placeholder attribute. </p>
@@ -143,9 +153,9 @@
             $(".carousel").carousel({
                 slide: 'img',
                 transition: 'slide',
-                speed: 3000
+                speed: 4000,
+                cssAnimations: true
             });
-
             //$("body").fullscreen();
         </script>
 
