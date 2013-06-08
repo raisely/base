@@ -3,69 +3,82 @@
 // --------------------------------------------------
 
 
+// Customising this file
+// -------------------
 
-// Font Faces
+// @fontSize: set within the base responsive files.
+// @weighting: element-specific percentage increase of font-size, margin & line-height
+
+
+// Variables
 // -------------------
 
 @headingFont: serif;
 @paragraphFont: serif;
+@baseColor: #000; // placeholder, remove & change if using own _variables.less file.
 
 // Headings
 // -------------------
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: @lineHeight;
+	font-family: @headingFont;
+	font-weight: bold;
+	color: @baseColor;
+}
+
 h1 { 
 	@weighting: 3.5;
-	font-family: @headingFont;
-	font-size: @fontSize * @weighting;
-	line-height: @lineHeight * 0.75;
-	margin-top: 0;
-	margin-bottom: @fontSize * (@weighting/4);
-	font-weight: bold;
+	@size: @fontSize * @weighting;
+
+	font-size: @size;
+	margin-top: @size / 2;
+	margin-bottom: @size / 4;
 }
 h2 { 
 	@weighting: 3;
-	font-family: @headingFont;
-	font-size: @fontSize * @weighting;
-	line-height: @lineHeight * 0.75;
-	margin-top: @fontSize * (@weighting/2);
-	margin-bottom: @fontSize * (@weighting/4);
-	font-weight: bold;
+	@size: @fontSize * @weighting;
+
+	font-size: @size;
+	margin-top: @size / 2;
+	margin-bottom: @size / 4;
 }
 h3 { 
 	@weighting: 2.5;
-	font-family: @headingFont;
-	font-size: @fontSize * @weighting;
-	line-height: @lineHeight * 0.75;
-	margin-top: @fontSize * (@weighting/2);
-	margin-bottom: @fontSize * (@weighting/4);
-	font-weight: bold;
+	@size: @fontSize * @weighting;
+
+	font-size: @size;
+	margin-top: @size / 2;
+	margin-bottom: @size / 4;
 }
 h4 {
 	@weighting: 2;
-	font-family: @headingFont;
-	font-size: @fontSize * @weighting;
-	line-height: @lineHeight * 0.75;
-	margin-top: @fontSize * (@weighting/2);
-	margin-bottom: @fontSize * (@weighting/4);
-	font-weight: bold;
+	@size: @fontSize * @weighting;
+
+	font-size: @size;
+	margin-top: @size / 2;
+	margin-bottom: @size / 4;
 }
 h5 {
 	@weighting: 1.5;
-	font-family: @headingFont;
-	font-size: @fontSize * @weighting;
-	line-height: @lineHeight * 0.75;
-	margin-top: @fontSize * (@weighting/2);
-	margin-bottom: @fontSize * (@weighting/4);
-	font-weight: bold;
+	@size: @fontSize * @weighting;
+
+	font-size: @size;
+	margin-top: @size / 2;
+	margin-bottom: @size / 4;
 }
 h6 {
 	@weighting: 1;
-	font-family: @headingFont;
-	font-size: @fontSize * @weighting;
-	line-height: @lineHeight * 0.75;
-	margin-top: @fontSize * (@weighting/2);
-	margin-bottom: @fontSize * (@weighting/4);
-	font-weight: bold;
+	@size: @fontSize * @weighting;
+
+	font-size: @size;
+	margin-top: @size / 2;
+	margin-bottom: @size / 4;
 }
 
 // Paragraph
@@ -76,6 +89,7 @@ p {
 	font-size: @fontSize;
 	line-height: @lineHeight;
 	margin: @fontSize 0;
+	color: @baseColor;
 }
 
 // Basic Elements
@@ -161,9 +175,16 @@ table {
 	width: 100%;
 	margin: @fontSize 0;
 
-	th,
+	th {
+		padding: @fontSize / 2;
+		border: 1px solid lighten(@baseColor, 75%);
+		background: lighten(@baseColor, 95%);
+		text-align: left;
+		font-weight: bold;
+	}
 	td {
-		padding: @fontSize/4 @fontSize/2 @fontSize/4 0;
+		padding: @fontSize / 2;
+		border: 1px solid lighten(@baseColor, 75%);
 	}
 }
 
