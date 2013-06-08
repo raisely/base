@@ -1,0 +1,60 @@
+//
+// Forms
+// --------------------------------------------------
+
+
+// Variables
+// -------------------
+
+@formColor: #000; // the theme colour for forms. remove or change this.
+
+
+// Basic Styles
+// -------------------
+
+form {
+	
+}
+
+fieldset {
+	display: block;
+}
+
+legend {
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	border-bottom: 1px solid lighten(@formColor, 75%);
+}
+
+// Form Elements
+// -------------------
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+	border: 1px solid lighten(@formColor, 75%);
+	outline: none;
+	padding: 5px;
+
+	&:focus {
+		border: 1px solid lighten(@formColor, 50%);
+	}
+}
+
+
+
+

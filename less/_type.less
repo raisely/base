@@ -119,6 +119,7 @@ cite {
 code {
 	font-size: @fontSize;
 	font-family: monospace;
+	background: #eee;
 }
 
 em,
@@ -131,6 +132,7 @@ b {
 	font-weight: bold;
 }
 
+ol,
 ul {
 	margin: @fontSize 0;
 	padding: 0 0 0 @fontSize * 2;
@@ -139,31 +141,39 @@ ul {
 		font-family: @paragraphFont;
 		font-size: @fontSize;
 		line-height: @lineHeight;
-		list-style: disc;
-		list-style-position: inside;
+		list-style-position: outside;
 	}
 }
-
-ol {
-	margin: @fontSize 0;
-	padding: 0 0 0 @fontSize * 2;
-
-	li {
-		font-family: @paragraphFont;
-		font-size: @fontSize;
-		line-height: @lineHeight;
-		list-style: decimal;
-		list-style-position: inside;
-	}
-}
+ul li { list-style: disc; }
+ol li { list-style: decimal; }
 
 // Inputs
 // -------------------
 
+form {
+	margin: @fontSize 0;
+}
+
+fieldset {
+	margin: 0 0 @fontSize;
+}
+
+legend {
+	margin: 0 0 @fontSize / 2;
+	font-family: @paragraphFont;
+	font-size: @fontSize;
+	font-weight: bold;
+	line-height: @lineHeight;
+}
+
+label,
 input,
+textarea,
+option,
 button {
 	font-family: @paragraphFont;
 	font-size: @fontSize;
+	line-height: @lineHeight; 
 }
 
 // Tables
