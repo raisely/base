@@ -18,6 +18,8 @@ form {
 
 fieldset {
 	display: block;
+	margin: 0;
+	padding: 0;
 }
 
 legend {
@@ -46,9 +48,9 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
+	padding: 5px;
 	border: 1px solid lighten(@formColor, 75%);
 	outline: none;
-	padding: 5px;
 
 	&:focus {
 		border: 1px solid lighten(@formColor, 50%);
