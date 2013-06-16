@@ -13,20 +13,27 @@
 // -------------------
 
 form {
-	
+	display: block;
 }
 
 fieldset {
 	display: block;
-	margin: 0;
+	margin: 1.25em 0;
 	padding: 0;
 }
 
 legend {
 	display: block;
 	width: 100%;
+	margin: 0 0 1em 0;
 	font-weight: bold;
 	border-bottom: 1px solid lighten(@formColor, 75%);
+}
+
+label {
+	display: block;
+	margin: 0 0 0.25em;
+	font-weight: bold;
 }
 
 // Form Elements
@@ -47,16 +54,55 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="tel"],
+input[type="image"],
 input[type="color"] {
-	padding: 5px;
+	display: block;
+	width: 100%;
+	padding: 0.125em;
+	margin: 0 0 0.625em;
+	vertical-align: middle;
 	border: 1px solid lighten(@formColor, 75%);
 	outline: none;
+	font-family: inherit;
+	font-size: 1em;
+	.box-sizing(border-box);
 
+	&:hover {
+		border: 1px solid lighten(@formColor, 60%);
+	}
 	&:focus {
 		border: 1px solid lighten(@formColor, 50%);
 	}
 }
 
+// Buttons
 
+button,
+input[type="button"],
+input[type="submit"],
+input[type="file"],
+input[type="reset"] {
+	padding: 0.125em;
+	margin: 0 0 0.625em;
+	font-family: inherit;
+	font-size: 1em;
+}
 
+// Misc Additions
 
+input[type="file"] {
+	line-height: 100%; // fixes vertical alignment
+}
+textarea {
+	padding: 0.25em; // to make the textarea more writeable
+}
+
+// Bonus HTML5 Elements
+
+progress,
+meter {
+	padding: 0.125em;
+	margin: 0 0 0.625em;
+	font-family: inherit;
+	font-size: 1em;
+}

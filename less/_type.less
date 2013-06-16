@@ -84,6 +84,10 @@ h6 {
 // Paragraph
 // -------------------
 
+body {
+	font-family: @paragraphFont;
+	font-size: @fontSize;
+}
 p {
 	font-family: @paragraphFont;
 	font-size: @fontSize;
@@ -147,29 +151,11 @@ ul {
 ul li { list-style: disc; }
 ol li { list-style: decimal; }
 
-// Inputs
+// Form
 // -------------------
 
 form {
 	margin: @fontSize 0;
-}
-
-legend {
-	margin: @fontSize / 2 0;
-	font-family: @paragraphFont;
-	font-size: @fontSize;
-	font-weight: bold;
-	line-height: @lineHeight;
-}
-
-label,
-input,
-textarea,
-option,
-button {
-	font-family: @paragraphFont;
-	font-size: @fontSize;
-	line-height: @lineHeight; 
 }
 
 // Tables
