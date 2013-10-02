@@ -3,6 +3,14 @@
 // --------------------------------------------------
 
 
+body {
+	font-size: @fontSize;
+	color: @textColor;
+	line-height: @lineHeight;
+	font-family: @paragraphFont;
+}
+
+
 // Headings
 // -------------------
 
@@ -15,71 +23,52 @@ h6 {
 	line-height: @lineHeight;
 	font-family: @headingFont;
 	font-weight: bold;
-	color: @textColor;
 }
 
 h1 { 
-	@weighting: 3.5;
-	@size: @fontSize * @weighting;
-
-	font-size: @size;
-	margin-top: @size / 2;
-	margin-bottom: @size / 4;
+	font-size: 4em;
+	margin-top: 0.75em;
+	margin-bottom: 0.25em;
 }
 h2 { 
-	@weighting: 3;
-	@size: @fontSize * @weighting;
-
-	font-size: @size;
-	margin-top: @size / 2;
-	margin-bottom: @size / 4;
+	font-size: 2.5em;
+	margin-top: 0.75em;
+	margin-bottom: 0.5em;
 }
 h3 { 
-	@weighting: 2.5;
-	@size: @fontSize * @weighting;
-
-	font-size: @size;
-	margin-top: @size / 2;
-	margin-bottom: @size / 4;
+	font-size: 2em;
+	margin-top: 0.75em;
+	margin-bottom: 0.5em;
 }
 h4 {
-	@weighting: 2;
-	@size: @fontSize * @weighting;
-
-	font-size: @size;
-	margin-top: @size / 2;
-	margin-bottom: @size / 4;
+	font-size: 1.25em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 }
 h5 {
-	@weighting: 1.5;
-	@size: @fontSize * @weighting;
-
-	font-size: @size;
-	margin-top: @size / 2;
-	margin-bottom: @size / 4;
+	font-size: 1.125em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 }
 h6 {
-	@weighting: 1;
-	@size: @fontSize * @weighting;
-
-	font-size: @size;
-	margin-top: @size / 2;
-	margin-bottom: @size / 4;
+	font-size: 1em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 }
 
 // Paragraph
 // -------------------
 
-body {
-	font-family: @paragraphFont;
-	font-size: @fontSize;
-}
 p {
-	font-family: @paragraphFont;
-	font-size: @fontSize;
-	line-height: @lineHeight;
-	margin: @fontSize 0;
-	color: @textColor;
+	margin: 1em 0;
+}
+a {
+	color: @primaryColor;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 // Basic Elements
@@ -92,14 +81,13 @@ acronym {
 }
 
 address {
-	font-family: @paragraphFont;
-	font-size: @fontSize;
+	font-size: 1em;
 	font-style: italic;
 }
 
 blockquote {
-	margin: @fontSize 0;
-	padding: 0 0 0 @fontSize * 2;
+	margin: 1em 0;
+	padding: 0 0 0 2em;
 }
 
 cite {
@@ -107,7 +95,7 @@ cite {
 }
 
 code {
-	font-size: @fontSize;
+	font-size: 1.25em;
 	font-family: monospace;
 	background: #eee;
 }
@@ -124,13 +112,11 @@ b {
 
 ol,
 ul {
-	margin: @fontSize 0;
-	padding: 0 0 0 @fontSize * 2;
+	margin: 1em 0;
+	padding: 0 0 0 2em;
 
 	li {
-		font-family: @paragraphFont;
-		font-size: @fontSize;
-		line-height: @lineHeight;
+		font-size: 1em;
 		list-style-position: outside;
 	}
 }
@@ -141,20 +127,20 @@ ol li { list-style: decimal; }
 // -------------------
 
 form {
-	margin: @fontSize 0;
+	margin: 1em 0;
 }
 
 // Descriptions
 // -------------------
 
 dl {
-	margin: @fontSize 0;
+	margin: 1em 0;
 
 	dt {
 		font-weight: bold;
 	}
 	dd {
-		margin: 0 0 @fontSize / 2;
+		margin: 0 0 0.5em;
 	}
 }
 
@@ -162,20 +148,18 @@ dl {
 // -------------------
 
 table {
-	font-family: @paragraphFont;
-	font-size: @fontSize;
 	width: 100%;
-	margin: @fontSize 0;
+	margin: 1em 0;
 
 	th {
-		padding: @fontSize / 2;
+		padding: 0.5em;
 		border: 1px solid lighten(@textColor, 75%);
 		background: lighten(@textColor, 95%);
 		text-align: left;
 		font-weight: bold;
 	}
 	td {
-		padding: @fontSize / 2;
+		padding: 0.5em;
 		border: 1px solid lighten(@textColor, 75%);
 	}
 }
