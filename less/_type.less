@@ -3,20 +3,6 @@
 // --------------------------------------------------
 
 
-// Customising this file
-// -------------------
-
-// @fontSize: set within the base responsive files.
-// @weighting: element-specific percentage increase of font-size, margin & line-height
-
-
-// Variables
-// -------------------
-
-@headingFont: serif;
-@paragraphFont: serif;
-@baseColor: #000; // placeholder, remove & change if using own _variables.less file.
-
 // Headings
 // -------------------
 
@@ -29,7 +15,7 @@ h6 {
 	line-height: @lineHeight;
 	font-family: @headingFont;
 	font-weight: bold;
-	color: @baseColor;
+	color: @textColor;
 }
 
 h1 { 
@@ -93,7 +79,7 @@ p {
 	font-size: @fontSize;
 	line-height: @lineHeight;
 	margin: @fontSize 0;
-	color: @baseColor;
+	color: @textColor;
 }
 
 // Basic Elements
@@ -183,14 +169,14 @@ table {
 
 	th {
 		padding: @fontSize / 2;
-		border: 1px solid lighten(@baseColor, 75%);
-		background: lighten(@baseColor, 95%);
+		border: 1px solid lighten(@textColor, 75%);
+		background: lighten(@textColor, 95%);
 		text-align: left;
 		font-weight: bold;
 	}
 	td {
 		padding: @fontSize / 2;
-		border: 1px solid lighten(@baseColor, 75%);
+		border: 1px solid lighten(@textColor, 75%);
 	}
 }
 
