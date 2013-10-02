@@ -3,13 +3,67 @@
 // --------------------------------------------------
 
 
-button {
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
 	-webkit-appearance: none;
-	padding: 0.25em 0.5em;
+	padding: 0.625em 1.25em;
 	margin: 0 0 0.625em;
 	font-family: inherit;
 	font-size: 1em;
 	border: none;
 	outline: none;
-	background: lighten(@textColor, 80%);
+	background: lighten(@textColor, 85%);
+	line-height: 100%;
+	cursor: pointer;
+
+	&:hover {
+		background: lighten(@textColor, 80%);
+	}
+	&:active {
+		background: lighten(@textColor, 75%);
+	}
+
+	&.disabled {
+		background: lighten(@textColor, 95%);
+		color: lighten(@textColor, 60%);
+		cursor: default;
+	}
+}
+
+button.primary {
+	background: @primaryColor;
+	color: white;
+
+	&:hover {
+		background: darken(@primaryColor, 5%);
+	}
+	&:active {
+		background: darken(@primaryColor, 10%);
+	}
+
+	&.disabled {
+		background: lighten(@primaryColor, 20%);
+		color: @primaryColor;
+		cursor: default;
+	}
+}
+
+button.secondary {
+	background: @secondaryColor;
+	color: white;
+
+	&:hover {
+		background: darken(@secondaryColor, 5%);
+	}
+	&:active {
+		background: darken(@secondaryColor, 10%);
+	}
+
+	&.disabled {
+		background: lighten(@secondaryColor, 20%);
+		color: @secondaryColor;
+		cursor: default;
+	}
 }
