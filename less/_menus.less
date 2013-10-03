@@ -22,10 +22,14 @@ ul[class*="menu-"] {
 		}
 		&:hover > a,
 		a:hover,
-		a.selected { background: @baseColor; }
+		a.selected { 
+			background: @baseColor;
+		}
 
 		a:active,
-		a.selected:hover { background: darken(@baseColor, 3%); }
+		a.selected:hover { 
+			background: darken(@baseColor, 3%);
+		}
 	}
 }
 
@@ -69,6 +73,8 @@ ul[class*="menu-"] {
 	li {
 		display: block;
 
-		a { display: block; }
+		a {
+			display: block;
+		}
 	}
 }
