@@ -21,7 +21,7 @@ legend {
 	width: 100%;
 	margin: 0 0 1em 0;
 	font-weight: bold;
-	border-bottom: 1px solid lighten(@textColor, 75%);
+	border-bottom: 1px solid @baseColor;
 }
 
 label {
@@ -52,21 +52,19 @@ input[type="image"],
 input[type="color"] {
 	display: block;
 	width: 100%;
-	padding: 0.125em;
+	padding: 0.5em;
 	margin: 0 0 0.625em;
 	vertical-align: middle;
-	border: 1px solid lighten(@textColor, 75%);
+	border: 1px solid @baseColor;
 	outline: none;
 	font-family: inherit;
 	font-size: 1em;
-	-webkit-appearance: none;
-	.box-sizing(border-box);
 
 	&:hover {
-		border: 1px solid lighten(@textColor, 60%);
+		border: 1px solid darken(@baseColor, 3%);
 	}
 	&:focus {
-		border: 1px solid lighten(@textColor, 50%);
+		border: 1px solid darken(@baseColor, 5%);
 	}
 }
 
