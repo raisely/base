@@ -15,20 +15,20 @@ input[type="reset"] {
 	font-size: 1em;
 	border: none;
 	outline: none;
-	background: lighten(@textColor, 85%);
+	background: @baseColor;
 	line-height: 100%;
 	cursor: pointer;
 
 	&:hover {
-		background: lighten(@textColor, 80%);
+		background: darken(@baseColor, 3%);
 	}
 	&:active {
-		background: lighten(@textColor, 75%);
+		background: darken(@baseColor, 6%);
 	}
 
 	&.disabled {
-		background: lighten(@textColor, 95%);
-		color: lighten(@textColor, 60%);
+		background: lighten(@baseColor, 10%);
+		color: darken(@baseColor, 15%);
 		cursor: default;
 	}
 }

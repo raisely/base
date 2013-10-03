@@ -9,7 +9,6 @@
 .menu-primary {
 	margin: 1em 0;
 	padding: 0;
-	background: lighten(@textColor, 95%);
 
 	li {
 		list-style: none;
@@ -17,7 +16,7 @@
 
 		a {
 			.inline-block();
-			padding: 0.75em 0.5em;
+			padding: 0.75em 1.25em;
 			line-height: 100%;
 			color: @textColor;
 			border-left: 1px solid white;
@@ -25,15 +24,16 @@
 
 			&:hover,
 			&.selected {
-				color: @primaryColor;
+				background: @baseColor;
 			}
-			&:active {
-				color: darken(@primaryColor, 10%);
+			&:active,
+			&.selected:hover {
+				background: darken(@baseColor, 5%);
 			}
 		}
 		&:first-child a {
 			border-left: none;
-			padding-left: 0.75em;
+			padding-left: 1.25em;
 		}
 	}
 }
