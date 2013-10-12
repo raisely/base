@@ -1,10 +1,8 @@
 # [Base](http://base.gs/)
 
-Base is a semantic, lightweight and extensible framework to power the next generation of responsive websites.
+**Base is a semantic, lightweight and extensible framework to power the next generation of responsive websites.**
 
-It's created and maintained by [@TomMaitland](https://twitter.com/TomMaitland) and the team at [@agencysc](https://twitter.com/agencysc). Head over to [base.gs](http://base.gs) to try it out.
-
-Follow [@BaseGS](https://twitter.com/basegs) for framework updates & news.
+It's created and maintained by [@TomMaitland](https://twitter.com/TomMaitland) and the team at [@agencysc](https://twitter.com/agencysc). Head over to [base.gs](http://base.gs) to try it out and follow [@BaseGS](https://twitter.com/basegs) for framework updates.
 
 ## Get Started
 
