@@ -17,23 +17,23 @@ Getting started building websites with Base is easy. You can:
 When you download Base you'll see a boilerplate `index.html` file and a folder structure like this:
 
 ```
-- js/
--- vendor/
---- jquery-1.10.2.min.js
---- modernizr-2.6.2.min.js
-- less/
--- _buttons.less
--- _forms.less
--- _layout.less
--- _mixins.less
--- _menus.less
--- _reset.less
--- _type.less
--- _variables.less
--- base.less (compiles)
--- desktop.less (compiles)
--- mobile.less (compiles)
--- tablet.less (compiles)
+| js/
+    vendor/
+      jquery-1.10.2.min.js
+      modernizr-2.6.2.min.js
+| less/
+    _buttons.less
+    _forms.less
+    _layout.less
+    _mixins.less
+    _menus.less
+    _reset.less
+    _type.less
+    _variables.less
+    base.less (compiles)
+    desktop.less (compiles)
+    mobile.less (compiles)
+    tablet.less (compiles)
 ```
 
 **To note:**
@@ -53,6 +53,7 @@ Base requires a [LESS CSS](http://lesscss.org/) compiler to work its magic. This
 [Grunt](http://gruntjs.com/) is an automated Javascript task-runner installed and managed by [npm](https://npmjs.org/) (the Node.js package manager). If you're unfamiliar with `npm` you can install it from the [Node.js website](http://nodejs.org/download/).
 
 **In the command line**
+
 1. Install `grunt-cli` with `npm install -g grunt-cli`
 2. Navigate to your Base install and run `npm install` to load depedencies.
 3. Run `grunt dev` to start watching and compiling the 4 main `.less` files.
