@@ -173,21 +173,15 @@
 
 // Box Sizing
 
-.box-sizing(@args){
+.box-sizing(@args) {
     -webkit-box-sizing: @args;
     -moz-box-sizing: @args;
     box-sizing: @args;
 }
-.border-box(){
-    .box-sizing(border-box);
-}
-.content-box(){
-    .box-sizing(content-box);
-}
 
 // Columns
 
-.columns(@args){
+.columns(@args) {
     -webkit-columns: @args;
     -moz-columns: @args;
     columns: @args;
@@ -202,12 +196,12 @@
     -moz-column-gap: @gap;
     column-gap: @gap;
 }
-.column-width(@width){
+.column-width(@width) {
     -webkit-column-width: @width;
     -moz-column-width: @width;
     column-width: @width;
 }
-.column-rule(@args){
+.column-rule(@args) {
     -webkit-column-rule: @rule;
     -moz-column-rule: @rule;
     column-rule: @rule;
@@ -299,18 +293,6 @@
     -ms-transform: @args; 
     -o-transform: @args; 
     transform: @args;
-}
-.rotate(@deg:45deg){
-    .transform(rotate(@deg));
-}
-.scale(@factor:.5){
-    .transform(scale(@factor));
-}
-.translate(@x,@y){
-    .transform(translate(@x,@y));
-}
-.translate3d(@x,@y,@z) {
-    .transform(translate3d(@x,@y,@z));
 }
 .translateHardware(@x,@y){
     .translate(@x,@y);
