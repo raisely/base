@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         watch: {
             styles: {
                 files: ["less/*"],
-                tasks: "less"
+                tasks: ["less", "cssmin"]
             }
         },
 
