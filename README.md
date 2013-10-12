@@ -11,7 +11,23 @@ Getting started building websites with Base is easy. You can:
 * [Download the latest code](https://github.com/agency/Base/archive/master.zip)
 * Clone the repo `git clone https://github.com/agency/base.git`
 
-You will need a [LESS CSS](http://lesscss.org/) compiler to use Base.
+## Compiling LESS
+
+Base requires a [LESS CSS](http://lesscss.org/) compiler to work its magic. This can be done with [Grunt](http://gruntjs.com/) *(instructions below)* or one of these third-party GUI tools:
+
+* [Codekit (OS X)](http://incident57.com/codekit/)
+* [Simpleless (Windows & OS X)](http://wearekiss.com/simpless)
+* [WinLess (Windows)](http://winless.org/)
+
+### Compiling with Grunt
+
+#### Install Grunt
+
+Grunt is installed and managed by [npm](https://npmjs.org/) (the Node.js package manager). If you're unfamiliar with `npm` you can install it from the [Node.js website](http://nodejs.org/download/).
+
+**In the command line**
+1. Install `grunt-cli` with `npm install -g grunt-cli`
+2. Navigate to your Base install and run `npm install` to load the LESS depedency.
 
 ## Usage
 
@@ -23,8 +39,8 @@ If you find bugs or have any feature requests please [open a new issue](https://
 
 Pull requests are very welcome. Please follow the same coding style already set within the Base files and keep commits as clean as possible with a detailed explanation of what your pull request is doing.
 
-Releases are worked on in branches by their release number. For example - branch `1.1.0` would be for that respective release. Please submit pull requests against a release branch rather than the master.
+Base is maintained through the `master` branch, bundled into releases as required. Experimental or major features will split out into separate branches.
 
 ## Copyright
 
-Copyright 2013 Agency Strategic Creative under the [Apache 2.0 license](https://github.com/agency/base/blob/master/LICENSE).
+Copyright 2013 [Agency Strategic Creative](http://agency.sc/) under the [Apache 2.0 license](https://github.com/agency/base/blob/master/LICENSE).
