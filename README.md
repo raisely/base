@@ -1,8 +1,9 @@
-# [Base](http://base.gs/)
+[Base](http://base.gs/)
+======
 
 **Base is a semantic, lightweight and extensible framework to power the next generation of responsive websites.**
 
-It's created and maintained by [@TomMaitland](https://twitter.com/TomMaitland) and the team at [@agencysc](https://twitter.com/agencysc). Head over to [base.gs](http://base.gs) to try it out and follow [@BaseGS](https://twitter.com/basegs) for framework updates.
+It's created and maintained by the team at [@agencysc](https://twitter.com/agencysc). Head over to [base.gs](http://base.gs) to try it out and follow [@BaseGS](https://twitter.com/basegs) for framework updates.
 
 ## Get Started
 
@@ -10,6 +11,34 @@ Getting started building websites with Base is easy. You can:
 
 * [Download the latest code](https://github.com/agency/Base/archive/master.zip)
 * Clone the repo `git clone https://github.com/agency/base.git`
+
+### What's Inside
+
+When you download Base you'll see a boilerplate `index.html` file and a folder structure like this:
+
+```
+- js/
+-- vendor/
+--- jquery-1.10.2.min.js
+--- modernizr-2.6.2.min.js
+- less/
+-- _buttons.less
+-- _forms.less
+-- _layout.less
+-- _mixins.less
+-- _menus.less
+-- _reset.less
+-- _type.less
+-- _variables.less
+-- base.less (compiles)
+-- desktop.less (compiles)
+-- mobile.less (compiles)
+-- tablet.less (compiles)
+```
+
+**To note:**
+* Files prefixed with ‘_’ do not directly compile.
+* The latest versions of jQuery and Modernizr are included for convenience.
 
 ## Compiling LESS
 
@@ -21,16 +50,16 @@ Base requires a [LESS CSS](http://lesscss.org/) compiler to work its magic. This
 
 ### Compiling with Grunt
 
-#### Install Grunt
-
-Grunt is installed and managed by [npm](https://npmjs.org/) (the Node.js package manager). If you're unfamiliar with `npm` you can install it from the [Node.js website](http://nodejs.org/download/).
+[Grunt](http://gruntjs.com/) is an automated Javascript task-runner installed and managed by [npm](https://npmjs.org/) (the Node.js package manager). If you're unfamiliar with `npm` you can install it from the [Node.js website](http://nodejs.org/download/).
 
 **In the command line**
 1. Install `grunt-cli` with `npm install -g grunt-cli`
 2. Navigate to your Base install and run `npm install` to load depedencies.
 3. Run `grunt dev` to start watching and compiling the 4 main `.less` files.
 
-## Usage
+## Using Base
+
+Docs coming soon
 
 ## Bugs & Feature Requests
 
@@ -41,6 +70,12 @@ If you find bugs or have any feature requests please [open a new issue](https://
 Pull requests are very welcome. Please follow the same coding style already set within the Base files and keep commits as clean as possible with a detailed explanation of what your pull request is doing.
 
 Base is maintained through the `master` branch, bundled into releases as required. Experimental or major features will split out into separate branches.
+
+## Authors & Key Contributors
+
+* [Tom Maitland](http://tommaitland.net) / [@tommaitland](https://twitter.com/tommaitland)
+* [Scott Sanders](https://twitter.com/scottsanders)
+* [Murray Bunton](http://murraybunton.com/) / [@murraybunton](https://twitter.com/murraybunton)
 
 ## Copyright
 
