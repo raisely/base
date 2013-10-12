@@ -27,7 +27,8 @@ Grunt is installed and managed by [npm](https://npmjs.org/) (the Node.js package
 
 **In the command line**
 1. Install `grunt-cli` with `npm install -g grunt-cli`
-2. Navigate to your Base install and run `npm install` to load the LESS depedency.
+2. Navigate to your Base install and run `npm install` to load depedencies.
+3. Run `grunt dev` to start watching and compiling the 4 main `.less` files.
 
 ## Usage
 
