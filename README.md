@@ -61,7 +61,7 @@ Base requires a [LESS CSS](http://lesscss.org/) compiler to work its magic. This
 
 ## Using Base
 
-Docs coming soon
+Base is easiest to learn by playing with the code. The default `index.html` file contains a quick reference for the reset and grid mixins. For more detail view the **[Base Wiki](https://github.com/agency/base/wiki)**.
 
 ## Bugs & Feature Requests
 
