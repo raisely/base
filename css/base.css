@@ -128,7 +128,7 @@ table {
   width: 960px;
   margin: 0 auto;
 }
-.nav-primary {
+header {
   float: left;
   width: 940px;
   margin-left: 10px;
@@ -138,53 +138,33 @@ table {
 }
 article {
   float: left;
-  width: 460px;
+  width: 620px;
   margin-left: 10px;
   margin-right: 10px;
   padding-left: 0px;
   padding-right: 0px;
 }
-.span1 {
+aside {
   float: left;
-  width: 60px;
+  width: 300px;
   margin-left: 10px;
   margin-right: 10px;
   padding-left: 0px;
   padding-right: 0px;
-  background: rgba(0, 0, 0, 0.1);
 }
-.span2 {
-  float: left;
-  width: 140px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-left: 0px;
-  padding-right: 0px;
-  background: rgba(0, 0, 0, 0.1);
-}
-.span7 {
-  float: left;
-  width: 540px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-left: 0px;
-  padding-right: 0px;
-  background: rgba(0, 0, 0, 0.1);
-}
-.span12 {
+footer {
   float: left;
   width: 940px;
   margin-left: 10px;
   margin-right: 10px;
   padding-left: 0px;
   padding-right: 0px;
-  background: rgba(0, 0, 0, 0.1);
 }
 body {
-  font-size: 16px;
+  font-size: 15px;
   color: #000000;
   line-height: 140%;
-  font-family: sans-serif;
+  font-family: 'Helvetica', sans-serif;
 }
 h1,
 h2,
@@ -193,28 +173,31 @@ h4,
 h5,
 h6 {
   line-height: 140%;
-  font-family: sans-serif;
+  font-family: 'Trebuchet MS', sans-serif;
   font-weight: bold;
 }
 h1 {
-  font-size: 4em;
+  font-size: 3em;
   margin-top: 0.75em;
   margin-bottom: 0.25em;
 }
 h2 {
-  font-size: 2.5em;
-  margin-top: 0.75em;
-  margin-bottom: 0.5em;
+  font-size: 2em;
+  margin-top: 1em;
+  margin-bottom: 0.75em;
 }
 h3 {
-  font-size: 2em;
-  margin-top: 0.75em;
+  font-size: 1.5em;
+  margin-top: 1.25em;
   margin-bottom: 0.5em;
+  font-weight: normal;
 }
 h4 {
   font-size: 1.25em;
-  margin-top: 0.5em;
+  margin-top: 1em;
   margin-bottom: 0.5em;
+  font-weight: normal;
+  color: #4d4d4d;
 }
 h5 {
   font-size: 1.125em;
@@ -230,7 +213,7 @@ p {
   margin: 1em 0;
 }
 a {
-  color: #84ceed;
+  color: #7cc5e3;
   text-decoration: none;
 }
 a:hover {
@@ -253,9 +236,12 @@ cite {
   font-style: italic;
 }
 code {
-  font-size: 1.25em;
+  font-size: 1em;
   font-family: monospace;
-  background: #eee;
+  background: #eeeeee;
+  border: 1px solid #e1e1e1;
+  padding: 0.125em 0.25em;
+  line-height: 150%;
 }
 em,
 i {
@@ -264,6 +250,13 @@ i {
 strong,
 b {
   font-weight: bold;
+}
+hr {
+  outline: none;
+  border: none;
+  margin: 1em 0;
+  padding: 0;
+  border-top: 1px solid #eeeeee;
 }
 ol,
 ul {
@@ -299,14 +292,14 @@ table {
 }
 table th {
   padding: 0.5em;
-  border: 1px solid #bfbfbf;
-  background: #f2f2f2;
+  border: 1px solid #eeeeee;
+  background: #f4f4f4;
   text-align: left;
   font-weight: bold;
 }
 table td {
   padding: 0.5em;
-  border: 1px solid #bfbfbf;
+  border: 1px solid #eeeeee;
 }
 form {
   display: block;
@@ -321,7 +314,7 @@ legend {
   width: 100%;
   margin: 0 0 1em 0;
   font-weight: bold;
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid #eeeeee;
 }
 label {
   display: block;
@@ -350,7 +343,7 @@ input[type="color"] {
   padding: 0.5em;
   margin: 0 0 0.625em;
   vertical-align: middle;
-  border: 1px solid #e7e7e7;
+  border: 1px solid #eeeeee;
   outline: none;
   font-family: inherit;
   font-size: 1em;
@@ -372,7 +365,7 @@ input[type="search"]:hover,
 input[type="tel"]:hover,
 input[type="image"]:hover,
 input[type="color"]:hover {
-  border: 1px solid #dfdfdf;
+  border: 1px solid #e6e6e6;
 }
 select:focus,
 textarea:focus,
@@ -391,7 +384,7 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="image"]:focus,
 input[type="color"]:focus {
-  border: 1px solid #dadada;
+  border: 1px solid #e1e1e1;
 }
 input[type="submit"] {
   display: block;
@@ -428,7 +421,7 @@ input[type="reset"] {
   font-size: 1em;
   border: none;
   outline: none;
-  background: #e7e7e7;
+  background: #eeeeee;
   line-height: 100%;
   cursor: pointer;
 }
@@ -437,14 +430,14 @@ button:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover {
-  background: #dfdfdf;
+  background: #e6e6e6;
 }
 .button:active,
 button:active,
 input[type="button"]:active,
 input[type="submit"]:active,
 input[type="reset"]:active {
-  background: #d8d8d8;
+  background: #dfdfdf;
 }
 .button.disabled,
 button.disabled,
@@ -452,26 +445,26 @@ input[type="button"].disabled,
 input[type="submit"].disabled,
 input[type="reset"].disabled {
   background: #f4f4f4;
-  color: #c1c1c1;
+  color: #c8c8c8;
   cursor: default;
 }
 button.primary,
 .button-primary {
-  background: #84ceed;
+  background: #7cc5e3;
   color: white;
 }
 button.primary:hover,
 .button-primary:hover {
-  background: #6ec5ea;
+  background: #67bcdf;
 }
 button.primary:active,
 .button-primary:active {
-  background: #58bce6;
+  background: #52b2da;
 }
 button.primary.disabled,
 .button-primary.disabled {
-  background: #ddf1fa;
-  color: #84ceed;
+  background: #d0eaf5;
+  color: #7cc5e3;
   cursor: default;
 }
 button.secondary,
@@ -509,12 +502,14 @@ ul[class*="menu-"] li a {
 }
 ul[class*="menu-"] li:hover > a,
 ul[class*="menu-"] li a:hover,
-ul[class*="menu-"] li a.selected {
-  background: #e7e7e7;
+ul[class*="menu-"] li a.selected,
+ul[class*="menu-"] li.selected a {
+  background: #eeeeee;
 }
 ul[class*="menu-"] li a:active,
-ul[class*="menu-"] li a.selected:hover {
-  background: #dfdfdf;
+ul[class*="menu-"] li a.selected:hover,
+ul[class*="menu-"] li.selected a:hover {
+  background: #e6e6e6;
 }
 .menu-primary li {
   display: inline;
@@ -531,8 +526,9 @@ ul[class*="menu-"] li a.selected:hover {
   position: absolute;
   top: 2.25em;
   left: 0;
-  border: 1px solid #e7e7e7;
+  border: 1px solid #eeeeee;
   background: white;
+  z-index: 1000;
 }
 .menu-primary li ul li {
   display: block;
@@ -546,7 +542,7 @@ ul[class*="menu-"] li a.selected:hover {
   display: inline;
 }
 .menu-secondary {
-  border: 1px solid #e7e7e7;
+  border: 1px solid #eeeeee;
 }
 .menu-secondary li {
   display: block;
