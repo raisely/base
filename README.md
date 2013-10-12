@@ -56,7 +56,7 @@ Base requires a [LESS CSS](http://lesscss.org/) compiler to work its magic. This
 **In the command line**
 
 1. Install `grunt-cli` with `npm install -g grunt-cli`
-2. Navigate to your Base install and run `npm install` to load depedencies.
+2. Navigate to your Base install and run `npm install` to load dependencies.
 3. Run `grunt dev` to start watching and compiling the 4 main `.less` files.
 
 ## Using Base
