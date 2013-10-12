@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
         <title>Base</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,318 +20,124 @@
 
         <div class="container">
 
-            <div class="span2">2</div>
-            <div class="span2">2</div>
-            <div class="span2">2</div>
-            <div class="span2">2</div>
-            <div class="span2">2</div>
-            <div class="span2">2</div>
-            
-            <div class="span12">12</div>
+            <header>
+                <h1>Getting Started</h1>
+                <p>This is a basic HTML template to help you get started with <a href="http://base.gs"><strong>Base</strong></a>. Apart from the grid system, Base includes a sensible reset to start styling your site on.</p>
+                <hr>
+            </header>
 
-            <nav class="nav-primary">
-                <ul class="menu-primary">
-                    <li><a href="#" class="selected">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li>
-                        <a href="#">Link</a>
-                        <ul>
-                            <li><a href="#">A dropdown item</a></li>
-                            <li><a href="#">Another link</a></li>
-                            <li><a href="#">And another</a></li>
+            <main>
+
+                <article>
+                    
+                    <h2>Quick Reference</h2>
+                    <p>These quick guides will help you get started. For more detailed instructions check out the documentation.</p>
+                    
+                    <h3>Grid <em>(_layout.less)</em></h3>
+                    <table>
+                        <tr>
+                            <th>Mixin</th>
+                            <th>Usage</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>.container()</code>
+                            </td>
+                            <td>
+                                <em>Apply to an element wrapping the column structure</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>.column(@columns, @offset, @padding)</code>
+                            </td>
+                            <td>
+                                <code>.column(8, 0, 0)</code>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <h3>Buttons <em>(_buttons.less)</em></h3>
+                    <button>.button</button>
+                    <button class="disabled">.button.disabled</button><br>
+                    <button class="primary">.button-primary</button>
+                    <button class="primary disabled">.button-primary.disabled</button><br>
+                    <button class="secondary">.button-secondary</button>
+                    <button class="secondary disabled">.button-secondary.disabled</button>
+
+                    <h3>Forms <em>(_forms.less)</em></h3>
+                    <p>All HTML5 form elements are normalized to a set of core styles.</p>
+                    <form>
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <input type="submit" value="Subscribe">
+                    </form>
+
+                    <h3>Mixins <em>(_mixins.less)</em></h3>
+                    <p>Base includes LESS mixins for CSS3 properties, animations, gradients and some utility mixins. Check the source to see what's available.</p>
+
+                    <h3>Menus <em>(_menus.less)</em></h3>
+                    <p>Add <code>.menu-primary</code> for a horizontal menu or <code>.menu-secondary</code> for a vertical menu.</p>
+                    <h4>.menu-primary</h4>
+                    <nav>
+                        <ul class="menu-primary">
+                            <li class="selected"><a href="#">Home</a></li>
+                            <li><a href="#">Page</a></li>
+                            <li><a href="#">Dropdown</a>
+                                <ul>
+                                    <li><a href="#">Subpage Item</a></li>
+                                    <li><a href="#">Subpage Item</a></li>
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
-                </ul>
-            </nav>
-            
-            <article>
+                    </nav>
+                    <h4>.menu-secondary</h4>
+                    <nav>
+                        <ul class="menu-secondary">
+                            <li class="selected"><a href="#">Home</a></li>
+                            <li><a href="#">Page</a></li>
+                            <li><a href="#">Dropdown</a></li>
+                        </ul>
+                    </nav>
 
-                <h1>Heading 1</h1>
-                <p>Paragraph of lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h3>Type <em>(_type.less)</em></h3>
+                    <p>Typography is responsive and controlled in <code>_type.less</code>. Base provides a sensible reset for heading styles, paragraphs, tables, lists and others.</p>
 
-                <nav>
-                    <ul class="menu-secondary">
-                        <li><a href="#" class="selected">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
+                    <h3>Variables <em>(_variables.less)</em></h3>
+                    <p>Control colors and fonts across the site. Begins with:</p>
+                    <ul>
+                        <li>Heading font-family - <em>@headingFont</em></li>
+                        <li>Paragraph font-family - <em>@paragraphFont</em></li>
+                        <li>Text color - <em>@textColor</em></li>
+                        <li>Base color - <em>@baseColor</em></li>
+                        <li>Primary color - <em>@primaryColor</em></li>
+                        <li>Secondary color - <em>@secondaryColor</em></li>
                     </ul>
-                </nav>
+                    
 
-                <h2>Heading 2</h1>
-                <p>Paragraph of lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.</p>
-                <dl>
-                    <dt>Coffee</dt>
-                    <dd>I need it</dd>
-                    <dt>Milk</dt>
-                    <dd>Best with coffee</dd>
-                    <dt>Beer</dt>
-                    <dd>Second best to coffee</dd>
-                </dl>
-                </dl>
-                <h3>Heading 3</h1>
-                <p>Paragraph of lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>
-                    <strong>Default</strong><br />
-                    <button>Default</button>
-                    <button class="disabled">Default Disabled</button>
-                </p>
-                <p>
-                    <strong>Primary</strong><br />
-                    <button class="primary">Primary</button>
-                    <button class="primary disabled">Primary Disabled</button>
-                </p>
-                <p>
-                    <strong>Secondary</strong><br />
-                    <button class="secondary">Secondary</button>
-                    <button class="secondary disabled">Secondary Disabled</button>
-                </p>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <ul>
-                    <li>Hello</li>
-                    <li>World</li>
-                    <li>This</li>
-                </ul>
-                <p>Paragraph of lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                <h4>My what a nice baseline you have.</h4>
-                <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <ol>
-                    <li>Is</li>
-                    <li>Not A</li>
-                    <li>UL</li>
-                </ol>
-                <h5>My what a nice baseline you have.</h5>
-                <p>Paragraph of lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <blockquote>
-                    <p><abbr title="World Wide Web Consortium">W3C</abbr> of lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                </blockquote>
-                <address>
-                    Level 2 / 104 Commonwealth St
-                    Surry Hills
-                    NSW Australia
-                </address>
-                <p>Paragraph of lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.</p>
-                <code>Is code</code>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Hi</th>
-                            <th>This</th>
-                            <th>Table</th>
-                        </tr>
-                        <tr>
-                            <td>Lorem</td>
-                            <td>Lorem</td>
-                            <td>Lorem</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem</td>
-                            <td>Lorem</td>
-                            <td>Lorem</td>
-                        </tr>
-                    </tbody>
-                </table>
+                </article>
 
-                
+                <aside>
+                    
+                    <h2>Resources</h2>
 
-            </article>
+                    <h4>Documentation</h4>
+                    <p>More detailed documentation is available on the <a href="https://github.com/agency/base" target="_blank">GitHub repo</a>.</p>
 
-            <article>
+                    <h4>CSS Compiler</h4>
+                    <p>Base includes Grunt configuration and tasks to watch and compile LESS files. With <a href="http://nodejs.org/download/" target="_blank">npm</a> installed, navigate to the Base directory in command line and run <code>npm install</code> then <code>grunt dev</code>.</p>
 
-                <h1>Mega Form</h1>
-                <form action="/">
+                    <h4>Sidebar Content</h4>
+                    <p>This is a sidebar block to demonstrate a basic Base grid. Change the columns in <code>_layout.less</code> and resize the page to see how the compiled responsive files work</p>
 
-                    <legend>A Sample Form Legend</legend>
+                </aside>
 
-                    <label for="name">Name: </label>
-                    <input type="text" value="Name" name="Name" />
+            </main>
 
-                    <label for="email">Email: </label>
-                    <input type="email" value="Email" name="Email" />
-
-                    <label>Button: </label>
-                    <input type="button" value="Button" name="button" />
-
-                    <label>Single Checkbox: 
-                    <input type="checkbox" value="checkbox1" name="button" /></label>
-
-                    <fieldset>
-                        <legend>Group of Checkboxes: </legend>
-                        <label>Checkbox 1: 
-                            <input type="checkbox" value="checkbox1" name="checkgroup[]" /></label>
-                        <label>Checkbox 2: 
-                            <input type="checkbox" value="checkbox2" name="checkgroup[]" /></label>
-                        <label>Checkbox 3: 
-                            <input type="checkbox" value="checkbox3" name="checkgroup[]" /></label>
-                        <label>Checkbox 4: 
-                            <input type="checkbox" value="checkbox4" name="checkgroup[]" /></label>
-                    </fieldset>
-
-                    <label>Color: </label>
-                    <input type="color" value="color" name="color" />
-
-                    <label>Date: </label>
-                    <input type="date" value="date" name="date" />
-
-                    <label>Date, Time (Local): </label>
-                    <input type="datetime-local" value="datetime" name="datetime" />
-
-                    <label>File: </label>
-                    <input type="file" value="file" name="file" />
-
-                    <input type="hidden" value="hidden" name="hidden" />
-
-                    <label>Image: </label>
-                    <input type="image" value="image" name="image" />
-
-                    <label>Month: </label>
-                    <input type="month" value="month" name="month" />
-
-                    <label>Number: </label>
-                    <input type="number" value="number" name="number" />
-
-                    <label>Password: </label>
-                    <input type="password" value="password" name="password" />
-
-                    <label>Single Radio: 
-                    <input type="radio" value="radio" name="radio" /></label>
-
-                    <fieldset>
-                        <legend>Group of Radios: </legend>
-                        <label>Radio 1: 
-                            <input type="radio" value="radio1" name="radiogroup" /></label>
-                        <label>Radio 2: 
-                            <input type="radio" value="radio2" name="radiogroup" /></label>
-                        <label>Radio 3: 
-                            <input type="radio" value="radio3" name="radiogroup" /></label>
-                        <label>Radio 4: 
-                            <input type="radio" value="radio4" name="radiogroup" /></label>
-                    </fieldset>
-
-                    <label>Range: </label>
-                    <input type="range" value="range" name="range" />
-
-                    <label>Reset: </label>
-                    <input type="reset" value="reset" name="reset" />
-
-                    <label>Time: </label>
-                    <input type="time" value="time" name="time" />
-
-                    <label>Search: </label>
-                    <input type="search" value="search" name="search" />
-
-                    <label>Tel: </label>
-                    <input type="tel" value="tel" name="tel" />
-
-                    <label>Text: </label>
-                    <input type="text" value="text" name="text" />
-
-                    <label>URL: </label>
-                    <input type="url" value="url" name="url" />
-
-                    <label>Week: </label>
-                    <input type="week" value="week" name="week" />
-
-                    <button>This is a button!</button>
-
-                    <label>Select 1: </label>
-                    <select name="select" size="1">
-                        <option>Test</option>
-                        <option>Test</option>
-                    </select>
-
-                    <label>Select 2: </label>
-                    <select name="select1" size="3">
-                        <option>Test</option>
-                        <option>Test</option>
-                    </select>
-
-                    <label>Select Multiple: </label>
-                    <select name="select2" size="3" multiple>
-                        <option>Test</option>
-                        <option>Test</option>
-                    </select>
-
-                    <label>Select Groups: </label>
-                    <select name="select3" size="1" multiple>
-                        <optgroup label="First Group">
-                            <option>Test</option>
-                            <option>Test</option>
-                        </optgroup>
-                        <optgroup label="Second Group">
-                            <option>Test</option>
-                            <option>Test</option>
-                        </optgroup>
-                        <optgroup label="Third Group">
-                            <option>Test</option>
-                            <option>Test</option>
-                        </optgroup>
-                    </select>
-
-                    <fieldset>
-                        <legend>Datalist: </legend>
-                        <input type="text" name="datalist" list="samplelist">
-                        <datalist id="samplelist">
-                            <option>Something</option>
-                            <option>Something else</option>
-                            <option>Another thing</option>
-                        </datalist>
-                    </fieldset>
-
-                    <label>A textarea!</label>
-                    <textarea name="textarea">A paragraph in here</textarea>
-
-                    <label>Progress (very unsupported): </label>
-                    <progress value="20" max="100"></progress>
-
-                    <label>Meter (very unsupported): </label>
-                    <meter min="0" value="20" max="100" low="10" high="90" optimum="80">20 in the meter</meter>
-
-                    <input type="submit" value="GO" />
-
-                </form>
-                <h1>Placeholder</h1>
-                <p>jQuery plugin to support placeholders in older browsers, using the placeholder attribute. </p>
-                <p>Adds a <code>.placeholder</code> class when field is not in focus, to allow for placeholder text styling.</p>
-                <p>Removes any <code>label</code> tags that are linked to the <code>id</code>, as the placeholder replaces the need for the label.</p>
-
-                <form method="get" action="/">
-
-                    <label for="email">Email</label>
-                    <input placeholder="Email" name="email" id="email">
-                    <button type="submit">Submit</button>
-
-                </form>
-
-
-            </article>
+            <footer>
+                <hr>
+                <p>Base is maintained by the team at <a href="https://twitter.com/agencysc">@agencysc</a> and distributed under the <a href="https://github.com/agency/base/blob/master/LICENSE">Apache 2.0 license</a>.</p>
+            </footer>
 
         </div>
 
