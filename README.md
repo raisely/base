@@ -39,6 +39,7 @@ When you download Base you'll see a boilerplate `index.html` file and a folder s
 **To note:**
 * Files prefixed with ‘_’ do not directly compile.
 * The latest versions of jQuery and Modernizr are included for convenience.
+* Base supports all major modern browsers and IE7+.
 
 ## Compiling LESS
 
