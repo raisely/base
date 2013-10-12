@@ -1,0 +1,186 @@
+@media (min-width: 768px) and (max-width: 959px) {
+  .container {
+    width: 768px;
+    margin: 0 auto;
+  }
+  .nav-primary {
+    float: left;
+    width: 752px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  article {
+    float: left;
+    width: 368px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .span1 {
+    float: left;
+    width: 48px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .span2 {
+    float: left;
+    width: 112px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .span7 {
+    float: left;
+    width: 432px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .span12 {
+    float: left;
+    width: 752px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  body {
+    font-size: 14px;
+    color: #000000;
+    line-height: 140%;
+    font-family: sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 140%;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 4em;
+    margin-top: 0.75em;
+    margin-bottom: 0.25em;
+  }
+  h2 {
+    font-size: 2.5em;
+    margin-top: 0.75em;
+    margin-bottom: 0.5em;
+  }
+  h3 {
+    font-size: 2em;
+    margin-top: 0.75em;
+    margin-bottom: 0.5em;
+  }
+  h4 {
+    font-size: 1.25em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  h5 {
+    font-size: 1.125em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  h6 {
+    font-size: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  p {
+    margin: 1em 0;
+  }
+  a {
+    color: #84ceed;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  abbr,
+  acronym {
+    border-bottom: 1px dotted;
+    cursor: help;
+  }
+  address {
+    font-size: 1em;
+    font-style: italic;
+  }
+  blockquote {
+    margin: 1em 0;
+    padding: 0 0 0 2em;
+  }
+  cite {
+    font-style: italic;
+  }
+  code {
+    font-size: 1.25em;
+    font-family: monospace;
+    background: #eee;
+  }
+  em,
+  i {
+    font-style: italic;
+  }
+  strong,
+  b {
+    font-weight: bold;
+  }
+  ol,
+  ul {
+    margin: 1em 0;
+    padding: 0 0 0 2em;
+  }
+  ol li,
+  ul li {
+    font-size: 1em;
+    list-style-position: outside;
+  }
+  ul li {
+    list-style: disc;
+  }
+  ol li {
+    list-style: decimal;
+  }
+  form {
+    margin: 1em 0;
+  }
+  dl {
+    margin: 1em 0;
+  }
+  dl dt {
+    font-weight: bold;
+  }
+  dl dd {
+    margin: 0 0 0.5em;
+  }
+  table {
+    width: 100%;
+    margin: 1em 0;
+  }
+  table th {
+    padding: 0.5em;
+    border: 1px solid #bfbfbf;
+    background: #f2f2f2;
+    text-align: left;
+    font-weight: bold;
+  }
+  table td {
+    padding: 0.5em;
+    border: 1px solid #bfbfbf;
+  }
+}
