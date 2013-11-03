@@ -124,6 +124,18 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+body {
+  font-size: 15px;
+  line-height: 140%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 140%;
+}
 .container {
   width: 960px;
   margin: 0 auto;
@@ -161,9 +173,7 @@ footer {
   padding-right: 0px;
 }
 body {
-  font-size: 15px;
   color: #000000;
-  line-height: 140%;
   font-family: 'Helvetica', sans-serif;
 }
 h1,
@@ -172,7 +182,6 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 140%;
   font-family: 'Trebuchet MS', sans-serif;
   font-weight: bold;
 }
