@@ -18,9 +18,12 @@ input[type="reset"] {
 	background: @baseColor;
 	line-height: 100%;
 	cursor: pointer;
+	text-decoration: none;
+	.inline-block();
 
 	&:hover {
 		background: darken(@baseColor, 3%);
+		text-decoration: none;
 	}
 	&:active {
 		background: darken(@baseColor, 6%);
