@@ -126,7 +126,7 @@ function updateLess(files, input) {
 
 			parser.parse(contents, function (e, tree) {
 			    var css = tree.toCSS();
-			    $('style[id="less:less-'+filename+'"]').html(css);
+			    $('style[id*="'+filename+'"]').html(css);
 			});
 		}
 
