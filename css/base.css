@@ -339,7 +339,6 @@ input[type="tel"],
 input[type="image"],
 input[type="color"] {
   display: block;
-  width: 100%;
   padding: 0.5em;
   margin: 0 0 0.625em;
   vertical-align: middle;
@@ -347,6 +346,8 @@ input[type="color"] {
   outline: none;
   font-family: inherit;
   font-size: 1em;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 select:hover,
 textarea:hover,
@@ -386,8 +387,10 @@ input[type="image"]:focus,
 input[type="color"]:focus {
   border: 1px solid #e1e1e1;
 }
-input[type="submit"] {
+input[type="submit"],
+input[type="button"] {
   display: block;
+  border-radius: 0;
 }
 input[type="file"] {
   padding: 0.125em;
@@ -395,8 +398,7 @@ input[type="file"] {
   font-family: inherit;
   font-size: 1em;
   -webkit-appearance: none;
-}
-input[type="file"] {
+  border-radius: 0;
   line-height: 100%;
 }
 textarea {
