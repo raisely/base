@@ -51,7 +51,6 @@ input[type="tel"],
 input[type="image"],
 input[type="color"] {
 	display: block;
-	width: 100%;
 	padding: 0.5em;
 	margin: 0 0 0.625em;
 	vertical-align: middle;
@@ -59,6 +58,7 @@ input[type="color"] {
 	outline: none;
 	font-family: inherit;
 	font-size: 1em;
+	-webkit-appearance: none;
 
 	&:hover {
 		border: 1px solid darken(@baseColor, 3%);
@@ -72,6 +72,7 @@ input[type="color"] {
 
 input[type="submit"] {
 	display: block;
+	border-radius: 0;
 }
 input[type="file"] {
 	padding: 0.125em;
