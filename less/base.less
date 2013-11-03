@@ -17,7 +17,7 @@
 // -------------------
 
 @fontSize: 15px;
-@lineHeight: 140%;
+@lineHeight: 1.4;
 
 
 // Base Styles
@@ -38,6 +38,228 @@
 // Custom Styles
 // -------------------
 
+.clear {
+	clear: both;
+	height: 0;
+}
+.masthead {
+	margin-bottom: -5.5em;
+	nav {
+		text-align: center;
+
+		ul:before {
+			display: block;
+			border-top: 1px solid @baseColor;
+			width: 70%;
+			content: '';
+			margin: 30px auto -20px;
+		}
+	}
+}
+
+.intro {
+	text-align: center;
+	padding: 2.5% 0 0;
+
+	.slogan {
+		font-size: 2.125em;
+		line-height: 1.375;
+		margin: 1em 0 2em;
+	}
+	
+	p {
+		margin: 0 0 0.5em;
+		font-size: 0.95em;
+	}
+}
+.download-button {
+	font-size: 1.25em;
+	font-weight: 600;
+	border-radius: 5px;
+	padding: 0.625em 2em;
+	box-shadow: 0 2px 0 darken(@primaryColor, 7%);
+
+	&.grey {
+		background: @textColor;
+		box-shadow: 0 2px 0 darken(@textColor, 7%);
+		&:hover {
+			background: darken(@textColor, 3%);
+		}
+		&:active {
+			background: darken(@textColor, 6%);
+		}
+	}
+}
+
+.logo {
+	border-top: 5px solid @primaryColor;
+	.inline-block();
+}
+.download-meta {
+	color: lighten(@textColor, 30%);
+	a {
+		color: lighten(@textColor, 10%);
+		font-weight: 400;
+		&:hover {
+			color: @primaryColor;
+			text-decoration: none;
+		}
+	}
+}
+
+main {
+	background: @backgroundDark;
+	width: 100%;
+	clear: both;
+	padding: 8em 0 5em;
+	overflow: hidden;
+}
+
+.try {
+	text-align: center;
+}
+
+.arrow {
+	width: 100%;
+	padding-top: 100%;
+	height: auto;
+	.transform( rotate(45deg) );
+	background: @backgroundLight;
+	position: absolute;
+	display: none;
+}
+.arrow-left {
+	left: -100%;
+	top: -68%;
+}
+.arrow-right {
+	right: -100%;
+	top: -68%;
+}
+
+.csstransforms .arrow {
+	display: block;
+}
+
+.editor {
+	border-radius: 5px;
+	background: white;
+	height: 400px;
+	position: relative;
+	margin-top: 4em;
+
+	.pane {
+		width: 50%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		.box-sizing(border-box);
+
+		&.layout {
+			left: 0;
+			border-right: 1px solid lighten(#1D1F21, 40%);
+		}
+		&.grid {
+			right: 0;
+			border-left: 1px solid lighten(#1D1F21, 40%);
+		}
+	}
+	.label {
+		position: absolute;
+		top: -1.9em;
+		left: 2em;
+		span {
+			background: white;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			padding: 4px 15px;
+			font-weight: 700;
+			font-size: 0.9em;
+			.inline-block();
+		}
+		em {
+			font-size: 0.825em;
+			padding: 2px 10px;
+			.inline-block();
+			color: lighten(@textColor, 10%);
+		}
+	}
+	.tabs {
+		position: absolute;
+		top: -2em;
+		right: 2em;
+		a {
+			color: white;
+			background: lighten(#1D1F21, 30%);
+			.inline-block();
+			padding: 7px 10px 5px;
+			font-size: 1.25em;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			min-width: 20px;
+			text-align: center;
+
+			&.active,
+			&.active:hover {
+				background: #1D1F21;
+			}
+			&:hover {
+				background: lighten(#1D1F21, 20%);
+			}
+		}
+	}
+
+	.code-editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        font-size: 15px;
+    }
+    .layout .code-editor {
+    	border-top-left-radius: 5px;
+    	border-bottom-left-radius: 5px;
+    }
+    .grid .code-editor {
+    	border-top-right-radius: 5px;
+    	border-bottom-right-radius: 5px;
+    }
+}
+
+.components {
+	margin-bottom: 2em;
+}
+.component {
+	background: white;
+	padding: 1em;
+	margin: 0 0 0.5em;
+	border-radius: 5px;
+
+	h3 {
+		margin-top: 0;
+		margin-bottom: 1em;
+	}
+}
+
+.get-started {
+	text-align: center;
+
+	.button {
+		margin-top: 1em;
+	}
+}
+
+footer {
+	background: @textColor;
+	padding: 1em 0;
+	color: white;
+	text-align: center;
+
+	a {
+		color: darken(#ffffff, 30%);
+	}
+}
 
 
 

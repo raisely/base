@@ -8,6 +8,7 @@ body {
 	color: @textColor;
 	line-height: @lineHeight;
 	font-family: @paragraphFont;
+	font-weight: 200;
 }
 
 
@@ -26,26 +27,45 @@ h6 {
 }
 
 h1 { 
-	font-size: 3em;
+	font-size: 4.5em;
 	margin-top: 0.75em;
 	margin-bottom: 0.25em;
+	font-weight: 200;
 }
 h2 { 
 	font-size: 2em;
 	margin-top: 1em;
 	margin-bottom: 0.75em;
+	font-weight: 200;
+	&.split-header {
+		clear: both;
+		text-align: center;
+		padding-top: 2em;
+		span {
+			background: @backgroundDark;
+			padding: 0 15px;
+		}
+		&:before {
+			content: '';
+			display: block;
+			width: 70%;
+			max-width: 515px;
+			border-top: 1px solid white;
+			margin: 0 auto -0.75em;
+		}
+	}
 }
 h3 { 
-	font-size: 1.5em;
+	font-size: 1.25em;
 	margin-top: 1.25em;
 	margin-bottom: 0.5em;
-	font-weight: normal;
+	font-weight: 200;
 }
 h4 {
-	font-size: 1.25em;
+	font-size: 1.125em;
 	margin-top: 1em;
 	margin-bottom: 0.5em;
-	font-weight: normal;
+	font-weight: 200;
 	color: lighten(@textColor, 30%);
 }
 h5 {
@@ -65,9 +85,15 @@ h6 {
 p {
 	margin: 1em 0;
 }
+p.subline {
+	font-size: 1.5em;
+	color: lighten(@textColor, 20%);
+	text-align: center;
+}
 a {
-	color: @primaryColor;
+	color: darken(@primaryColor, 20%);
 	text-decoration: none;
+	font-weight: 400;
 
 	&:hover {
 		text-decoration: underline;

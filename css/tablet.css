@@ -1,1 +1,190 @@
-@media (min-width:768px) and (max-width:959px){.container{width:768px;margin:0 auto}header{float:left;width:752px;margin-left:8px;margin-right:8px;padding-left:0;padding-right:0}article{float:left;width:496px;margin-left:8px;margin-right:8px;padding-left:0;padding-right:0}aside{float:left;width:240px;margin-left:8px;margin-right:8px;padding-left:0;padding-right:0}footer{float:left;width:752px;margin-left:8px;margin-right:8px;padding-left:0;padding-right:0}body{font-size:14px;color:#000;line-height:140%;font-family:Helvetica,sans-serif}h1,h2,h3,h4,h5,h6{line-height:140%;font-family:'Trebuchet MS',sans-serif;font-weight:700}h1{font-size:3em;margin-top:.75em;margin-bottom:.25em}h2{font-size:2em;margin-top:1em;margin-bottom:.75em}h3{font-size:1.5em;margin-top:1.25em;margin-bottom:.5em;font-weight:400}h4{font-size:1.25em;margin-top:1em;margin-bottom:.5em;font-weight:400;color:#4d4d4d}h5{font-size:1.125em;margin-top:.5em;margin-bottom:.5em}h6{font-size:1em;margin-top:.5em;margin-bottom:.5em}p{margin:1em 0}a{color:#7cc5e3;text-decoration:none}a:hover{text-decoration:underline}abbr,acronym{border-bottom:1px dotted;cursor:help}address{font-size:1em;font-style:italic}blockquote{margin:1em 0;padding:0 0 0 2em}cite{font-style:italic}code{font-size:1em;font-family:monospace;background:#eee;border:1px solid #e1e1e1;padding:.125em .25em;line-height:150%}em,i{font-style:italic}strong,b{font-weight:700}hr{outline:0;border:0;margin:1em 0;padding:0;border-top:1px solid #eee}ol,ul{margin:1em 0;padding:0 0 0 2em}ol li,ul li{font-size:1em;list-style-position:outside}ul li{list-style:disc}ol li{list-style:decimal}form{margin:1em 0}dl{margin:1em 0}dl dt{font-weight:700}dl dd{margin:0 0 .5em}table{width:100%;margin:1em 0}table th{padding:.5em;border:1px solid #eee;background:#f4f4f4;text-align:left;font-weight:700}table td{padding:.5em;border:1px solid #eee}}
+@media (min-width: 768px) and (max-width: 959px) {
+  .container {
+    width: 768px;
+    margin: 0 auto;
+  }
+  .intro {
+    float: left;
+    width: 624px;
+    margin-left: 72px;
+    margin-right: 8px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .feature {
+    float: left;
+    width: 240px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .editor {
+    float: left;
+    width: 752px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  body {
+    font-size: 14px;
+    color: #4b5358;
+    line-height: 140%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 140%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 4.5em;
+    margin-top: 0.75em;
+    margin-bottom: 0.25em;
+    font-weight: 200;
+  }
+  h2 {
+    font-size: 2em;
+    margin-top: 1em;
+    margin-bottom: 0.75em;
+    font-weight: 200;
+  }
+  h2.split-header {
+    clear: both;
+    text-align: center;
+    padding-top: 2em;
+  }
+  h2.split-header span {
+    background: #dee9f1;
+    padding: 0 15px;
+  }
+  h2.split-header:before {
+    content: '';
+    display: block;
+    width: 40%;
+    border-top: 1px solid white;
+    margin: 0 auto -0.75em;
+  }
+  h3 {
+    font-size: 1.25em;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+    font-weight: 200;
+  }
+  h4 {
+    font-size: 1.375em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-weight: normal;
+    color: #96a0a6;
+  }
+  h5 {
+    font-size: 1.125em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  h6 {
+    font-size: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  p {
+    margin: 1em 0;
+  }
+  a {
+    color: #69b5e1;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  abbr,
+  acronym {
+    border-bottom: 1px dotted;
+    cursor: help;
+  }
+  address {
+    font-size: 1em;
+    font-style: italic;
+  }
+  blockquote {
+    margin: 1em 0;
+    padding: 0 0 0 2em;
+  }
+  cite {
+    font-style: italic;
+  }
+  code {
+    font-size: 1em;
+    font-family: monospace;
+    background: #eeeeee;
+    border: 1px solid #e1e1e1;
+    padding: 0.125em 0.25em;
+    line-height: 150%;
+  }
+  em,
+  i {
+    font-style: italic;
+  }
+  strong,
+  b {
+    font-weight: bold;
+  }
+  hr {
+    outline: none;
+    border: none;
+    margin: 1em 0;
+    padding: 0;
+    border-top: 1px solid #eeeeee;
+  }
+  ol,
+  ul {
+    margin: 1em 0;
+    padding: 0 0 0 2em;
+  }
+  ol li,
+  ul li {
+    font-size: 1em;
+    list-style-position: outside;
+  }
+  ul li {
+    list-style: disc;
+  }
+  ol li {
+    list-style: decimal;
+  }
+  form {
+    margin: 1em 0;
+  }
+  dl {
+    margin: 1em 0;
+  }
+  dl dt {
+    font-weight: bold;
+  }
+  dl dd {
+    margin: 0 0 0.5em;
+  }
+  table {
+    width: 100%;
+    margin: 1em 0;
+  }
+  table th {
+    padding: 0.5em;
+    border: 1px solid #eeeeee;
+    background: #f4f4f4;
+    text-align: left;
+    font-weight: bold;
+  }
+  table td {
+    padding: 0.5em;
+    border: 1px solid #eeeeee;
+  }
+}
