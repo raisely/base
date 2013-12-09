@@ -465,39 +465,47 @@ input[type="reset"].disabled {
   cursor: default;
 }
 button.primary,
-.button-primary {
+.button-primary,
+input.button-primary {
   background: #69b5e1;
   color: white;
 }
 button.primary:hover,
-.button-primary:hover {
+.button-primary:hover,
+input.button-primary:hover {
   background: #54abdd;
 }
 button.primary:active,
-.button-primary:active {
+.button-primary:active,
+input.button-primary:active {
   background: #3ea0d9;
 }
 button.primary.disabled,
-.button-primary.disabled {
+.button-primary.disabled,
+input.button-primary.disabled {
   background: #bedff2;
   color: #69b5e1;
   cursor: default;
 }
 button.secondary,
-.button-secondary {
+.button-secondary,
+input.button-secondary {
   background: #9d6ab4;
   color: white;
 }
 button.secondary:hover,
-.button-secondary:hover {
+.button-secondary:hover,
+input.button-secondary:hover {
   background: #9259ab;
 }
 button.secondary:active,
-.button-secondary:active {
+.button-secondary:active,
+input.button-secondary:active {
   background: #844f9c;
 }
 button.secondary.disabled,
-.button-secondary.disabled {
+.button-secondary.disabled,
+input.button-secondary.disabled {
   background: #caaed6;
   color: #9d6ab4;
   cursor: default;
