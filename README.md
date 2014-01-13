@@ -1,4 +1,4 @@
-[Base](http://base.gs/)
+[Base 1.0.2](http://base.gs/)
 ======
 
 **Base is a semantic, lightweight and extensible framework to power the next generation of responsive websites.**
