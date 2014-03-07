@@ -12,13 +12,13 @@
     width: @columnWidth * @columnCount + @gutterWidth * @columnCount;
 }
 
-.column(@columns: 1, @offset: 0, @padding: 0) when (@columnCount >= (@columns+@offset)) {
+.column(@columns: 1, @offset: 0) when (@columnCount >= (@columns + @offset)) {
     @consideredColumns: (@columnCount * @columns) / @columnCount;
     
     .newColumn();
 }
 
-.column(@columns: 1, @offset: 0, @padding: 0) when (@columnCount < (@columns+@offset)) {
+.column(@columns: 1, @offset: 0) when (@columnCount < (@columns + @offset)) {
     @consideredColumns: (@columnCount * @columns) / @columns;
     @offset: 0;
 
@@ -27,15 +27,13 @@
 
 .newColumn() {
     @offsetWidth: @columnWidth * @offset + @gutterWidth * @offset;
-    @width: (@columnWidth * @consideredColumns) + (@gutterWidth * (@consideredColumns - 1)) - ((@padding * (unit(@paddingRatio) / 100)) * 2);
+    @width: (@columnWidth * @consideredColumns) + (@gutterWidth * (@consideredColumns - 1));
     @unit: @columnWidth - @columnWidth;
 
     float: left;
     width: @width;
-    margin-left: @offsetWidth+@gutterWidth/2;
-    margin-right: @gutterWidth/2;
-    padding-left: @unit + @padding * (unit(@paddingRatio) / 100);
-    padding-right: @unit + @padding * (unit(@paddingRatio) / 100);
+    margin-left: @offsetWidth + @gutterWidth/2;
+    margin-right: @gutterWidth / 2;
 }
 
 
