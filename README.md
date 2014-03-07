@@ -47,7 +47,6 @@ Base requires a [LESS CSS](http://lesscss.org/) compiler to work its magic. This
 
 * [Codekit (OS X)](http://incident57.com/codekit/)
 * [Simpleless (Windows & OS X)](http://wearekiss.com/simpless)
-* [WinLess (Windows)](http://winless.org/)
 
 ### Compiling with Grunt
 
