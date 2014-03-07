@@ -3,13 +3,12 @@
 // --------------------------------------------------
 
 
+button,
 .button,
 a[class^="button"],
-button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-	-webkit-appearance: none;
 	padding: 0.625em 1.25em;
 	margin: 0 0 0.625em;
 	font-family: inherit;
@@ -20,6 +19,8 @@ input[type="reset"] {
 	line-height: 100%;
 	cursor: pointer;
 	text-decoration: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 	.inline-block();
 
 	&:hover {
