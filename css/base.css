@@ -175,6 +175,7 @@ footer {
 body {
   color: #000000;
   font-family: 'Helvetica', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 h1,
 h2,
@@ -421,6 +422,7 @@ meter {
   font-size: 1em;
 }
 .button,
+a[class^="button"],
 button,
 input[type="button"],
 input[type="submit"],
@@ -441,6 +443,7 @@ input[type="reset"] {
   *display: inline;
 }
 .button:hover,
+a[class^="button"]:hover,
 button:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
@@ -449,6 +452,7 @@ input[type="reset"]:hover {
   text-decoration: none;
 }
 .button:active,
+a[class^="button"]:active,
 button:active,
 input[type="button"]:active,
 input[type="submit"]:active,
@@ -456,6 +460,7 @@ input[type="reset"]:active {
   background: #dfdfdf;
 }
 .button.disabled,
+a[class^="button"].disabled,
 button.disabled,
 input[type="button"].disabled,
 input[type="submit"].disabled,
@@ -535,15 +540,15 @@ ul[class*="menu-"] li a.selected:hover,
 ul[class*="menu-"] li.selected a:hover {
   background: #e6e6e6;
 }
-.menu-primary li {
+ul.menu-primary li {
   display: inline;
 }
-.menu-primary li a {
+ul.menu-primary li a {
   display: inline-block;
   zoom: 1;
   *display: inline;
 }
-.menu-primary li ul {
+ul.menu-primary li ul {
   display: none;
   margin: 0;
   padding: 0;
@@ -554,23 +559,23 @@ ul[class*="menu-"] li.selected a:hover {
   background: white;
   z-index: 1000;
 }
-.menu-primary li ul li {
+ul.menu-primary li ul li {
   display: block;
 }
-.menu-primary li ul li a {
+ul.menu-primary li ul li a {
   display: block;
   white-space: nowrap;
 }
-.menu-primary li:hover ul,
-.menu-primary li ul:hover {
+ul.menu-primary li:hover ul,
+ul.menu-primary li ul:hover {
   display: inline;
 }
-.menu-secondary {
+ul.menu-secondary {
   border: 1px solid #eeeeee;
 }
-.menu-secondary li {
+ul.menu-secondary li {
   display: block;
 }
-.menu-secondary li a {
+ul.menu-secondary li a {
   display: block;
 }
