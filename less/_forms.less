@@ -33,7 +33,6 @@ label {
 // Form Elements
 // -------------------
 
-select,
 textarea,
 input[type="text"],
 input[type="password"],
@@ -58,8 +57,9 @@ input[type="color"] {
 	outline: none;
 	font-family: inherit;
 	font-size: 1em;
-	-webkit-appearance: none;
 	border-radius: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 
 	&:hover {
 		border: 1px solid darken(@baseColor, 3%);
