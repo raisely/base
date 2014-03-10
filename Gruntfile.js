@@ -6,7 +6,10 @@ module.exports = function (grunt) {
             styles: {
                 files: ["less/*"],
                 tasks: ["less"]
-            }
+            },
+            options: {
+                spawn: false,
+            },
         },
 
         // compile set less files
