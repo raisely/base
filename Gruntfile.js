@@ -1,6 +1,15 @@
 module.exports = function (grunt) {
     grunt.initConfig({
 
+        styleinjector: {
+            files: {
+                src : 'css/site.css'
+            },
+            options: {
+                watchTask: true
+            }
+        },
+
         // watch changes to less files
         watch: {
             styles: {
@@ -29,6 +38,7 @@ module.exports = function (grunt) {
     // Load tasks so we can use them
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-less");
+    grunt.loadNpmTasks('grunt-style-injector');
 
     // the default task will show the usage
     grunt.registerTask("default", "Prints usage", function () {
@@ -40,5 +50,5 @@ module.exports = function (grunt) {
         grunt.log.writeln("* run 'grunt dev' to start watching and compiling LESS changes.");
     });
 
-    grunt.registerTask("dev", ["less:development", "watch:styles"]);
+    grunt.registerTask("dev", ["less:development", "styleinjector", "watch:styles"]);
 };
