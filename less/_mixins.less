@@ -12,6 +12,14 @@
     width: @columnWidth * @columnCount + @gutterWidth * @columnCount;
 }
 
+.absoluteContainer() {
+    width: @columnWidth * @columnCount + @gutterWidth * @columnCount;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -((@columnWidth * @columnCount + @gutterWidth * @columnCount) / 2);
+}
+
 .column(@columns: 1, @offset: 0) when (@columnCount >= (@columns + @offset)) {
     @consideredColumns: (@columnCount * @columns) / @columnCount;
     
