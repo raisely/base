@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         // watch changes to less files
         watch: {
             styles: {
-                files: ["less/*"],
+                files: ["less/**/*"],
                 tasks: ["less"]
             },
             options: {
