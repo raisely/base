@@ -77,3 +77,41 @@ input.button-secondary {
 		cursor: default;
 	}
 }
+
+button.facebook,
+.button-facebook,
+input.button-facebook {
+	background-color: @socialFacebook;
+	color: white;
+	&:hover {
+		background: darken(@socialFacebook, 5%);
+	}
+	&:active {
+		background: darken(@socialFacebook, 10%);
+	}
+
+	&.disabled {
+		background: lighten(@socialFacebook, 20%);
+		color: @socialFacebook;
+		cursor: default;
+	}
+}
+
+button.twitter,
+.button-twitter,
+input.button-twitter {
+	background-color: @socialTwitter;
+	color: white;
+	&:hover {
+		background: darken(@socialTwitter, 5%);
+	}
+	&:active {
+		background: darken(@socialTwitter, 10%);
+	}
+
+	&.disabled {
+		background: #bedff2;
+		color: @socialTwitter;
+		cursor: default;
+	}
+}
