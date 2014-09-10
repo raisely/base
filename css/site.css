@@ -511,6 +511,7 @@ button.facebook,
 input.button-facebook {
   background-color: #3b5998;
   color: white;
+  padding-left: 0.6em;
 }
 button.facebook:hover,
 .button-facebook:hover,
@@ -534,6 +535,7 @@ button.twitter,
 input.button-twitter {
   background-color: #00aced;
   color: white;
+  padding-left: 0.7em;
 }
 button.twitter:hover,
 .button-twitter:hover,
@@ -666,6 +668,12 @@ ul.menu-secondary li a {
 
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 
+}
+span.icon-facebook:before {
+  padding-right: 0.2em;
+}
+span.icon-twitter:before {
+  padding-right: 0.3em;
 }
 .icon-note:before {
   content: '\e800';
