@@ -4,6 +4,7 @@
 
 [data-tooltip] {
 	position: relative;
+	height: 100%;
 	cursor: pointer;
 	.inline-block();
 
@@ -13,11 +14,13 @@
 		position: absolute;
 		visibility: hidden;
 		opacity: 0;
+		pointer-events: none;
 	}
 
 	&:before {
-		.arrow-up(7px, @textColor);
+		.arrow-down(7px, @textColor);
 		content: '';
+		top: 0;
 		left: 50%;
 		margin-left: -3.25px;
 		z-index: 10001;
@@ -28,12 +31,13 @@
 		content: attr(data-tooltip);
 		padding: 0.5em 0.75em;
 		border-radius: 3px;
-		font-size: 0.875em;
+		font-size: 0.95em;
 		z-index: 10000;
 		left: 50%;
-		margin-left: -5em;
+		bottom: 100%;
+		margin-left: -7.5em;
 		margin-top: 10px;
-		width: 10em;
+		width: 15em;
 		line-height: 120%;
 		background: @textColor;
 		color: @baseColor;
@@ -43,5 +47,4 @@
 		visibility: visible;
 		opacity: 1;
 	}
-
 }
