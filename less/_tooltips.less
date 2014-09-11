@@ -1,0 +1,47 @@
+//
+// Tooltips
+// --------------------------------------------------
+
+[data-tooltip] {
+	position: relative;
+	cursor: pointer;
+	.inline-block();
+
+	&:before,
+	&:after {
+		.transition(all 0.2s ease-out);
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	&:before {
+		.arrow-up(7px, @textColor);
+		content: '';
+		left: 50%;
+		margin-left: -3.25px;
+		z-index: 10001;
+		bottom: -10px;
+	}
+	&:after {
+		.box-sizing(border-box);
+		content: attr(data-tooltip);
+		padding: 0.5em 0.75em;
+		border-radius: 3px;
+		font-size: 0.875em;
+		z-index: 10000;
+		left: 50%;
+		margin-left: -5em;
+		margin-top: 10px;
+		width: 10em;
+		line-height: 120%;
+		background: @textColor;
+		color: @baseColor;
+	}
+	&:hover:before,
+	&:hover:after {
+		visibility: visible;
+		opacity: 1;
+	}
+
+}
