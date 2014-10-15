@@ -526,8 +526,8 @@ input.button-facebook:active {
 button.facebook.disabled,
 .button-facebook.disabled,
 input.button-facebook.disabled {
-  background: #718dc8;
-  color: #3b5998;
+  background: #9099ae;
+  color: white;
   cursor: default;
 }
 button.twitter,
@@ -550,8 +550,8 @@ input.button-twitter:active {
 button.twitter.disabled,
 .button-twitter.disabled,
 input.button-twitter.disabled {
-  background: #bedff2;
-  color: #00aced;
+  background: #aebcc7;
+  color: white;
   cursor: default;
 }
 ul[class*="menu-"] {
@@ -617,6 +617,25 @@ ul.menu-secondary li {
 }
 ul.menu-secondary li a {
   display: block;
+}
+@media (max-width: 767px) {
+  nav:before {
+    content: '\e822';
+    font-family: "entypo";
+    display: block;
+    font-size: 2em;
+    margin-bottom: 0.3em;
+  }
+  ul.menu-primary {
+    overflow-x: scroll;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    -webkit-user-select: none;
+  }
+  ul.menu-primary > li {
+    display: inline-block;
+  }
 }
 @font-face {
   font-family: 'entypo';
