@@ -81,30 +81,3 @@ ul.menu-secondary {
 		}
 	}
 }
-
-
-// Mobile Navigation
-// -----------------
-
-@media (max-width: 767px) {
-	nav {
-			&:before {
-			content: '\e822';
-			font-family: "entypo";
-			display: block;
-			font-size: 2em;
-			margin-bottom: 0.3em;
-		}
-	}
-	ul.menu-primary {
-		overflow-x: scroll;
-		overflow-y: auto;
-		-webkit-overflow-scrolling: touch;
-
-		white-space: nowrap;
-		-webkit-user-select: none;
-		> li {
-			display: inline-block;
-		}
-	}
-}

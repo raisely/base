@@ -618,25 +618,6 @@ ul.menu-secondary li {
 ul.menu-secondary li a {
   display: block;
 }
-@media (max-width: 767px) {
-  nav:before {
-    content: '\e822';
-    font-family: "entypo";
-    display: block;
-    font-size: 2em;
-    margin-bottom: 0.3em;
-  }
-  ul.menu-primary {
-    overflow-x: scroll;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-    -webkit-user-select: none;
-  }
-  ul.menu-primary > li {
-    display: inline-block;
-  }
-}
 @font-face {
   font-family: 'entypo';
   src: url('../fonts/entypo.eot?59575301');
@@ -1829,7 +1810,62 @@ span.icon-twitter:before {
 .icon-suitcase:before {
   content: '\e91b';
 }
-/* '' */
+/* '' */[data-tooltip] {
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+[data-tooltip]:before,
+[data-tooltip]:after {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+[data-tooltip]:before {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #000000;
+  content: '';
+  top: 0;
+  left: 50%;
+  margin-left: -3.25px;
+  z-index: 10001;
+  bottom: -10px;
+}
+[data-tooltip]:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  content: attr(data-tooltip);
+  padding: 0.5em 0.75em;
+  border-radius: 3px;
+  font-size: 0.95em;
+  z-index: 10000;
+  left: 50%;
+  bottom: 100%;
+  margin-left: -7.5em;
+  margin-top: 10px;
+  width: 15em;
+  line-height: 120%;
+  background: #000000;
+  color: #eeeeee;
+}
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  opacity: 1;
+}
+
 @media (min-width: 1200px) {
   body {
     font-size: 15px;
