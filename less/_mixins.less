@@ -78,46 +78,6 @@
 }
 
 
-// Button generator
-// -------------------
-.newButton(@bgColor, @textColor){
-    padding: 0.625em 1.25em;
-    margin: 0 0 0.625em;
-    font-family: inherit;
-    font-size: 1em;
-    border: none;
-    outline: none;
-    background: @bgColor;
-    color: @textColor;
-    line-height: 100%;
-    cursor: pointer;
-    text-decoration: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    .inline-block();
-
-    &:hover {
-        background: darken(@bgColor, 3%);
-        text-decoration: none;
-    }
-    &:active {
-        background: darken(@bgColor, 6%);
-    }
-
-    &.disabled {
-        background: lighten(@bgColor, 2.5%);
-        color: darken(@bgColor, 15%);
-        cursor: default;
-    }
-
-    &.huge,
-    &.button-huge{
-        font-size: 1.25em;
-        font-weight: 600;
-        padding: 0.625em 2em;
-        box-shadow: 0 2px 0 darken(@bgColor, 5%);
-    }
-}
 
 
 // Shortcuts

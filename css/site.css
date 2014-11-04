@@ -424,6 +424,7 @@ input[type="reset"] {
   border: none;
   outline: none;
   background: #eeeeee;
+  color: #000000;
   line-height: 100%;
   cursor: pointer;
   text-decoration: none;
@@ -460,68 +461,124 @@ input[type="reset"].disabled {
   color: #c8c8c8;
   cursor: default;
 }
+button.huge,
+.button.huge,
+[class^="button"].huge,
+input[type="button"].huge,
+input[type="submit"].huge,
+input[type="reset"].huge,
+button.button-huge,
+.button.button-huge,
+[class^="button"].button-huge,
+input[type="button"].button-huge,
+input[type="submit"].button-huge,
+input[type="reset"].button-huge {
+  font-size: 1.25em;
+  font-weight: 600;
+  padding: 0.625em 2em;
+  box-shadow: 0 2px 0 #e1e1e1;
+}
+button.rounded,
+.button.rounded,
+[class^="button"].rounded,
+input[type="button"].rounded,
+input[type="submit"].rounded,
+input[type="reset"].rounded,
+button .button-rounded,
+.button .button-rounded,
+[class^="button"] .button-rounded,
+input[type="button"] .button-rounded,
+input[type="submit"] .button-rounded,
+input[type="reset"] .button-rounded {
+  border-radius: 5px;
+}
 button.primary,
 .button-primary,
 input.button-primary {
   background: #69b5e1;
-  color: white;
+  color: #ffffff;
 }
 button.primary:hover,
 .button-primary:hover,
 input.button-primary:hover {
-  background: #54abdd;
+  background: #5cafde;
+  text-decoration: none;
 }
 button.primary:active,
 .button-primary:active,
 input.button-primary:active {
-  background: #3ea0d9;
+  background: #4fa8dc;
 }
 button.primary.disabled,
 .button-primary.disabled,
 input.button-primary.disabled {
-  background: #bedff2;
-  color: #69b5e1;
+  background: #74bae3;
+  color: #2a95d3;
   cursor: default;
+}
+button.primary.huge,
+.button-primary.huge,
+input.button-primary.huge {
+  box-shadow: 0 2px 0 #54abdd;
 }
 button.secondary,
 .button-secondary,
 input.button-secondary {
   background: #9d6ab4;
-  color: white;
+  color: #ffffff;
 }
 button.secondary:hover,
 .button-secondary:hover,
 input.button-secondary:hover {
-  background: #9259ab;
+  background: #9660af;
+  text-decoration: none;
 }
 button.secondary:active,
 .button-secondary:active,
 input.button-secondary:active {
-  background: #844f9c;
+  background: #9056aa;
 }
 button.secondary.disabled,
 .button-secondary.disabled,
 input.button-secondary.disabled {
-  background: #caaed6;
-  color: #9d6ab4;
+  background: #a372b8;
+  color: #76468b;
   cursor: default;
+}
+button.secondary.huge,
+.button-secondary.huge,
+input.button-secondary.huge {
+  box-shadow: 0 2px 0 #9259ab;
 }
 button.facebook,
 .button-facebook,
 input.button-facebook {
-  background-color: #3b5998;
-  color: white;
+  background: #3b5998;
+  color: #ffffff;
   padding-left: 0.6em;
 }
 button.facebook:hover,
 .button-facebook:hover,
 input.button-facebook:hover {
-  background: #344e86;
+  background: #37538d;
+  text-decoration: none;
 }
 button.facebook:active,
 .button-facebook:active,
 input.button-facebook:active {
-  background: #2d4373;
+  background: #324c82;
+}
+button.facebook.disabled,
+.button-facebook.disabled,
+input.button-facebook.disabled {
+  background: #3f5ea1;
+  color: #263961;
+  cursor: default;
+}
+button.facebook.huge,
+.button-facebook.huge,
+input.button-facebook.huge {
+  box-shadow: 0 2px 0 #344e86;
 }
 button.facebook.disabled,
 .button-facebook.disabled,
@@ -533,19 +590,31 @@ input.button-facebook.disabled {
 button.twitter,
 .button-twitter,
 input.button-twitter {
-  background-color: #00aced;
-  color: white;
-  padding-left: 0.7em;
+  background: #00aced;
+  color: #ffffff;
 }
 button.twitter:hover,
 .button-twitter:hover,
 input.button-twitter:hover {
-  background: #0099d4;
+  background: #00a1de;
+  text-decoration: none;
 }
 button.twitter:active,
 .button-twitter:active,
 input.button-twitter:active {
-  background: #0087ba;
+  background: #0096ce;
+}
+button.twitter.disabled,
+.button-twitter.disabled,
+input.button-twitter.disabled {
+  background: #00b5fa;
+  color: #0074a1;
+  cursor: default;
+}
+button.twitter.huge,
+.button-twitter.huge,
+input.button-twitter.huge {
+  box-shadow: 0 2px 0 #0099d4;
 }
 button.twitter.disabled,
 .button-twitter.disabled,
