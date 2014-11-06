@@ -1,95 +1,51 @@
 //
 // Buttons
 // --------------------------------------------------
-
-
 button,
 .button,
 [class^="button"],
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-	padding: 0.625em 1.25em;
-	margin: 0 0 0.625em;
-	font-family: inherit;
-	font-size: 1em;
-	border: none;
-	outline: none;
-	background: @baseColor;
-	line-height: 100%;
-	cursor: pointer;
-	text-decoration: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	.inline-block();
+    padding: 0.625em 1.25em;
+    margin: 0 0 0.625em;
+    font-family: inherit;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    line-height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    .inline-block();
 
-	&:hover {
-		background: darken(@baseColor, 3%);
-		text-decoration: none;
-	}
-	&:active {
-		background: darken(@baseColor, 6%);
-	}
+    .button-style(@baseColor, @textColor);
 
-	&.disabled {
-		background: lighten(@baseColor, 2.5%);
-		color: darken(@baseColor, 15%);
-		cursor: default;
-	}
+    &.huge{
+        font-size: 1.25em;
+        font-weight: 600;
+        padding: 0.625em 2em;
+    }
 }
 
 button.primary,
 .button-primary,
 input.button-primary {
-	background: @primaryColor;
-	color: white;
-
-	&:hover {
-		background: darken(@primaryColor, 5%);
-	}
-	&:active {
-		background: darken(@primaryColor, 10%);
-	}
-
-	&.disabled {
-		background: lighten(@primaryColor, 20%);
-		color: @primaryColor;
-		cursor: default;
-	}
+	.button-style(@primaryColor, white);
 }
 
 button.secondary,
 .button-secondary,
 input.button-secondary {
-	background: @secondaryColor;
-	color: white;
-
-	&:hover {
-		background: darken(@secondaryColor, 5%);
-	}
-	&:active {
-		background: darken(@secondaryColor, 10%);
-	}
-
-	&.disabled {
-		background: lighten(@secondaryColor, 20%);
-		color: @secondaryColor;
-		cursor: default;
-	}
+	.button-style(@secondaryColor, white);
 }
 
 button.facebook,
 .button-facebook,
 input.button-facebook {
-	background-color: @socialFacebook;
-	color: white;
+	.button-style(@socialFacebook, white);
 	padding-left: 0.6em;
-	&:hover {
-		background: darken(@socialFacebook, 5%);
-	}
-	&:active {
-		background: darken(@socialFacebook, 10%);
-	}
 
 	&.disabled {
 		background: #9099ae;
@@ -101,15 +57,7 @@ input.button-facebook {
 button.twitter,
 .button-twitter,
 input.button-twitter {
-	background-color: @socialTwitter;
-	color: white;
-	padding-left: 0.7em;
-	&:hover {
-		background: darken(@socialTwitter, 5%);
-	}
-	&:active {
-		background: darken(@socialTwitter, 10%);
-	}
+	.button-style(@socialTwitter, white);
 
 	&.disabled {
 		background: #aebcc7;
