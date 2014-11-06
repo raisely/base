@@ -1,15 +1,18 @@
 //
 // Buttons
 // --------------------------------------------------
-.button (){
+button,
+.button,
+[class^="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
     padding: 0.625em 1.25em;
     margin: 0 0 0.625em;
     font-family: inherit;
     font-size: 1em;
     border: none;
     outline: none;
-    background: @baseColor;
-    color: @textColor;
     line-height: 100%;
     cursor: pointer;
     text-decoration: none;
@@ -17,64 +20,13 @@
     -moz-appearance: none;
     .inline-block();
 
-    &:hover {
-        background: darken(@baseColor, 3%);
-        text-decoration: none;
-    }
-    &:active {
-        background: darken(@baseColor, 6%);
-    }
+    .button-style(@baseColor, @textColor);
 
-    &.disabled {
-        background: lighten(@baseColor, 2.5%);
-        color: darken(@baseColor, 15%);
-        cursor: default;
-    }
-
-    &.huge,
-    &.button-huge{
+    &.huge{
         font-size: 1.25em;
         font-weight: 600;
         padding: 0.625em 2em;
-        box-shadow: 0 2px 0 darken(@baseColor, 5%);
     }
-
-    &.rounded,
-	.button-rounded
-	{
-		border-radius: 5px;
-	}
-}
-
-.button-style(@customColor, @customTextColor){
-	background: @customColor;
-    color: @customTextColor;
-	 &:hover {
-        background: darken(@customColor, 3%);
-        text-decoration: none;
-    }
-    &:active {
-        background: darken(@customColor, 6%);
-    }
-
-    &.disabled {
-        background: lighten(@customColor, 2.5%);
-        color: darken(@customColor, 15%);
-        cursor: default;
-    }
-    &.huge{
-    	box-shadow: 0 2px 0 darken(@customColor, 5%);
-    }
-
-}
-
-button,
-.button,
-[class^="button"],
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
-	.button;
 }
 
 button.primary,

@@ -77,6 +77,27 @@
     border-left: @size solid @color;
 }
 
+// Custom Buttons
+
+.button-style(@customColor, @customTextColor){
+    background: @customColor;
+    color: @customTextColor;
+     &:hover {
+        background: darken(@customColor, 3%);
+        text-decoration: none;
+    }
+    
+    &:active {
+        background: darken(@customColor, 6%);
+    }
+
+    &.disabled {
+        background: lighten(@customColor, 2.5%);
+        color: darken(@customColor, 15%);
+        cursor: default;
+    }
+
+}
 
 
 
