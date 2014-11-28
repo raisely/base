@@ -124,17 +124,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.clearfix {
-  zoom: 1;
-}
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
 body {
   font-size: 15px;
   line-height: 140%;
@@ -1933,17 +1922,6 @@ span.icon-twitter:before {
   opacity: 1;
 }
 
-.clearfix {
-  zoom: 1;
-}
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
 @media (min-width: 1200px) {
   body {
     font-size: 15px;
@@ -1987,17 +1965,6 @@ span.icon-twitter:before {
   }
 }
 
-.clearfix {
-  zoom: 1;
-}
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
 @media (max-width: 767px) {
   body {
     font-size: 16px;
@@ -2041,17 +2008,6 @@ span.icon-twitter:before {
   }
 }
 
-.clearfix {
-  zoom: 1;
-}
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
 @media (min-width: 768px) and (max-width: 959px) {
   body {
     font-size: 14px;
