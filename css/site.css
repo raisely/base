@@ -164,6 +164,21 @@ footer {
   margin-left: 10px;
   margin-right: 10px;
 }
+.icons-list {
+  padding: 0;
+  margin: 0;
+}
+.icons-list li {
+  float: left;
+  width: 220px;
+  margin-left: 10px;
+  margin-right: 10px;
+  list-style: none;
+  margin-bottom: 10px;
+}
+.icons-list li i {
+  font-size: 20px;
+}
 body {
   color: #000000;
   font-family: 'Helvetica', sans-serif;
@@ -1935,6 +1950,21 @@ span.icon-twitter:before {
     margin-left: 14.25px;
     margin-right: 14.25px;
   }
+  .icons-list {
+    padding: 0;
+    margin: 0;
+  }
+  .icons-list li {
+    float: left;
+    width: 256.5px;
+    margin-left: 14.25px;
+    margin-right: 14.25px;
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  .icons-list li i {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1978,6 +2008,21 @@ span.icon-twitter:before {
     margin-left: 5%;
     margin-right: 5%;
   }
+  .icons-list {
+    padding: 0;
+    margin: 0;
+  }
+  .icons-list li {
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  .icons-list li i {
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 959px) {
@@ -2020,5 +2065,20 @@ span.icon-twitter:before {
     width: 752px;
     margin-left: 8px;
     margin-right: 8px;
+  }
+  .icons-list {
+    padding: 0;
+    margin: 0;
+  }
+  .icons-list li {
+    float: left;
+    width: 176px;
+    margin-left: 8px;
+    margin-right: 8px;
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  .icons-list li i {
+    font-size: 20px;
   }
 }
