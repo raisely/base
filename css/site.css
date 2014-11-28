@@ -124,6 +124,17 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
 body {
   font-size: 15px;
   line-height: 140%;
@@ -163,21 +174,6 @@ footer {
   width: 940px;
   margin-left: 10px;
   margin-right: 10px;
-}
-.icons-list {
-  padding: 0;
-  margin: 0;
-}
-.icons-list li {
-  float: left;
-  width: 220px;
-  margin-left: 10px;
-  margin-right: 10px;
-  list-style: none;
-  margin-bottom: 10px;
-}
-.icons-list li i {
-  font-size: 20px;
 }
 body {
   color: #000000;
@@ -717,6 +713,34 @@ span.icon-facebook:before {
 }
 span.icon-twitter:before {
   padding-right: 0.3em;
+}
+.icons-list {
+  padding: 0;
+  margin: 0;
+  zoom: 1;
+  width: 960px;
+  margin: 0 auto;
+}
+.icons-list:before,
+.icons-list:after {
+  content: "";
+  display: table;
+}
+.icons-list:after {
+  clear: both;
+}
+.icons-list li {
+  float: left;
+  width: 220px;
+  margin-left: 10px;
+  margin-right: 10px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.icons-list li i {
+  font-size: 20px;
 }
 .icon-note:before {
   content: '\e800';
@@ -1909,6 +1933,17 @@ span.icon-twitter:before {
   opacity: 1;
 }
 
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
 @media (min-width: 1200px) {
   body {
     font-size: 15px;
@@ -1950,23 +1985,19 @@ span.icon-twitter:before {
     margin-left: 14.25px;
     margin-right: 14.25px;
   }
-  .icons-list {
-    padding: 0;
-    margin: 0;
-  }
-  .icons-list li {
-    float: left;
-    width: 256.5px;
-    margin-left: 14.25px;
-    margin-right: 14.25px;
-    list-style: none;
-    margin-bottom: 10px;
-  }
-  .icons-list li i {
-    font-size: 20px;
-  }
 }
 
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
 @media (max-width: 767px) {
   body {
     font-size: 16px;
@@ -2008,23 +2039,19 @@ span.icon-twitter:before {
     margin-left: 5%;
     margin-right: 5%;
   }
-  .icons-list {
-    padding: 0;
-    margin: 0;
-  }
-  .icons-list li {
-    float: left;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    list-style: none;
-    margin-bottom: 10px;
-  }
-  .icons-list li i {
-    font-size: 20px;
-  }
 }
 
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
 @media (min-width: 768px) and (max-width: 959px) {
   body {
     font-size: 14px;
@@ -2065,20 +2092,5 @@ span.icon-twitter:before {
     width: 752px;
     margin-left: 8px;
     margin-right: 8px;
-  }
-  .icons-list {
-    padding: 0;
-    margin: 0;
-  }
-  .icons-list li {
-    float: left;
-    width: 176px;
-    margin-left: 8px;
-    margin-right: 8px;
-    list-style: none;
-    margin-bottom: 10px;
-  }
-  .icons-list li i {
-    font-size: 20px;
   }
 }
