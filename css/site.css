@@ -677,25 +677,17 @@ ul.menu-secondary li a {
   margin-right: .2em;
   text-align: center;
   /* For safety - reset parent styles, that can break glyph codes*/
-
   font-variant: normal;
   text-transform: none;
   /* fix buttons height, for twitter bootstrap */
-
   line-height: 1em;
   /* Animation center compensation - margins should be symmetric */
-
   /* remove if not needed */
-
   margin-left: .2em;
   /* you can be more comfortable with increased icons size */
-
   /* font-size: 120%; */
-
   /* Uncomment for 3D effect */
-
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-
 }
 span.icon-facebook:before {
   padding-right: 0.2em;
@@ -1838,7 +1830,8 @@ span.icon-twitter:before {
 .icon-suitcase:before {
   content: '\e91b';
 }
-/* '' */[data-tooltip] {
+/* '' */
+[data-tooltip] {
   position: relative;
   height: 100%;
   cursor: pointer;
@@ -1893,7 +1886,7 @@ span.icon-twitter:before {
   visibility: visible;
   opacity: 1;
 }
-
+/*# sourceMappingURL=css/site.css.map */
 @media (min-width: 1200px) {
   body {
     font-size: 15px;
@@ -1936,7 +1929,7 @@ span.icon-twitter:before {
     margin-right: 14.25px;
   }
 }
-
+/*# sourceMappingURL=css/site.css.map */
 @media (max-width: 767px) {
   body {
     font-size: 16px;
@@ -1979,7 +1972,7 @@ span.icon-twitter:before {
     margin-right: 5%;
   }
 }
-
+/*# sourceMappingURL=css/site.css.map */
 @media (min-width: 768px) and (max-width: 959px) {
   body {
     font-size: 14px;
@@ -2022,3 +2015,4 @@ span.icon-twitter:before {
     margin-right: 8px;
   }
 }
+/*# sourceMappingURL=css/site.css.map */
