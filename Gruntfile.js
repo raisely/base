@@ -29,7 +29,7 @@ module.exports = function (grunt) {
                     paths: ["less"],
                     sourceMap: true,
                     sourceMapFilename: 'css/site.css.map',
-                    sourceMapURL: 'css/site.css.map',
+                    sourceMapURL: 'site.css.map',
                     compress: true
                 },
                 files: {
