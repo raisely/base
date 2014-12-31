@@ -44,6 +44,11 @@
     margin-right: @gutterWidth / 2;
 }
 
+.clearfix(){
+  zoom:1;
+  &:before, &:after{ content:""; display:table; }
+  &:after{ clear: both; }
+}
 
 // Useful Visual Elements
 // -------------------
