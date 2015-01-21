@@ -1886,7 +1886,7 @@ span.icon-twitter:before {
   visibility: visible;
   opacity: 1;
 }
-/*# sourceMappingURL=css/site.css.map */
+
 @media (min-width: 1200px) {
   body {
     font-size: 15px;
@@ -1929,7 +1929,7 @@ span.icon-twitter:before {
     margin-right: 14.25px;
   }
 }
-/*# sourceMappingURL=css/site.css.map */
+
 @media (max-width: 767px) {
   body {
     font-size: 16px;
@@ -1972,7 +1972,7 @@ span.icon-twitter:before {
     margin-right: 5%;
   }
 }
-/*# sourceMappingURL=css/site.css.map */
+
 @media (min-width: 768px) and (max-width: 959px) {
   body {
     font-size: 14px;
@@ -2015,4 +2015,3 @@ span.icon-twitter:before {
     margin-right: 8px;
   }
 }
-/*# sourceMappingURL=css/site.css.map */

@@ -1,122 +1,84 @@
-   module.exports = function (grunt) {
-       grunt.initConfig({
+module.exports = function (grunt) {
 
-           // live browser injection
-           browserSync: {
-               bsFiles: {
-                   src : 'css/site.css'
-               },
-               options: {
-                   watchTask: true,
-                   server: {
-                     baseDir: "."
-                   }
-               }
-           },
+  grunt.initConfig({
 
-           // watch changes to less files
-           watch: {
-               styles: {
-                   files: ["less/**/*", "css/*.css"],
-                   tasks: ["less", "csslint"]
-               },
-               options: {
-                   spawn: false,
-               },
-           },
+    // Live browser injection
+    browserSync: {
+      bsFiles: {
+        src : ["css/site.css", "js/*.js"]
+      }
+    },
 
-           // compile set less files
-           less: {
-               development: {
-                   options: {
-                       paths: ["less"],
-                       sourceMap: true,
-                       sourceMapFilename: 'css/site.css.map',
-                       sourceMapURL: 'css/site.css.map',
-                       compress: false
-                     },
-                   files: {
-                     "css/site.css": ["less/*.less", "!less/_*.less"]
-                   }
-               }
-           },
+    // Watch changes to files
+    watch: {
+      styles: {
+        files: ["less/**/*.less", "js/**/*.js"],
+        tasks: ["less", "minified"]
+      },
+      options: {
+        spawn: false,
+      },
+    },
 
-           // compresses .js files
-           uglify: {
-             options: {
-               mangle: {
-                 except: ['jQuery']
-               },
-               compress: true
-             },
-             js_files: {
-               files: {
-                 'js/dest/site.min.js': ['js/src/*.js']
-               }
-             }
-           },
+    // Compile set less files
+    less: {
+      development: {
+        options: {
+          paths: ["less"],
+          sourceMap: true,
+          sourceMapFilename: "css/site.css.map",
+          sourceMapURL: "css/site.css.map"
+        },
+        files: {
+          "css/site.css": ["less/*.less", "!less/_*.less"]
+        }
+      },
+      production: {
+        options: {
+          paths: ["less"],
+          sourceMap: false,
+          cssmin: true
+        },
+        files: {
+          "css/site.css": ["less/*.less", "!less/_*.less"]
+        }
+      }
+    },
 
-           // minify css files
-           cssmin: {
-             add_banner: {
-               options: {
-                 banner: '/* My minified css file */'
-               }
-             },
-             minify: {
-               expand: true,
-               cwd: 'css/',
-               src: ['*.css', '!*.min.css'],
-               dest: 'css/dist/',
-               ext: '.min.css'
-             }
-           },
+    // Compress .js files
+    minified : {
+      files: {
+        src: [ 'js/*.js', '!js/*.min.js', '!js/vendor/**/*.js', '!js/**/_*.js'],
+        dest: 'js/'
+      },
+      options : {
+        allinone: false,
+        ext: '.min.js'
+      }
+    }
 
-          // lint css
-          csslint: {
-            options: {
-              csslintrc: '.csslintrc'
-            },
-            strict: {
-              options: {
-                import: 2
-              },
-              src: ['css/*.css']
-            },
-            lax: {
-              options: {
-                import: false
-              },
-              src: ['css/*.css']
-            }
-          }
+  });
 
-       });
+  // Load modules
+  grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-contrib-less");
+  grunt.loadNpmTasks("grunt-browser-sync");
+  grunt.loadNpmTasks("grunt-contrib-cssmin");
+  grunt.loadNpmTasks('grunt-minified');
 
-       // Load tasks so we can use them
+  // The default task prints usage
+  grunt.registerTask("default", "Prints usage", function () {
+     grunt.log.writeln("");
+     grunt.log.writeln("Building Base");
+     grunt.log.writeln("------------------------");
+     grunt.log.writeln("");
+     grunt.log.writeln("* run 'grunt --help' to get an overview of all commands.");
+     grunt.log.writeln("* run 'grunt dev' to start watching and compiling LESS changes for development.");
+     grunt.log.writeln("* run 'grunt prod' to minify css and js files for production.");
+  });
 
-         // dev tasks
-         grunt.loadNpmTasks("grunt-contrib-watch");
-         grunt.loadNpmTasks("grunt-contrib-less");
-         grunt.loadNpmTasks('grunt-browser-sync');
-         grunt.loadNpmTasks('grunt-contrib-csslint');
+  // Create our tasks
+  grunt.registerTask("dev", ["less:development", "minified", "watch", "browserSync"]);
+  grunt.registerTask("prod", ["minified", "less:production"]);
 
-         // prod tasks
-         grunt.loadNpmTasks('grunt-contrib-uglify');
-         grunt.loadNpmTasks('grunt-contrib-cssmin');
-
-       // the default task will show the usage
-       grunt.registerTask("default", "Prints usage", function () {
-           grunt.log.writeln("");
-           grunt.log.writeln("Building Base");
-           grunt.log.writeln("------------------------");
-           grunt.log.writeln("");
-           grunt.log.writeln("* run 'grunt --help' to get an overview of all commands.");
-           grunt.log.writeln("* run 'grunt dev' to start watching and compiling LESS changes for development.");
-           grunt.log.writeln("* run 'grunt prod' to minify css and js files for production.");
-         });
-
-       grunt.registerTask("dev", ["csslint", "less", "browserSync", "watch"]);
-       grunt.registerTask("prod", ["cssmin", "uglify"]);
-
-   };
+};
