@@ -15,12 +15,19 @@ module.exports = function (grunt) {
         // watch changes to less files
         watch: {
             styles: {
-                files: ["less/**/*"],
-                tasks: ["less"]
+                files: ['less/**/*'],
+                tasks: ['less', 'cssmin'],
+                options: {
+                   spawn: false
+                }
             },
-            options: {
-                spawn: false,
-            },
+            scripts: {
+                files: ['js/*.js', '!js/*.min.js'],
+                tasks: ['uglify'],
+                options: {
+                  spawn: false
+                }
+            }
         },
 
         // compile set less files
@@ -37,6 +44,28 @@ module.exports = function (grunt) {
                     "css/site.css": ["less/*.less", "!less/_*.less"]
                 }
             }
+        },
+
+        // Minify CSS
+        cssmin: {
+          target: {
+            files: [{
+              expand: true,
+              cwd: 'css',
+              src: ['*.css', '!*.min.css'],
+              dest: 'css',
+              ext: '.min.css'
+            }]
+          }
+        },
+
+        // Minify Javascript
+        uglify: {
+            my_target: {
+              files: {
+                'js/site.min.js': ['js/*.js', '!js/*.min.js']
+              }
+            }
         }
 
     });
@@ -45,6 +74,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks('grunt-browser-sync');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
 
     // the default task will show the usage
     grunt.registerTask("default", "Prints usage", function () {
@@ -56,6 +88,6 @@ module.exports = function (grunt) {
         grunt.log.writeln("* run 'grunt dev' to start watching and compiling LESS changes for development.");
     });
 
-    grunt.registerTask("dev", ["less", "browserSync", "watch"]);
+    grunt.registerTask("dev", ["less", "cssmin", "uglify", "browserSync", "watch"]);
 
 };
