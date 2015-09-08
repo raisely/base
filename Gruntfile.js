@@ -16,7 +16,7 @@ module.exports = function (grunt) {
         watch: {
             styles: {
                 files: ['less/**/*'],
-                tasks: ['less', 'cssmin'],
+                tasks: ['less'],
                 options: {
                    spawn: false
                 }
@@ -46,19 +46,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Minify CSS
-        cssmin: {
-          target: {
-            files: [{
-              expand: true,
-              cwd: 'css',
-              src: ['*.css', '!*.min.css'],
-              dest: 'css',
-              ext: '.min.css'
-            }]
-          }
-        },
-
         // Minify Javascript
         uglify: {
             my_target: {
@@ -74,7 +61,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks('grunt-browser-sync');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
 
@@ -88,6 +74,6 @@ module.exports = function (grunt) {
         grunt.log.writeln("* run 'grunt dev' to start watching and compiling LESS changes for development.");
     });
 
-    grunt.registerTask("dev", ["less", "cssmin", "uglify", "browserSync", "watch"]);
+    grunt.registerTask("dev", ["less", "uglify", "browserSync", "watch"]);
 
 };
