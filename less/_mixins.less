@@ -22,7 +22,7 @@
 
 .column(@columns: 1, @offset: 0) when (@columnCount >= (@columns + @offset)) {
     @consideredColumns: (@columnCount * @columns) / @columnCount;
-    
+
     .newColumn();
 }
 
@@ -30,7 +30,7 @@
     @consideredColumns: (@columnCount * @columns) / @columns;
     @offset: 0;
 
-    .newColumn();   
+    .newColumn();
 }
 
 .newColumn() {
@@ -49,29 +49,29 @@
 // -------------------
 
 .arrow-up(@size: 5px, @color: #000) {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: @size solid transparent;
     border-right: @size solid transparent;
     border-bottom: @size solid @color;
 }
 .arrow-down(@size: 5px, @color: #000) {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: @size solid transparent;
     border-right: @size solid transparent;
     border-top: @size solid @color;
 }
 .arrow-left(@size: 5px, @color: #000) {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-top: @size solid transparent;
-    border-bottom: @size solid transparent; 
-    border-right: @size solid @color; 
+    border-bottom: @size solid transparent;
+    border-right: @size solid @color;
 }
 .arrow-right(@size: 5px, @color: #000) {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-top: @size solid transparent;
     border-bottom: @size solid transparent;
     border-left: @size solid @color;
@@ -86,7 +86,7 @@
         background: darken(@customColor, 3%);
         text-decoration: none;
     }
-    
+
     &:active {
         background: darken(@customColor, 6%);
     }
@@ -189,7 +189,15 @@
     background-size: @args;
 }
 
-// Box Shadows 
+// Background Cover
+
+.background-cover(@position: center center){
+    background-position: @position;
+    background-repeat: no-repeat;
+    .background-size(cover);
+}
+
+// Box Shadows
 
 .box-shadow(@args) {
     -webkit-box-shadow: @args;
@@ -317,10 +325,10 @@
 // Transforms
 
 .transform(@args) {
-    -webkit-transform: @args; 
-    -moz-transform: @args; 
-    -ms-transform: @args; 
-    -o-transform: @args; 
+    -webkit-transform: @args;
+    -moz-transform: @args;
+    -ms-transform: @args;
+    -o-transform: @args;
     transform: @args;
 }
 .translateHardware(@x,@y){
@@ -361,3 +369,101 @@
     -o-transition-timing-function: @function;
     transition-timing-function: @function;
 }
+
+// ------------------------------------
+// Appearance
+// ------------------------------------
+
+.appearance(@val) {
+    -webkit-appearance: @val;
+    -moz-appearance: @val;
+    appearance: @val;
+}
+
+// ------------------------------------
+// Border Radius
+// ------------------------------------
+
+.border-radius(@int) {
+  -webkit-border-radius: @int;
+  -moz-border-radius: @int;
+  border-radius: @int;
+
+}
+
+// ------------------------------------
+// Vertically Center
+// ------------------------------------
+
+.vertically-center(){
+    top: 50%;
+    position: absolute;
+    .transform(translateY(-50%));
+}
+
+.destroy-vertically-center() {
+    top: 0%;
+    position: relative;
+    .transform(translateY(0%));
+}
+
+// ------------------------------------
+// Ellipsis
+// ------------------------------------
+
+.ellipsis(@w:250px) {
+    max-width: @w;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// ------------------------------------
+// Iconify
+// ------------------------------------
+
+.iconify() {
+    font-family: "entypo";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+}
+
+// ------------------------------------
+// Clearfix
+// ------------------------------------
+
+// Clearfix
+
+.clearfix() {
+    &:before,
+    &:after { content: " "; display: table; }
+    &:after { clear: both; }
+    *zoom: 1;
+}
+
+// Clearfix Float
+
+.clearfixfloat() {
+    float: left;
+    width: 100%;
+}
+

@@ -1,32 +1,33 @@
 {
-	"name": "Base",
-	"version": "1.0.0",
-	"keywords": [
-		"base",
-		"grid",
-		"responsive"
-	],
-	"description": "A semantic, lightweight and extensible framework to power the next generation of responsive websites.",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/agency/base.git"
-	},
-	"licenses": [
-		{
-			"type": "Apache-2.0",
-			"url": "http://www.apache.org/licenses/LICENSE-2.0"
-		}
-	],
-	"bugs": {
-		"url": "https://github.com/agency/base/issues"
-	},
-	"devDependencies": {
-		"grunt": "^0.4.5",
-		"grunt-browser-sync": "^1.5.3",
-		"grunt-cli": "^0.1.13",
-		"grunt-contrib-cssmin": "^0.10.0",
-		"grunt-contrib-less": "^0.12.0",
-		"grunt-contrib-watch": "^0.6.1",
-		"grunt-minified": "0.0.6"
-	}
+  "name": "Base",
+  "version": "1.0.0",
+  "keywords": [
+    "base",
+    "grid",
+    "responsive"
+  ],
+  "description": "A semantic, lightweight and extensible framework to power the next generation of responsive websites.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agency/base.git"
+  },
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/agency/base/issues"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.0",
+    "grunt": "^0.4.5",
+    "grunt-browser-sync": "^1.5.3",
+    "grunt-browserify": "^4.0.1",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-less": "^1.1.0",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1"
+  }
 }
