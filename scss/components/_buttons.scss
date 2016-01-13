@@ -18,9 +18,9 @@ input[type="reset"] {
     text-decoration: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    .inline-block();
+     display: inline-block;
 
-    .button-style(@baseColor, @textColor);
+    @include button-style($baseColor, $textColor);
 
     &.huge{
         font-size: 1.25em;
@@ -32,19 +32,19 @@ input[type="reset"] {
 button.primary,
 .button-primary,
 input.button-primary {
-	.button-style(@primaryColor, white);
+	@include button-style($primaryColor, white);
 }
 
 button.secondary,
 .button-secondary,
 input.button-secondary {
-	.button-style(@secondaryColor, white);
+	@include button-style($secondaryColor, white);
 }
 
 button.facebook,
 .button-facebook,
 input.button-facebook {
-	.button-style(@socialFacebook, white);
+	@include button-style($socialFacebook, white);
 	padding-left: 0.6em;
 
 	&.disabled {
@@ -57,7 +57,7 @@ input.button-facebook {
 button.twitter,
 .button-twitter,
 input.button-twitter {
-	.button-style(@socialTwitter, white);
+	@include button-style($socialTwitter, white);
 
 	&.disabled {
 		background: #aebcc7;

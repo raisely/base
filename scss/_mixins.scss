@@ -1,0 +1,211 @@
+
+//
+// Grid
+// --------------------------------------------------
+
+$base-container-columns: map-get(map-get($breakpoint-map, base), container-columns);
+$base-gutter:            map-get(map-get($breakpoint-map, base), gutter);
+$base-max-width:         map-get(map-get($breakpoint-map, base), max-width);
+
+@mixin container($max-width: $base-max-width) {
+	
+	// Default Base max-width
+	max-width: $max-width;
+
+	// Loop through responsive breakpoints and set max-width
+	@each $breakpoint, $map in $breakpoint-map {
+			
+		@if ($breakpoint != 'base') {
+			$max-width: map-get($map, max-width);
+
+			@include respond-to($breakpoint) {
+
+				@if ($max-width) {
+					max-width: $max-width;
+				} @else {
+					// If max-width not specified use 100%;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+
+	@include clearfix;
+	margin: {
+		left: auto;
+		right: auto;
+  	}
+}
+
+@mixin build-column($columns, $container-columns, $offset, $gutter) {
+
+		display: block;
+		float: left;
+
+	@if ($gutter == 0) {
+		width: percentage($columns / $container-columns);
+		margin-left: percentage($offset / $container-columns);
+		margin-right: 0;
+	}
+	@else {
+		width: percentage($columns / $container-columns) - $gutter * 2;
+		margin-left: percentage($offset / $container-columns) + $gutter;
+		margin-right: $gutter;
+	}
+}
+
+@mixin columns($columns: $base-container-columns, $offset: 0, $gutter: $base-gutter) {
+	
+	// Build default Base columns
+	@include build-column($columns, $base-container-columns, $offset, $gutter);
+	
+	// Loop through responsive breakpoints and build columns
+	@each $breakpoint, $map in $breakpoint-map {
+		
+		@if ($breakpoint != 'base') {
+			$container-columns: map-get($map, container-columns);
+			
+			// Check if gutter was set to 0 
+			@if ($gutter != 0) {
+				$gutter: map-get($map, gutter);
+			}
+
+			@if (($columns + $offset) > $container-columns) {
+				$considered-columns: $container-columns;
+			} @else {
+				$considered-columns: $columns;
+			}
+			
+			@if ($offset > $considered-columns) {
+				$offset: 0;
+			}
+
+			@include respond-to($breakpoint) {
+				
+				@if ($gutter != 0) {
+					$gutter: $gutter;
+				}
+				@include build-column($considered-columns, $container-columns, $offset, $gutter);
+			}
+		}
+	}
+}
+
+
+@mixin responsive-columns($breakpoint, $columns, $offset: 0) {
+	
+	@include respond-to($breakpoint) {
+		
+		$container-columns: 12;
+		$gutter: map-get(map-get($breakpoint-map, $breakpoint), gutter);
+
+		@include build-column($columns, $container-columns, $offset, $gutter);
+	}
+	
+}
+
+// Breakpoints
+// --------------------------------------------------
+
+@mixin respond-to($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media #{inspect(map-get($breakpoints, $breakpoint))} {
+			@content;
+		}
+	}
+
+	@else {
+		@error 'No value found for `#{$breakpoint}`. '
+				+ 'Please make sure it is defined in `$breakpoints` map.';
+	}
+}
+
+
+// Useful Visual Elements
+// -------------------
+
+@mixin arrow-up($size: 5px, $color: #000) {
+    width: 0; 
+    height: 0; 
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+}
+@mixin arrow-down($size: 5px, $color: #000) {
+    width: 0; 
+    height: 0; 
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+}
+@mixin arrow-left($size: 5px, $color: #000) {
+    width: 0; 
+    height: 0; 
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent; 
+    border-right: $size solid $color; 
+}
+@mixin arrow-right($size: 5px, $color: #000) {
+    width: 0; 
+    height: 0; 
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+}
+
+// Custom Buttons
+// -------------------
+
+@mixin button-style($customColor, $customTextColor){
+    background: $customColor;
+    color: $customTextColor;
+     &:hover {
+        background: darken($customColor, 3%);
+        text-decoration: none;
+    }
+    
+    &:active {
+        background: darken($customColor, 6%);
+    }
+
+    &.disabled {
+        background: lighten($customColor, 2.5%);
+        color: darken($customColor, 15%);
+        cursor: default;
+    }
+}
+
+
+// Shortcuts
+// -------------------
+
+@mixin size($height, $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin hide-text() {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+}
+
+@mixin font($size: 100%, $weight: normal, $lineHeight: 150%) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lineHeight;
+}
+
+@mixin inline-block() {
+    display: inline-block;
+    zoom: 1;
+    *display: inline; // For IE 7 support
+}
+
+@mixin clearfix {
+  &:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+}

@@ -6,11 +6,11 @@
 	position: relative;
 	height: 100%;
 	cursor: pointer;
-	.inline-block();
+	@include inline-block();
 
 	&:before,
 	&:after {
-		.transition(all 0.2s ease-out);
+		transition: all .2s ease-out;
 		position: absolute;
 		visibility: hidden;
 		opacity: 0;
@@ -18,7 +18,7 @@
 	}
 
 	&:before {
-		.arrow-down(7px, @textColor);
+		@include arrow-down(7px, $textColor);
 		content: '';
 		top: 0;
 		left: 50%;
@@ -27,7 +27,7 @@
 		bottom: -10px;
 	}
 	&:after {
-		.box-sizing(border-box);
+		box-sizing: border-box;
 		content: attr(data-tooltip);
 		padding: 0.5em 0.75em;
 		border-radius: 3px;
@@ -39,8 +39,8 @@
 		margin-top: 10px;
 		width: 15em;
 		line-height: 120%;
-		background: @textColor;
-		color: @baseColor;
+		background: $textColor;
+		color: $baseColor;
 	}
 	&:hover:before,
 	&:hover:after {

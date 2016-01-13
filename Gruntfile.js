@@ -1,79 +1,97 @@
-module.exports = function (grunt) {
+module.exports = grunt => {
 
-    grunt.initConfig({
+	require('load-grunt-tasks')(grunt);
 
-        // live browser injection
-        browserSync: {
-            bsFiles: {
-                src : 'css/site.css'
+	grunt.initConfig({
+		browserSync: {
+			bsFiles: {
+                src: [
+                    'css/*.css',
+                    'js/*.js',
+                    '/*.html'
+                ]
             },
-            options: {
-                watchTask: true
-            }
-        },
+			options: {
+				watchTask: true,
+	            proxy: "base-scss.dev"
+	        }
+		},
+		// watch changes to SASS and JS files
+		watch: {
+			styles: {
+				files: ['scss/**/*'],
+				tasks: ['sass', 'autoprefixer'],
+				options: {
+				   spawn: false
+				}
+			},
+			scripts: {
+				files: ['js/**/*.js'],
+				tasks: ['browserify', 'uglify'],
+				options: {
+				  spawn: false
+				}
+			}
+		},
 
-        // watch changes to less files
-        watch: {
-            styles: {
-                files: ['less/**/*'],
-                tasks: ['less'],
-                options: {
-                   spawn: false
-                }
-            },
-            scripts: {
-                files: ['js/*.js', '!js/*.min.js'],
-                tasks: ['uglify'],
-                options: {
-                  spawn: false
-                }
-            }
-        },
+		sass: {
+			options: {
+				sourceMap: true,
+				sourceMapFilename: 'css/site.min.css.map',
+                sourceMapURL: 'main.min.css.map',
+				outputStyle: 'compressed'
+			},
+			dist: {
+				files: {
+					'css/main.min.css': 'scss/base.scss'
+				}
+			}
+		},
+		autoprefixer: {
+			options: {
+				browsers: ['last 2 versions', 'ie 8', 'ie 9'],
+				map: true
+			},
+			dist: {
+				files: {
+					'css/main.min.css': 'css/main.min.css'
+				}
+			}
+		},
+		browserify: {
+			dist: {
+				options: {
+					browserifyOptions: {
+						debug: true
+					},
+					transform: [
+						["babelify"]
+					]
+				},
+				files: {
+				   "js/site.min.js": ["js/main.js"]
+				}
+			}
+		},
+		uglify: {
+			dist: {
+				files: {
+					'js/site.min.js': ['js/site.min.js']
+				}
+			}
+		}
 
-        // compile set less files
-        less: {
-            development: {
-                options: {
-                    paths: ["less"],
-                    sourceMap: true,
-                    sourceMapFilename: 'css/site.css.map',
-                    sourceMapURL: 'css/site.css.map',
-                    compress: true
-                },
-                files: {
-                    "css/site.css": ["less/*.less", "!less/_*.less"]
-                }
-            }
-        },
+	});
 
-        // Minify Javascript
-        uglify: {
-            my_target: {
-              files: {
-                'js/site.min.js': ['js/*.js', '!js/*.min.js']
-              }
-            }
-        }
+	grunt.registerTask("default", "Prints usage", function () {
+		grunt.log.writeln("");
+		grunt.log.writeln("Building Base");
+		grunt.log.writeln("------------------------");
+		grunt.log.writeln("");
+		grunt.log.writeln("* run 'grunt --help' to get an overview of all commands.");
+		grunt.log.writeln("* run 'grunt dev' to start watching and compiling SASS and JS changes for development.");
+	});
 
-    });
-
-    // Load tasks so we can use them
-    grunt.loadNpmTasks("grunt-contrib-watch");
-    grunt.loadNpmTasks("grunt-contrib-less");
-    grunt.loadNpmTasks('grunt-browser-sync');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-
-
-    // the default task will show the usage
-    grunt.registerTask("default", "Prints usage", function () {
-        grunt.log.writeln("");
-        grunt.log.writeln("Building Base");
-        grunt.log.writeln("------------------------");
-        grunt.log.writeln("");
-        grunt.log.writeln("* run 'grunt --help' to get an overview of all commands.");
-        grunt.log.writeln("* run 'grunt dev' to start watching and compiling LESS changes for development.");
-    });
-
-    grunt.registerTask("dev", ["less", "uglify", "browserSync", "watch"]);
-
-};
+	grunt.registerTask('dev', ['sass', 'autoprefixer', 'browserSync', 'watch']);
+	grunt.registerTask('prod', ['sass', 'autoprefixer', 'browserify', 'uglify']);
+}

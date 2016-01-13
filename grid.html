@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+			<meta charset="utf-8">
+
+			<title>Base</title>
+			<meta name="description" content="">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<link rel="shortcut icon" href="/favicon.png" type="image/png">
+
+			<link rel="stylesheet" href="css/main.min.css">
+	</head>
+
+	<body>
+		<div class="container">
+
+			<header>
+				<h1>Getting Started</h1>
+				<p>This is a basic HTML template to help you get started with <a href="http://base.gs"><strong>Base</strong></a>. Apart from the grid system, Base includes a sensible reset to start styling your site on.</p>
+				<hr>
+			</header>
+
+			<section class="main">
+				
+				<article>
+					<div class="grid-reference">
+						<h2>Quick Reference</h2>
+						<p>These quick guides will help you get started. For more detailed instructions check out the documentation.</p>
+
+						<h3>Grid <em>(_layout.scss)</em></h3>
+						<table>
+							<tr>
+								<th>Mixin</th>
+								<th>Usage</th>
+							</tr>
+							<tr>
+								<td>
+									<code>@include container()</code>
+								</td>
+								<td>
+									<em>Apply to an element wrapping the column structure</em>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<code>@include columns($columns, $offset, $gutter)</code>
+								</td>
+								<td>
+									<code>@include columns(8, 0, 0)</code>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<code>@include responsive-columns($breakpoint, $columns, $offset);</code>
+								</td>
+								<td>
+									<em>Apply to overwrite default breakpoint columns</em>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</article>
+				<article class="grid-examples">
+					<h3>Grid Examples</h3>
+						
+					<div class="grid-container">
+
+						<code>@include container()</code>
+						<div class="box -b1">
+							<code>@include columns(3);</code>
+						</div>
+						<div class="box -b2">
+							<code>@include columns(4);</code>
+						</div>
+						<div class="box -b3">
+							<code>@include columns(5);</code>
+						</div>
+						<div class="box -b4">
+							<code>@include columns(5, 2);</code>
+						</div>
+						<div class="box -b5">
+							<code>@include columns(5);</code>
+						</div>
+						<div class="box -b6">
+							<code>
+								@include columns(6); <br/>
+								<code>@include responsive-columns('mobile', 6);</code>
+							</code>
+						</div>
+						<div class="box -b7">
+							<code>
+								@include columns(6); <br/>
+								<code>@include responsive-columns('mobile', 6);</code>
+							</code>
+						</div>
+						<div class="box -b8">
+							<code>@include columns(5, 0, 0);</code>
+						</div>
+						<div class="box -b9">
+							<code>@include columns(7, 0, 0);</code>
+						</div>
+					</div>
+				
+				</article>
+			</section>
+
+			<footer>
+				<hr>
+				<p>Base is maintained by the team at <a href="https://twitter.com/agencysc">@agencysc</a> and distributed under the <a href="https://github.com/agency/base/blob/master/LICENSE">Apache 2.0 license</a>.</p>
+			</footer>
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="js/site.min.js"></script>
+	</body>
+</html>

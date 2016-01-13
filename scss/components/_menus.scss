@@ -17,20 +17,20 @@ ul[class*="menu-"] {
 		a {
 			padding: 0.75em 1.25em;
 			line-height: 100%;
-			color: @textColor;
+			color: $textColor;
 			text-decoration: none;
 		}
 		&:hover > a,
 		a:hover,
 		a.selected,
 		&.selected a { 
-			background: @baseColor;
+			background: $baseColor;
 		}
 
 		a:active,
 		a.selected:hover,
 		&.selected a:hover { 
-			background: darken(@baseColor, 3%);
+			background: darken($baseColor, 3%);
 		}
 	}
 }
@@ -39,7 +39,7 @@ ul.menu-primary {
 	li {
 		display: inline;
 
-		a { .inline-block(); }
+		a { @include inline-block(); }
 
 		// dropdowns
 
@@ -50,7 +50,7 @@ ul.menu-primary {
 			position: absolute;
 			top: 2.25em;
 			left: 0;
-			border: 1px solid @baseColor;
+			border: 1px solid $baseColor;
 			background: white;
 			z-index: 1000;
 
@@ -71,7 +71,7 @@ ul.menu-primary {
 }
 
 ul.menu-secondary {
-	border: 1px solid @baseColor;
+	border: 1px solid $baseColor;
 
 	li {
 		display: block;

@@ -1,0 +1,80 @@
+//
+// Site Layout
+// --------------------------------------------------
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	@include container();
+}
+
+header {
+	@include columns(12);
+}
+
+article {
+	@include columns(8);
+	@include responsive-columns('tablet', 12);
+}
+
+aside {
+	@include columns(4);
+}
+
+article.grid-examples {
+	@include columns(12);
+	
+	.grid-container {
+		@include container();
+		text-align: center;
+		background: lighten($baseColor, 3.5%);
+		
+		> code {
+			padding: 2%;
+		}
+		code {
+			display: block;
+			background: none;
+			border: none;
+		}
+	}
+
+	.box {
+		margin-bottom: 2%;
+
+		background: $baseColor;
+    	border: 1px solid darken($baseColor, 5%);
+
+		&.-b1 {
+			@include columns(3);
+		}
+		&.-b2 {
+			@include columns(4);
+		}
+		&.-b3 {
+			@include columns(5);
+		}
+		&.-b4 {
+			@include columns(5, 2);
+		}
+		&.-b5 {
+			@include columns(5);
+		}
+		&.-b6, &.-b7  {
+			@include columns(6);
+			@include responsive-columns('mobile', 6);
+		}
+		&.-b8 {
+			@include columns(5, 0, 0);
+		}
+		&.-b9 {
+			@include columns(7, 0, 0);
+		}
+	}
+}
+
+footer {
+	@include columns(12);
+}

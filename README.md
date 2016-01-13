@@ -1,4 +1,4 @@
-[Base 1.0.2](http://base.gs/)
+[Base 2.0.0](http://base.gs/)
 ======
 
 **Base is a semantic, lightweight and extensible framework to power the next generation of responsive websites.**
@@ -16,34 +16,11 @@ Getting started building websites with Base is easy. You can:
 
 When you download Base you'll see a boilerplate `index.html` file and a folder structure like this:
 
-```
-| js/
-    vendor/
-      jquery-1.10.2.min.js
-      modernizr-2.6.2.min.js
-| less/
-    _buttons.less
-    _forms.less
-    _layout.less
-    _mixins.less
-    _menus.less
-    _reset.less
-    _type.less
-    _variables.less
-    base.less (compiles)
-    desktop.less (compiles)
-    mobile.less (compiles)
-    tablet.less (compiles)
-```
-
 **To note:**
-* Files prefixed with ‘_’ do not directly compile.
-* The latest versions of jQuery and Modernizr are included for convenience.
-* Base supports all major modern browsers and IE7+.
 
-## Compiling LESS
+## Compiling SASS
 
-Base requires a [LESS CSS](http://lesscss.org/) compiler to work its magic. This can be done with [Grunt](http://gruntjs.com/) *(instructions below)* or one of these third-party GUI tools:
+This can be done with [Grunt](http://gruntjs.com/) *(instructions below)* or one of these third-party GUI tools:
 
 * [Codekit (OS X)](http://incident57.com/codekit/)
 * [Simpleless (Windows & OS X)](http://wearekiss.com/simpless)
