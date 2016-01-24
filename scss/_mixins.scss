@@ -76,7 +76,7 @@ $base-max-width:         map-get(map-get($breakpoint-map, base), max-width);
 				$considered-columns: $columns;
 			}
 			
-			@if ($offset > $considered-columns) {
+			@if ($offset >= $considered-columns) {
 				$offset: 0;
 			}
 
