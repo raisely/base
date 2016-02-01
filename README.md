@@ -5,6 +5,7 @@
 
 It's created and maintained by the team at [@agencysc](https://twitter.com/agencysc). Head over to [base.gs](http://base.gs) to try it out and follow [@BaseGS](https://twitter.com/basegs) for framework updates.
 
+This is Base V2 (SASS), for Base V1 (LESS) check [v1 Branch](tree/v1)
 ## Get Started
 
 Getting started building websites with Base is easy. You can:
@@ -16,11 +17,33 @@ Getting started building websites with Base is easy. You can:
 
 When you download Base you'll see a boilerplate `index.html` file and a folder structure like this:
 
-**To note:**
+```
+├── js
+│   ├── main.js
+│   ├── modules
+│   │   └── theme.js
+│   └── plugins
+└── scss
+    ├── _fonts.scss
+    ├── _layout.scss
+    ├── _reset.scss
+    ├── _tooltips.scss
+    ├── _type.scss
+    ├── _variables.scss
+    ├── base.scss
+    ├── components
+    │   ├── _buttons.scss
+    │   ├── _forms.scss
+    │   └── _menus.scss
+    └── mixins
+        ├── _grid.scss
+        └── _helpers.scss
+
+```
 
 ## Compiling SASS
 
-This can be done with [Grunt](http://gruntjs.com/) *(instructions below)* or one of these third-party GUI tools:
+This can be done with [Grunt](http://gruntjs.com/) *(instructions below)*, [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) or one of these third-party GUI tools:
 
 * [Codekit (OS X)](http://incident57.com/codekit/)
 * [Simpleless (Windows & OS X)](http://wearekiss.com/simpless)
@@ -33,7 +56,16 @@ This can be done with [Grunt](http://gruntjs.com/) *(instructions below)* or one
 
 1. Install `grunt-cli` with `npm install -g grunt-cli`
 2. Navigate to your Base install and run `npm install` to load dependencies.
-3. Run `grunt dev` to start watching and compiling the 4 main `.less` files.
+3. Run `grunt dev` to start watching and compiling files
+
+`Grunt dev` will run the following tasks:
+- compile `base.scss` into `site.min.css` and create source maps 
+- autoprefix CSS properties that require vendor prefixes
+- Compile Javascript modules with [Broserify](https://github.com/substack/node-browserify) into `site.min.js`
+- Compile ES6 with [Babel](https://babeljs.io/)
+- concatenate and uglify Javascript files
+- watch for changes and automatically synchronise browsers and devices with [Browsersync](https://www.browsersync.io/docs/grunt/)
+
 
 ## Using Base
 
