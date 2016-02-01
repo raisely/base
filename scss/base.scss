@@ -2,7 +2,9 @@
 @import 'reset.scss';
 
 @import 'variables.scss';
-@import 'mixins.scss';
+
+@import 'mixins/helpers.scss';
+@import 'mixins/grid.scss';
 
 @import 'layout.scss';
 @import 'type.scss';
