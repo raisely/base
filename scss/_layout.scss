@@ -64,7 +64,7 @@ article.grid-examples {
 		}
 		&.-b6, &.-b7  {
 			@include columns(6);
-			@include responsive-columns('mobile', 6);
+			@include responsive-columns('mobile', 0.5);
 		}
 		&.-b8 {
 			@include columns(5, 0, 0);

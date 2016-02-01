@@ -94,9 +94,10 @@ $base-max-width:         map-get(map-get($breakpoint-map, base), max-width);
 
 @mixin responsive-columns($breakpoint, $columns, $offset: 0) {
 	
+	$container-columns: map-get(map-get($breakpoint-map, $breakpoint), container-columns);
+
 	@include respond-to($breakpoint) {
-		
-		$container-columns: 12;
+
 		$gutter: map-get(map-get($breakpoint-map, $breakpoint), gutter);
 
 		@include build-column($columns, $container-columns, $offset, $gutter);
