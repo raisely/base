@@ -8,12 +8,12 @@ module.exports = grunt => {
                 src: [
                     'css/*.css',
                     'js/*.js',
-                    '/*.html'
+                    '*.html'
                 ]
             },
 			options: {
 				watchTask: true,
-	            proxy: "base-scss.dev"
+	            proxy: "base.dev"
 	        }
 		},
 		// watch changes to SASS and JS files

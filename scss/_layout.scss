@@ -23,29 +23,45 @@ aside {
 	@include columns(4);
 }
 
+//
+// Grid
+// --------------------------------------------------
+
 article.grid-examples {
 	@include columns(12);
 	
 	.grid-container {
 		@include container();
-		text-align: center;
-		background: lighten($baseColor, 3.5%);
 		
-		> code {
-			padding: 2%;
-		}
+		text-align: center;
+		background: $bgColorLight;
+		
 		code {
 			display: block;
+			font-size: 0.94rem;
 			background: none;
 			border: none;
+		}
+
+		> code {
+			padding: 20px;
 		}
 	}
 
 	.box {
+		position: relative;
+		
+		padding: 10px;
+		height: 120px;
 		margin-bottom: 2%;
+		
 
-		background: $baseColor;
-    	border: 1px solid darken($baseColor, 5%);
+		background: $bgColor;
+		border: 1px solid darken($bgColor, 3%);
+		
+		@include respond-to('mobile') {
+			height: auto;
+		}
 
 		&.-b1 {
 			@include columns(3);
@@ -62,15 +78,53 @@ article.grid-examples {
 		&.-b5 {
 			@include columns(5);
 		}
-		&.-b6, &.-b7  {
+		&.-b6 {
+			@include columns(9);
+			
+			code {
+				padding-bottom: 10px;
+			}
+
+			.-b6-1, .-b6-2 {
+				@include columns(6);
+				height: 50px;
+				background: darken($bgColor, 6%);
+				border: 1px solid darken($bgColor, 9%);
+			}
+		}
+		&.-b7 {
+			@include columns(3);
+		}
+
+		&.-b8 {
+			@include columns(9, 0, 10%);
+		}
+		&.-b9 {
+			@include columns(3);
+		}
+		&.-b10, &.-b11  {
 			@include columns(6);
 			@include responsive-columns('mobile', 0.5);
 		}
-		&.-b8 {
+		&.-b12 {
 			@include columns(5, 0, 0);
+			@include responsive-columns('mobile', 0.4, 0, 0);
 		}
-		&.-b9 {
+		&.-b13 {
 			@include columns(7, 0, 0);
+			@include responsive-columns('mobile', 0.6, 0, 0);
+		}
+
+		&.-tall {
+			@include respond-to('mobile') {
+				height: 200px;
+			}
+
+			code {
+				@include respond-to('mobile') {
+					font-size: 0.8rem;
+				}
+			}
 		}
 	}
 }

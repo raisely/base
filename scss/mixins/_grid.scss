@@ -114,8 +114,6 @@ $base-max-width:         map-get(map-get($grid-settings, base), max-width);
 			$c-offset:  get-offset($c-columns, $default-container-columns, $offset);
 
 			@include respond-to($breakpoint) {
-				
-				top: $c-columns;
 
 				@include build-column($c-columns, $default-container-columns, $c-offset, $c-gutter);
 			}
@@ -128,11 +126,10 @@ $base-max-width:         map-get(map-get($grid-settings, base), max-width);
 	
 	$default-container-columns: map-get(map-get($grid-settings, $breakpoint), container-columns);
 	$default-gutter:            map-get(map-get($grid-settings, $breakpoint), gutter);
-	
-	$c-gutter:  get-gutter($gutter, $default-gutter);
 
 	@include respond-to($breakpoint) {
-
+		
+		$c-gutter:  get-gutter($gutter, $default-gutter);
 		@include build-column($columns, $default-container-columns, $offset, $c-gutter);
 	}
 }

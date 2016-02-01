@@ -55,7 +55,7 @@
 							</tr>
 							<tr>
 								<td>
-									<code>@include responsive-columns($breakpoint, $columns, $offset);</code>
+									<code>@include responsive-columns($breakpoint, $columns, $offset, $gutter);</code>
 								</td>
 								<td>
 									<em>Apply to overwrite default breakpoint columns</em>
@@ -64,8 +64,12 @@
 						</table>
 					</div>
 				</article>
+				<article>
+					<h3>Grid Settings<em>(_variables.scss)</em></h3>
+					<p>Grid breakpoints and settings are set in <code>_variables.scss</code></p>
+				</article>
 				<article class="grid-examples">
-					<h3>Grid Examples</h3>
+					<h3>Grid Examples<em>(_layout.scss)</em></h3>
 						
 					<div class="grid-container">
 
@@ -85,23 +89,49 @@
 						<div class="box -b5">
 							<code>@include columns(5);</code>
 						</div>
+
 						<div class="box -b6">
-							<code>
-								@include columns(6); <br/>
-								<code>@include responsive-columns('mobile', 0.5);</code>
-							</code>
+							<code>@include columns(9);</code>
+							<div class="box -b6-1">
+								<code>@include columns(6);</code>
+							</div>
+							<div class="box -b6-2">
+								<code>@include columns(6);</code>
+							</div>
 						</div>
 						<div class="box -b7">
+							<code>@include columns(3);</code>
+						</div>
+
+						<div class="box -b8">
 							<code>
-								@include columns(6); <br/>
+								@include columns(9, 0, 10%);
+							</code>
+						</div>
+						<div class="box -b9">
+							<code>
+								<code>@include columns(3);</code>
+							</code>
+						</div>
+
+						<div class="box -b10 -tall">
+							<code>@include columns(6);</code>
+							<code>@include responsive-columns('mobile', 0.5);</code>
+						</div>
+						<div class="box -b11 -tall">
+							<code>
+								<code>@include columns(6);</code>
 								<code>@include responsive-columns('mobile', 0.5);</code>
 							</code>
 						</div>
-						<div class="box -b8">
+
+						<div class="box -b12 -tall">
 							<code>@include columns(5, 0, 0);</code>
+							<code>@include responsive-columns('mobile', 0.4, 0, 0);</code>
 						</div>
-						<div class="box -b9">
+						<div class="box -b13 -tall">
 							<code>@include columns(7, 0, 0);</code>
+							<code>@include responsive-columns('mobile', 0.6, 0, 0);</code>
 						</div>
 					</div>
 				
