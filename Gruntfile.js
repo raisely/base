@@ -38,12 +38,12 @@ module.exports = grunt => {
 			options: {
 				sourceMap: true,
 				sourceMapFilename: 'css/site.min.css.map',
-                sourceMapURL: 'main.min.css.map',
+                sourceMapURL: 'site.min.css.map',
 				outputStyle: 'compressed'
 			},
 			dist: {
 				files: {
-					'css/main.min.css': 'scss/base.scss'
+					'css/site.min.css': 'scss/base.scss'
 				}
 			}
 		},
@@ -54,7 +54,7 @@ module.exports = grunt => {
 			},
 			dist: {
 				files: {
-					'css/main.min.css': 'css/main.min.css'
+					'css/site.min.css': 'css/site.min.css'
 				}
 			}
 		},
@@ -69,7 +69,7 @@ module.exports = grunt => {
 					]
 				},
 				files: {
-				   "js/site.min.js": ["js/main.js"]
+				   "js/site.min.js": ["js/site.js"]
 				}
 			}
 		},
