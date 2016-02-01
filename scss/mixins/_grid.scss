@@ -1,10 +1,45 @@
 //
+// Grid Functions
+// --------------------------------------------------
+
+// Checks if gutter is set
+// Returns default gutter value if gutter is not set
+@function get-gutter($gutter, $default-gutter){
+	
+	@if ($gutter == null) {
+		@return $default-gutter;
+	} @else {
+		@return	$gutter;
+	}
+}
+
+// Checks if columns should be set to default columns
+@function get-columns($columns, $default-columns, $offset) {
+	
+	@if (($columns + $offset) > $default-columns) {
+		@return $default-columns;
+	} @else {
+		@return $columns;
+	}
+}
+
+@function get-offset($columns, $default-columns, $offset) {
+
+	@if ($offset >= $columns) {
+		@return 0;
+	} @else {
+		@return $offset;
+	}
+}
+
+
+//
 // Grid
 // --------------------------------------------------
 
-$base-container-columns: map-get(map-get($breakpoint-map, base), container-columns);
-$base-gutter:            map-get(map-get($breakpoint-map, base), gutter);
-$base-max-width:         map-get(map-get($breakpoint-map, base), max-width);
+$base-container-columns: map-get(map-get($grid-settings, base), container-columns);
+$base-gutter:            map-get(map-get($grid-settings, base), gutter);
+$base-max-width:         map-get(map-get($grid-settings, base), max-width);
 
 @mixin container($max-width: $base-max-width) {
 	
@@ -12,10 +47,10 @@ $base-max-width:         map-get(map-get($breakpoint-map, base), max-width);
 	max-width: $max-width;
 
 	// Loop through responsive breakpoints and set max-width
-	@each $breakpoint, $map in $breakpoint-map {
+	@each $breakpoint, $breakpoint-settings in $grid-settings {
 			
 		@if ($breakpoint != 'base') {
-			$max-width: map-get($map, max-width);
+			$max-width: map-get($breakpoint-settings, max-width);
 
 			@include respond-to($breakpoint) {
 
@@ -36,6 +71,7 @@ $base-max-width:         map-get(map-get($breakpoint-map, base), max-width);
   	}
 }
 
+// Builds columns
 @mixin build-column($columns, $container-columns, $offset, $gutter) {
 
 		display: block;
@@ -53,44 +89,31 @@ $base-max-width:         map-get(map-get($breakpoint-map, base), max-width);
 	}
 }
 
+
 @mixin columns($columns: $base-container-columns, $offset: 0, $gutter: null) {
 	
-	@if $gutter == null {
-	    $gutter: $base-gutter;
-	}
+	// Build default base columns
+	$c-gutter: get-gutter($gutter, $base-gutter);
+	@include build-column($columns, $base-container-columns, $offset, $c-gutter);
 	
-	// Default Base columns
-	@include build-column($columns, $base-container-columns, $offset, $gutter);
 	
-	// Loop through responsive breakpoints and build columns
-	@each $breakpoint, $map in $breakpoint-map {
+	// Build other breakpoint columns
+
+	// Loop through grid settings and build breakpoint columns
+	@each $breakpoint, $breakpoint-settings in $grid-settings {
 		
 		@if ($breakpoint != 'base') {
-			$container-columns: map-get($map, container-columns);
 			
-			// Check if gutter was set to 0 
-			@if ($gutter == null) {
-				$considered-gutter: map-get($map, gutter);
-			} @else {
-				$considered-gutter: $gutter;
-			}
+			$default-gutter:  map-get($breakpoint-settings, gutter);
+			$default-columns: map-get($breakpoint-settings, container-columns);
 
-			@if (($columns + $offset) > $container-columns) {
-				$considered-columns: $container-columns;
-			} @else {
-				$considered-columns: $columns;
-			}
-			
-			@if ($offset >= $considered-columns) {
-				$offset: 0;
-			}
+			$c-gutter:  get-gutter($gutter, $default-gutter);
+			$c-columns: get-columns($columns, $default-columns, $offset);
+			$c-offset:  get-offset($columns, $default-columns, $offset);
 
 			@include respond-to($breakpoint) {
 				
-				@if ($gutter != 0) {
-					$gutter: $gutter;
-				}
-				@include build-column($considered-columns, $container-columns, $offset, $considered-gutter);
+				@include build-column($c-columns, $default-columns, $c-offset, $c-gutter);
 			}
 		}
 	}
@@ -99,11 +122,11 @@ $base-max-width:         map-get(map-get($breakpoint-map, base), max-width);
 
 @mixin responsive-columns($breakpoint, $columns, $offset: 0) {
 	
-	$container-columns: map-get(map-get($breakpoint-map, $breakpoint), container-columns);
+	$container-columns: map-get(map-get($grid-settings, $breakpoint), container-columns);
 
 	@include respond-to($breakpoint) {
 
-		$gutter: map-get(map-get($breakpoint-map, $breakpoint), gutter);
+		$gutter: map-get(map-get($grid-settings, $breakpoint), gutter);
 
 		@include build-column($columns, $container-columns, $offset, $gutter);
 	}
