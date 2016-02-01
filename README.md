@@ -5,7 +5,7 @@
 
 It's created and maintained by the team at [@agencysc](https://twitter.com/agencysc). Head over to [base.gs](http://base.gs) to try it out and follow [@BaseGS](https://twitter.com/basegs) for framework updates.
 
-This is Base V2 (SASS), for Base V1 (LESS) check [v1 Branch](tree/v1)
+This is Base V2 (SASS), for Base V1 (LESS) check [v1 Branch](https://github.com/agency/base/tree/v1)
 ## Get Started
 
 Getting started building websites with Base is easy. You can:
