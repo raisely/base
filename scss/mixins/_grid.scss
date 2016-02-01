@@ -14,18 +14,20 @@
 }
 
 // Checks if columns should be set to default columns
-@function get-columns($columns, $default-columns, $offset) {
+@function get-columns($columns, $default-container-columns, $offset) {
 	
-	@if (($columns + $offset) > $default-columns) {
-		@return $default-columns;
+	@if (($columns + $offset) > $default-container-columns) {
+		@return $default-container-columns;
 	} @else {
 		@return $columns;
 	}
 }
 
-@function get-offset($columns, $default-columns, $offset) {
+@function get-offset($columns, $default-container-columns, $offset) {
 
-	@if ($offset >= $columns) {
+	@if (($columns + $offset) > $default-container-columns) {
+		@return 0;
+	} @else if ($offset >= $columns) {
 		@return 0;
 	} @else {
 		@return $offset;
@@ -43,10 +45,10 @@ $base-max-width:         map-get(map-get($grid-settings, base), max-width);
 
 @mixin container($max-width: $base-max-width) {
 	
-	// Default Base max-width
+	// Build default base container
 	max-width: $max-width;
 
-	// Loop through responsive breakpoints and set max-width
+	// Loop through grid settings and build breakpoint container
 	@each $breakpoint, $breakpoint-settings in $grid-settings {
 			
 		@if ($breakpoint != 'base') {
@@ -104,33 +106,35 @@ $base-max-width:         map-get(map-get($grid-settings, base), max-width);
 		
 		@if ($breakpoint != 'base') {
 			
+			$default-container-columns: map-get($breakpoint-settings, container-columns);
 			$default-gutter:  map-get($breakpoint-settings, gutter);
-			$default-columns: map-get($breakpoint-settings, container-columns);
 
 			$c-gutter:  get-gutter($gutter, $default-gutter);
-			$c-columns: get-columns($columns, $default-columns, $offset);
-			$c-offset:  get-offset($columns, $default-columns, $offset);
+			$c-columns: get-columns($columns, $default-container-columns, $offset);
+			$c-offset:  get-offset($c-columns, $default-container-columns, $offset);
 
 			@include respond-to($breakpoint) {
 				
-				@include build-column($c-columns, $default-columns, $c-offset, $c-gutter);
+				top: $c-columns;
+
+				@include build-column($c-columns, $default-container-columns, $c-offset, $c-gutter);
 			}
 		}
 	}
 }
 
 
-@mixin responsive-columns($breakpoint, $columns, $offset: 0) {
+@mixin responsive-columns($breakpoint, $columns, $offset: 0, $gutter: null) {
 	
-	$container-columns: map-get(map-get($grid-settings, $breakpoint), container-columns);
+	$default-container-columns: map-get(map-get($grid-settings, $breakpoint), container-columns);
+	$default-gutter:            map-get(map-get($grid-settings, $breakpoint), gutter);
+	
+	$c-gutter:  get-gutter($gutter, $default-gutter);
 
 	@include respond-to($breakpoint) {
 
-		$gutter: map-get(map-get($grid-settings, $breakpoint), gutter);
-
-		@include build-column($columns, $container-columns, $offset, $gutter);
+		@include build-column($columns, $default-container-columns, $offset, $c-gutter);
 	}
-	
 }
 
 // Breakpoints
