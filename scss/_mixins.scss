@@ -1,4 +1,3 @@
-
 //
 // Grid
 // --------------------------------------------------
@@ -54,9 +53,13 @@ $base-max-width:         map-get(map-get($breakpoint-map, base), max-width);
 	}
 }
 
-@mixin columns($columns: $base-container-columns, $offset: 0, $gutter: $base-gutter) {
+@mixin columns($columns: $base-container-columns, $offset: 0, $gutter: null) {
 	
-	// Build default Base columns
+	@if $gutter == null {
+	    $gutter: $base-gutter;
+	}
+	
+	// Default Base columns
 	@include build-column($columns, $base-container-columns, $offset, $gutter);
 	
 	// Loop through responsive breakpoints and build columns
@@ -66,8 +69,10 @@ $base-max-width:         map-get(map-get($breakpoint-map, base), max-width);
 			$container-columns: map-get($map, container-columns);
 			
 			// Check if gutter was set to 0 
-			@if ($gutter != 0) {
-				$gutter: map-get($map, gutter);
+			@if ($gutter == null) {
+				$considered-gutter: map-get($map, gutter);
+			} @else {
+				$considered-gutter: $gutter;
 			}
 
 			@if (($columns + $offset) > $container-columns) {
@@ -85,7 +90,7 @@ $base-max-width:         map-get(map-get($breakpoint-map, base), max-width);
 				@if ($gutter != 0) {
 					$gutter: $gutter;
 				}
-				@include build-column($considered-columns, $container-columns, $offset, $gutter);
+				@include build-column($considered-columns, $container-columns, $offset, $considered-gutter);
 			}
 		}
 	}
