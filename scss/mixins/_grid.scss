@@ -47,6 +47,11 @@ $base-max-width:         map-get(map-get($grid-settings, base), max-width);
 	
 	// Build default base container
 	max-width: $max-width;
+	margin: {
+		left: auto;
+		right: auto;
+  	}
+  	@include clearfix();
 
 	// Loop through grid settings and build breakpoint container
 	@each $breakpoint, $breakpoint-settings in $grid-settings {
@@ -65,12 +70,6 @@ $base-max-width:         map-get(map-get($grid-settings, base), max-width);
 			}
 		}
 	}
-
-	@include clearfix;
-	margin: {
-		left: auto;
-		right: auto;
-  	}
 }
 
 // Builds columns
