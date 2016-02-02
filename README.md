@@ -58,7 +58,7 @@ This can be done with [Grunt](http://gruntjs.com/) *(instructions below)*, [Gulp
 2. Navigate to your Base install and run `npm install` to load dependencies.
 3. Run `grunt dev` to start watching and compiling files
 
-`Grunt dev` will run the following tasks:
+`grunt dev` will run the following tasks:
 - Compile `base.scss` into `site.min.css` and create source maps 
 - Autoprefix CSS properties that require vendor prefixes
 - Compile Javascript modules with [Browserify](https://github.com/substack/node-browserify) into `site.min.js`
@@ -70,12 +70,11 @@ This can be done with [Grunt](http://gruntjs.com/) *(instructions below)*, [Gulp
 
 ## Using Base
 
-Base is easiest to learn by playing with the code. The default `index.html` file contains a quick reference for the reset and grid mixins and `grig.html` contains grid examples. For more detail view the instructions below. 
+Base is easiest to learn by playing with the code. The default `index.html` file contains a quick reference for the reset and grid mixins and `grid.html` contains grid examples. For more detail view the instructions below. 
 
 ### Grid 
 
-Base grid system allows to build responsive layouts without having to overwrite column styles for every breakpoint. Based on your grid settings Base will automatically generate column styles for your breakpoints. 
-
+Base grid system allows you to build responsive layouts without having to overwrite column styles for every breakpoint. Based on your grid settings Base will automatically generate column styles and grid widths for all of your your breakpoints, responding to different grid configurations (ie. 12 columns on desktop and 1 on mobile). 
 
 Grid settings can be found and updated in `_variables.scss`. You can add as many breakpoints as you like!
 
@@ -108,10 +107,9 @@ $grid-settings: (
 );
 ```
 
-Use `@include container();` to create centered container.
+Use `@include container();` to create centered container with an optional `max width` set in the breakpoint.
 
-`Base` and other breakpoint (mobile, tablet, etc) styles are automatically generated based on your grid settings. 
-
+`Base` and other breakpoints (mobile, tablet, etc) styles are automatically generated based on your grid settings. 
 
 ```scss
 .container {
@@ -146,7 +144,7 @@ container {                   /* Base */
 
 Use `@include columns($columns)` to specify the number of columns your element should take. 
 
-`Base` and other breakpoint (mobile, tablet, etc) styles are automatically generated based on your grid settings.
+`Base` and other breakpointx (mobile, tablet, etc) styles are automatically generated based on your grid settings.
 
 
 ```scss
@@ -218,9 +216,7 @@ For example, to create two 50% columns on mobile view with `$container-columns: 
 }
 ```
 
-
 For more grid examples check `grid.html`
-
 
 ## Bugs & Feature Requests
 
@@ -235,9 +231,10 @@ Base is maintained through the `master` branch, bundled into releases as require
 ## Authors & Key Contributors
 
 * [Tom Maitland](http://tommaitland.net) / [@tommaitland](https://twitter.com/tommaitland)
+* [Katia Shatoba](https://github.com/katiaeirin) / [@KatiaEirin](https://twitter.com/KatiaEirin)
 * [Scott Sanders](https://twitter.com/scottsanders)
 * [Murray Bunton](http://murraybunton.com/) / [@murraybunton](https://twitter.com/murraybunton)
 
 ## Copyright
 
-Copyright 2013 [Agency Strategic Creative](http://agency.sc/) under the [Apache 2.0 license](https://github.com/agency/base/blob/master/LICENSE).
+Copyright 2015 [Agency Strategic Creative](http://agency.sc/) under the [Apache 2.0 license](https://github.com/agency/base/blob/master/LICENSE).
