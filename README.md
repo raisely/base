@@ -74,7 +74,7 @@ Base is easiest to learn by playing with the code. The default `index.html` file
 
 ### Grid 
 
-Base grid system allows you to build responsive layouts without having to overwrite column styles for every breakpoint. Based on your grid settings Base will automatically generate column styles and grid widths for all of your your breakpoints, responding to different grid configurations (ie. 12 columns on desktop and 1 on mobile). 
+Base grid system allows you to build responsive layouts without having to overwrite column styles for every breakpoint. Based on your grid settings Base will automatically generate column styles and grid widths for all of your breakpoints, responding to different grid configurations (ie. 12 columns on desktop and 1 on mobile). 
 
 Grid settings can be found and updated in `_variables.scss`. You can add as many breakpoints as you like!
 
@@ -144,7 +144,7 @@ container {                   /* Base */
 
 Use `@include columns($columns)` to specify the number of columns your element should take. 
 
-`Base` and other breakpointx (mobile, tablet, etc) styles are automatically generated based on your grid settings.
+`Base` and other breakpoints (mobile, tablet, etc) styles are automatically generated based on your grid settings.
 
 
 ```scss
