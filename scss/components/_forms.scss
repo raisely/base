@@ -56,7 +56,7 @@ input[type="color"] {
 	border: 1px solid $baseColor;
 	outline: none;
 	font-family: inherit;
-	font-size: 1em;
+	font-size: 1rem;
 	border-radius: 0;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -80,7 +80,7 @@ input[type="file"] {
 	padding: 0.125em;
 	margin: 0 0 0.625em;
 	font-family: inherit;
-	font-size: 1em;
+	font-size: 1rem;
 	-webkit-appearance: none;
 	border-radius: 0;
 	line-height: 100%;
@@ -99,5 +99,5 @@ meter {
 	padding: 0.125em;
 	margin: 0 0 0.625em;
 	font-family: inherit;
-	font-size: 1em;
+	font-size: 1rem;
 }

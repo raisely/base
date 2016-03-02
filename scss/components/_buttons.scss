@@ -10,7 +10,7 @@ input[type="reset"] {
     padding: 0.625em 1.25em;
     margin: 0 0 0.625em;
     font-family: inherit;
-    font-size: 1em;
+    font-size: 1rem;
     border: none;
     outline: none;
     line-height: 100%;
@@ -23,7 +23,7 @@ input[type="reset"] {
     @include button-style($baseColor, $textColor);
 
     &.huge{
-        font-size: 1.25em;
+        font-size: 1.25rem;
         font-weight: 600;
         padding: 0.625em 2em;
     }
