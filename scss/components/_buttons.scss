@@ -16,9 +16,8 @@ input[type="reset"] {
     line-height: 100%;
     cursor: pointer;
     text-decoration: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-     display: inline-block;
+    appearance: none;
+    display: inline-block;
 
     @include button-style($baseColor, $textColor);
 

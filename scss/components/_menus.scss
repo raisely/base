@@ -37,9 +37,9 @@ ul[class*="menu-"] {
 
 ul.menu-primary {
 	li {
-		display: inline;
+		display: inline-block;
 
-		a { @include inline-block(); }
+		a { display: inline-block; }
 
 		// dropdowns
 
@@ -65,7 +65,7 @@ ul.menu-primary {
 		}
 		&:hover ul,
 		ul:hover {
-			display: inline;
+			display: inline-block;
 		}
 	}
 }

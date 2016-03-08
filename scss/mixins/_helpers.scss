@@ -73,12 +73,6 @@
     line-height: $lineHeight;
 }
 
-@mixin inline-block() {
-    display: inline-block;
-    zoom: 1;
-    *display: inline; // For IE 7 support
-}
-
 @mixin clearfix {
   &:after {
 	content: "";
@@ -111,4 +105,11 @@
 	position: relative;
 	top: auto;
 	transform: none;
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
 }

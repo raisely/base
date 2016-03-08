@@ -6,7 +6,7 @@
 	position: relative;
 	height: 100%;
 	cursor: pointer;
-	@include inline-block();
+	display: inline-block;
 
 	&:before,
 	&:after {
