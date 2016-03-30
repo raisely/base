@@ -10,14 +10,6 @@ body {
 
 	font-size: 100%;
 	line-height: 1.4;
-
-	@include respond-to('tablet') {
-		font-size: 100%;
-	}
-
-	@include respond-to('mobile') {
-		font-size: 100%;
-	}
 }
 
 

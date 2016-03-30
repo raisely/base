@@ -29,13 +29,13 @@ aside {
 
 article.grid-examples {
 	@include columns(12);
-	
+
 	.grid-container {
 		@include container();
-		
+
 		text-align: center;
-		background: $bgColorLight;
-		
+		background: $baseColor;
+
 		code {
 			display: block;
 			font-size: 0.94rem;
@@ -50,15 +50,15 @@ article.grid-examples {
 
 	.box {
 		position: relative;
-		
+
 		padding: 10px;
 		height: 120px;
 		margin-bottom: 2%;
-		
 
-		background: $bgColor;
-		border: 1px solid darken($bgColor, 3%);
-		
+
+		background: darken($baseColor, 5%);
+		border: 1px solid darken($baseColor, 6%);
+
 		@include respond-to('mobile') {
 			height: auto;
 		}
@@ -80,7 +80,7 @@ article.grid-examples {
 		}
 		&.-b6 {
 			@include columns(9);
-			
+
 			code {
 				padding-bottom: 10px;
 			}
@@ -88,8 +88,8 @@ article.grid-examples {
 			.-b6-1, .-b6-2 {
 				@include columns(6);
 				height: 50px;
-				background: darken($bgColor, 6%);
-				border: 1px solid darken($bgColor, 9%);
+				background: darken($baseColor, 9%);
+				border: 1px solid darken($baseColor, 10%);
 			}
 		}
 		&.-b7 {
