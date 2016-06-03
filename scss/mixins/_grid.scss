@@ -27,8 +27,6 @@
 
 	@if (($columns + $offset) > $default-container-columns) {
 		@return 0;
-	} @else if ($offset >= $columns) {
-		@return 0;
 	} @else {
 		@return $offset;
 	}
