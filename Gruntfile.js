@@ -65,8 +65,10 @@ module.exports = grunt => {
 						debug: true
 					},
 					transform: [
-						["babelify"]
-					]
+                        ["babelify",{
+                            presets: ['es2015']
+                        }]
+                    ]
 				},
 				files: {
 				   "js/site.min.js": ["js/site.js"]

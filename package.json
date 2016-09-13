@@ -31,5 +31,8 @@
     "grunt-notify": "^0.4.3",
     "grunt-sass": "^1.1.0",
     "load-grunt-tasks": "^3.4.0"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.14.0"
   }
 }
