@@ -1,0 +1,9 @@
+// Some Examples
+
+
+.show-hide-example {
+	display: none;
+	&.active {
+		display: block;
+	}
+}

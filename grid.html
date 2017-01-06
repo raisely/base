@@ -12,7 +12,7 @@
 
 			<link rel="shortcut icon" href="/favicon.png" type="image/png">
 
-			<link rel="stylesheet" href="css/site.min.css">
+			<link rel="stylesheet" href="dist/css/site.css">
 	</head>
 
 	<body>
@@ -23,6 +23,34 @@
 				<p>This is a basic HTML template to help you get started with <a href="http://base.gs"><strong>Base</strong></a>. Apart from the grid system, Base includes a sensible reset to start styling your site on.</p>
 				<hr>
 			</header>
+			
+			Form class names should always be prefixed with `form-`. When form name consists of two names, concatenate them without dashes or underscores: 
+			
+			```html
+				<form class="form-volunteersubmission"></form>
+			```
+
+			Form `input` and `label` should be wrapped in a div that has `field` class name. Use variant classnames for custom fields like `-select` or `-country`. Use variant classnames for fields width - like `-full`, `-half` or`third`.
+			
+			```html
+				<form class="form-volunteersubmission">
+					<div class="field -half">
+						<input>
+					</div>
+					<div class="field -half">
+						<input>
+					</div>
+					<div class="field -full -address">
+						<input>
+					</div>
+					<div class="field -third -country">
+						<input>
+					</div>
+				</form>
+			```
+
+			<form class=”form-FORMNAME”> // should be form-ONEWORD. Ie. form-volunteersubmission
+			</form>
 
 			<section class="main">
 				
@@ -71,7 +99,7 @@
 				<article class="grid-examples">
 					<h3>Grid Examples<em>(_layout.scss)</em></h3>
 						
-					<div class="grid-container">
+					<div class="container">
 
 						<code>@include container()</code>
 						<div class="box -b1">

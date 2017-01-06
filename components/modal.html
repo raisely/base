@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+			<meta charset="utf-8">
+
+			<title>Modal | Base</title>
+			<meta name="description" content="">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<link rel="shortcut icon" href="/favicon.png" type="image/png">
+
+			<link rel="stylesheet" href="/dist/css/site.css">
+	</head>
+
+	<body>
+
+		<section>
+
+			<div class="container">
+
+				<h1>Modal</h1>
+				<p>A simple modal.</p>
+
+				<a href="#" class="button-primary" data-modal-target="the_modal_id" aria-label="Open Modal">Launch the Modal</a>
+
+			</div>
+
+		</section>
+
+
+		<section class="modal" data-modal="the_modal_id">
+
+			<a class="modal-close" href="#close" aria-label="Close Modal"><span class="icon-cancel"></span></a>
+
+			<div class="container">
+
+				<div class="modal-content-wrap">
+
+					<div class="modal-content">
+
+						
+						<h3>My Modal Title</h3>
+
+						<p>This is my modal content</p>
+
+						<img src="https://images.unsplash.com/photo-1431512284068-4c4002298068?dpr=1&auto=format&fit=crop&w=1500&h=998&q=80&cs=tinysrgb&crop=">
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<section>
+
+			<div class="container">
+
+				<h1>How To</h1>
+				<p></p>
+<code>
+<pre>
+
+/**
+ * The HTML for the modal
+ */
+
+&lt;section class="modal" data-modal="the_modal_id"&gt;
+
+	&lt;a class="modal-close" href="#close" aria-label="Close Modal">&lt;span class="icon-cancel"&gt;&lt;/span&gt;&lt;/a&gt;
+
+	&lt;div class="container"&gt;
+
+		&lt;div class="modal-content-wrap"&gt;
+
+			&lt;div class="modal-content"&gt;
+
+				This is my modal content...
+
+			&lt;/div&gt;
+
+		&lt;/div&gt;
+
+	&lt;/div&gt;
+
+&lt;/section&gt;
+
+
+/**
+ * The Button That Triggers the modal
+ */
+
+&lt;a href="#" class="button-primary" data-modal-target="the_modal_id" aria-label="Open Modal"&gt;Launch the Modal&lt;/a&gt;
+
+
+</pre>
+
+</code>
+
+
+
+			</div>
+
+		</section>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="/dist/js/site.js"></script>
+	</body>
+</html>

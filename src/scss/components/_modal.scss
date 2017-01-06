@@ -1,0 +1,217 @@
+/**
+ * Modal Component
+ * --------------------------------
+ * A simple inline modal for opening boxes.
+ */
+
+.modal {
+
+	display: none;
+	float:left;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-color: rgba(0,0,0,0.75);
+	z-index: 10000;
+	text-align: center;
+	opacity: 0;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+
+
+	.modal-content-wrap {
+		
+		background-color: white;
+		position: relative;
+		top: 0px;
+		opacity: 0;
+		float:left;
+		width: 100%;
+
+	}
+
+	.modal-close {
+		position: absolute;
+		color: white;
+		transition: all;
+		opacity: 1;
+		top: 1em;
+		right: 1em;
+
+		&:hover { opacity:0.5; }
+	}
+
+	.modal-back-button {
+		margin-bottom: -4em;
+		a {}
+	}
+
+	&.open {
+		display: block;
+		opacity: 1;
+		animation-name: modal_display_background;
+		animation-duration: 500ms;
+		animation-timing-function: ease;
+
+		.modal-content-wrap {
+			opacity: 1;
+			animation-name: modal_display_content;
+			animation-duration: 500ms;
+			animation-timing-function: ease;
+		}
+	}
+
+	&.closing {
+		opacity: 0;
+		animation-name: modal_close_background;
+		animation-duration: 300ms;
+		animation-timing-function: ease;
+
+		.modal-content-wrap {
+			opacity: 0;
+			animation-name: modal_close_content;
+			animation-duration: 300ms;
+			animation-timing-function: ease;
+		}
+
+	}
+}
+
+// ------------------------------------
+//
+// Modal Styles Editable
+//
+// ------------------------------------
+
+.modal {
+
+
+	.modal-content-wrap {
+		width: 80%;
+		margin-left: 10%;
+		margin-right: auto;
+		@include center-vertically();
+		left: 0%;
+
+		img { width: 100%; }
+	}
+
+	h3 {
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+		float: left;
+		width: 100%;
+	}
+
+	.campaign-point-image {
+		max-width: 130px;
+		margin: 0 auto;
+		img { max-width: 100%; height: auto; }
+	}
+
+	.campaign-point { margin-bottom: 2em; }
+
+	.modal-back-button {
+		float: left;
+		width: 100%;
+	}
+
+	&.modal-full-width {
+		.modal-content-wrap {
+			width: 100%;
+			margin-left: auto;
+		}
+	}
+
+	// ------------------------------------
+	// Video Modal
+	// ------------------------------------
+
+	&.video-modal {
+
+		.modal-content-wrap {
+
+			background-color: transparent;
+
+
+			.modal-close {
+				z-index: 20;
+				color: white;
+				right: -1.5em;
+				top: -1.5em;
+			}
+		}
+
+
+
+
+
+	}
+}
+
+
+
+// -----------------------------------
+//
+// Animations
+//
+// -----------------------------------
+
+@keyframes modal_display_background {
+
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+	 	opacity: 1;
+	}
+
+}
+
+@keyframes modal_display_content {
+
+	0% {
+
+		// top:100px;
+		opacity: 0;
+	}
+
+	100% {
+
+		// top:0px;
+	 	opacity: 1;
+	}
+
+}
+
+@keyframes modal_close_background {
+
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+	 	opacity: 0;
+	}
+
+}
+
+@keyframes modal_close_content {
+
+	0% {
+
+		// top:0px;
+		opacity: 1;
+	}
+
+	100% {
+
+		// top:100px;
+	 	opacity: 0;
+	}
+
+}

@@ -1,0 +1,59 @@
+[data-sticky] {
+
+	position: relative;
+	
+	&.fixed {
+		margin-top: 0rem !important;
+		position: fixed !important;
+		top: 0rem;
+		z-index: 30 !important;
+		@include respond-to('mobile'){
+			position: relative !important;
+		}
+	}
+
+	&.freeze {
+
+		position: relative !important;
+		top: 0em;
+		right: 0rem !important;
+		@include respond-to('mobile'){
+			top: 0rem !important;
+		}
+
+	}
+
+	&.stay {
+		position: absolute !important;
+		right: 0rem !important;
+		@include respond-to('mobile'){
+			position: relative !important;
+			top: 0rem !important;
+		}
+	}
+}
+
+
+/**
+ * THIS IS JUST FOR THE THE COMPONET DEMO. 
+ * DON'T NEED ANYTHING BELOW THIS POINT.
+ */
+
+.sticky-component-example {
+
+	.container {
+		position: relative;
+	}
+
+	article {
+		@include columns(8);
+	}
+
+	aside {
+		@include columns(4);
+		background: white;
+		padding: 1em;
+		// max-width: 400px;
+	}
+
+}

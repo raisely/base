@@ -7,18 +7,18 @@ button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
+    display: inline-block;
     padding: 0.625em 1.25em;
     margin: 0 0 0.625em;
-    font-family: inherit;
-    font-size: 1rem;
     border: none;
+    appearance: none;
     outline: none;
     line-height: 100%;
     cursor: pointer;
     text-decoration: none;
-    appearance: none;
-    display: inline-block;
-
+    font-family: inherit;
+    font-size: 1rem;
+    
     @include button-style($baseColor, $textColor);
 
     &.huge{
@@ -59,7 +59,7 @@ input.button-twitter {
 	@include button-style($socialTwitter, white);
 
 	&.disabled {
-		background: #aebcc7;
+		background-color: #aebcc7;
 		color: white;
 		cursor: default;
 	}

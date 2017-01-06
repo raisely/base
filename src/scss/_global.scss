@@ -1,0 +1,15 @@
+//
+// Global Settigns
+// --------------------------------------------------
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #f2f2f2;
+}
+
+.container {
+	@include container()
+}

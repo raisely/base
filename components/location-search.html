@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+			<meta charset="utf-8">
+
+			<title>Location Search | Base</title>
+			<meta name="description" content="">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<link rel="shortcut icon" href="/favicon.png" type="image/png">
+
+			<link rel="stylesheet" href="/dist/css/site.css">
+	</head>
+
+	<body>
+
+		<section>
+
+			<div class="container">
+
+				<h1>Location to search</h1>
+
+				<label>
+			        <span class="screen-reader-text">Location Search:</span>
+			        <input type="search" id="js-locationsearch" class="" placeholder="Find activites by postcode" value="" name="search" title="Search for:">
+			    </label>
+
+
+
+				<div class="park -left" data-lat="-37.9279508" data-lng="144.77336879999996">
+
+					<h3 class="title">Point Cook Coastal Park</h3>
+
+				</div>
+
+
+				<div class="park -right" data-lat="-36.8881081" data-lng="146.0472969">
+
+					<h3 class="title">Mount Samaria State Park</h3>
+
+				</div>
+
+
+				<div class="park -left" data-lat="-37.4062074" data-lng="145.2038278">
+
+					<h3 class="title">Kinglake National Park</h3>
+
+				</div>
+
+			</div>
+
+		</section>
+
+
+		<section>
+
+			<div class="container">
+
+				<h1>Location Search</h1>
+				<p></p>
+				<code>
+					<pre>
+// Don't forget to include google maps API
+https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyABnOpbRhD0jdaQY8TEsO-VaHxPwKUKHC8
+
+// Location Search
+LocationSearch.init('js-adventuresearch', filterByLocation)</p>
+
+// Filter By Location Radius
+
+function filterByLocation (){
+
+	var locationSearch = LocationSearch.inputs['js-locationsearch'];
+	console.log(locationSearch);
+
+	// Read the page for data attributes
+	var data = [];
+	$('[data-lat]').each(function(index){
+
+		var park = {};
+		park.element = $(this);
+		park.lat = $(this).data('lat');
+		park.lng = $(this).data('lng');
+		data[index] = park;
+
+	});
+
+	// Search By Radius
+	LocationSearch.radiusSearch('js-locationsearch',50,data,function(item,inside){
+
+		if(inside){
+			item.element.slideDown();
+		} else {
+			item.element.slideUp();
+		}
+
+
+	});
+
+}
+</pre>
+
+</code>
+
+
+
+			</div>
+
+		</section>
+
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyABnOpbRhD0jdaQY8TEsO-VaHxPwKUKHC8"></script>
+		<script src="/dist/js/site.js"></script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+//
+// Navigation
+// --------------------------------------------------
+
+
+// Primary (Horiztonal) Navigation
+// -------------------
+
+ul[class*="menu-"] {
+	margin: 0;
+	padding: 0;
+	
+	li {
+		position: relative;
+		list-style: none;
+
+		a {
+			display: inline-block;
+		}
+	}
+}
+
+ul.menu-secondary {
+
+	li {
+		display: block;
+
+		a {
+			display: block;
+		}
+	}
+}

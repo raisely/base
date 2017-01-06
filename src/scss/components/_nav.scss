@@ -1,0 +1,161 @@
+//
+// Header Nav
+// --------------------------------------------------
+
+$nav-base-font: 1rem;
+
+$nav-bar-width: 40px;
+$nav-bar-height: 4px;
+$nav-bar-spacing: 10px;
+
+.header-nav {
+	
+	position: relative;
+	background: #fff;
+	margin: 3em;
+	padding: 1em;
+	
+	.logo-wrapper, .menu-wrapper {
+		display: block;
+		float: left;
+	}
+	
+	.logo-wrapper {
+
+		.logo {
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+
+	.menu-wrapper {
+	
+		@include respond-to('tablet') {
+			display: none;
+			width: 100%;
+		}
+	}
+
+	.menu-hamburger {
+
+		display: none;
+
+		float: right;
+		margin: 0.5em;
+		
+		@include respond-to('tablet') {
+			display: block;
+		}
+	}
+
+	.menu-primary {
+		li.menu-item {
+			
+			display: inline-block;
+			
+			@include respond-to('tablet') {
+				display: block;
+			}
+
+			&:hover {
+				ul, ul:hover {
+					display: block;
+
+					@include respond-to('tablet') {
+						display: none;
+					}
+				}
+			}
+
+			a {
+				color: $textColor;
+				display: inline-block;
+				text-decoration: none;
+				padding: 0 1em;
+			}
+			
+			// dropdowns
+
+			ul {
+				display: none;
+				margin: 0;
+				padding: 1em;
+				top: 1.5em;
+				left: 0;
+				z-index: 1000;
+				
+				@include respond-to('tablet') {
+					position: relative;
+					top: auto;
+				}
+
+				li {
+					display: block;
+
+					a { 
+						display: block;
+						white-space: nowrap;
+					}
+				}
+
+			}
+		}
+	}
+}
+
+.menu-hamburger {
+	width: $nav-bar-width;
+	height: $nav-bar-height + $nav-bar-spacing*2;
+	cursor: pointer;
+	
+	font-size: $nav-base-font;
+
+	.bar,
+	.bar:after,
+	.bar:before {
+		width: $nav-bar-width;
+		height: $nav-bar-height;
+	}
+
+	.bar {
+		position: relative;
+		transform: translateY($nav-bar-spacing);
+		background: $textColor;
+		transition: all 0ms 300ms;
+	  
+		.open & {
+			background: rgba(255, 255, 255, 0); 
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: $nav-bar-spacing;
+			background: $textColor;
+			transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+
+			.open & {
+				bottom: 0;
+				transform: rotate(-45deg);
+				transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+			}
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: $nav-bar-spacing;
+			background: $textColor;
+			transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+
+			.open & {
+				top: 0;
+				transform: rotate(45deg);
+				transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+			}
+		}
+	}
+}
