@@ -12,13 +12,13 @@
 
 		settings: {},
 
-		// ------------------------------------
-		// Theme Init
-		// ------------------------------------
+		/*
+		 * Theme init
+		 */
 
 		init: function() {
 
-			console.log('Theme initilised');
+			// Init 
 
 		}
 	};

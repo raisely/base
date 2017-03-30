@@ -15,7 +15,7 @@
 
 // Checks if columns should be set to default columns
 @function get-columns($columns, $default-container-columns, $offset) {
-	
+	 
 	@if (($columns + $offset) > $default-container-columns) {
 		@return $default-container-columns;
 	} @else {
@@ -72,9 +72,20 @@ $base-max-width:         map-get(map-get($grid-settings, base), max-width);
 
 // Builds columns
 @mixin build-column($columns, $container-columns, $offset, $gutter) {
+	
 
-		display: block;
-		float: left;
+	@if ($gutterOnOutside) {
+		@include build-column-outside-gutter($columns, $container-columns, $offset, $gutter);
+	}
+
+	@else {
+		@include build-column-no-outside-gutter($columns, $container-columns, $offset, $gutter);
+	}
+}
+
+@mixin build-column-outside-gutter($columns, $container-columns, $offset, $gutter) {
+	display: block;
+	float: left;
 
 	@if ($gutter == 0) {
 		width: percentage($columns / $container-columns);
@@ -88,6 +99,77 @@ $base-max-width:         map-get(map-get($grid-settings, base), max-width);
 	}
 }
 
+@mixin build-column-no-outside-gutter($columns, $container-columns, $offset, $gutter) {
+	display: block;
+	float: left;
+	
+	@if ($columns == $container-columns) {
+		$gutter: 0;
+	}
+	
+	width: get-columns-width($columns, $container-columns, $offset, $gutter);
+	margin-right: $gutter;
+	
+	@if ($offset > 0 && $offset < $container-columns) {
+		margin-left: get-offset-width($offset, $container-columns, $offset, $gutter);
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+@function get-column-width($columns, $container-columns, $offset, $gutter) {
+	$width: (100% - ($container-columns - 1) * $gutter) / $container-columns;
+	
+	@return $width;
+}
+
+@function get-columns-width($columns, $container-columns, $offset, $gutter) {
+	
+	$width: get-column-width($columns, $container-columns, $offset, $gutter);
+	$columnsWidth: ($width * $columns) + $gutter * ($columns - 1);
+
+	@return $columnsWidth;
+}
+
+@function  get-offset-width($columns, $container-columns, $offset, $gutter) {
+	
+	$width: get-column-width($columns, $container-columns, $offset, $gutter);
+	$columnsWidth: ($width * $columns) + $gutter * $columns;
+
+	@return $columnsWidth;
+}
+
+@mixin omega() {
+	
+	margin-right: 0;
+
+	@each $breakpoint, $breakpoint-settings in $grid-settings {
+		
+		@if ($breakpoint != 'base') {
+			@include respond-to($breakpoint) {
+				margin-right: 0;
+			}
+		}
+
+	}
+}
+
+@mixin omega() {
+	
+	margin-right: 0;
+
+	@each $breakpoint, $breakpoint-settings in $grid-settings {
+		
+		@if ($breakpoint != 'base') {
+			@include respond-to($breakpoint) {
+				margin-right: 0;
+			}
+		}
+
+	}
+}
 
 @mixin columns($columns: $base-container-columns, $offset: 0, $gutter: null) {
 	
@@ -128,21 +210,5 @@ $base-max-width:         map-get(map-get($grid-settings, base), max-width);
 		
 		$c-gutter:  get-gutter($gutter, $default-gutter);
 		@include build-column($columns, $default-container-columns, $offset, $c-gutter);
-	}
-}
-
-// Breakpoints
-// --------------------------------------------------
-
-@mixin respond-to($breakpoint) {
-	@if map-has-key($breakpoints, $breakpoint) {
-		@media #{inspect(map-get($breakpoints, $breakpoint))} {
-			@content;
-		}
-	}
-
-	@else {
-		@error 'No value found for `#{$breakpoint}`. '
-				+ 'Please make sure it is defined in `$breakpoints` map.';
 	}
 }

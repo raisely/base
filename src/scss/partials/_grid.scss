@@ -1,37 +1,12 @@
 //
-// Site Layout
-// --------------------------------------------------
-
-* {
-	box-sizing: border-box;
-}
-
-.container {
-	@include container();
-}
-
-header {
-	@include columns(12);
-}
-
-article {
-	@include columns(8);
-	@include responsive-columns('tablet', 12);
-}
-
-aside {
-	@include columns(4);
-}
-
-//
 // Grid
 // --------------------------------------------------
 
 article.grid-examples {
+	
 	@include columns(12);
 
-	.grid-container {
-		@include container();
+	.container {
 
 		text-align: center;
 		background: $baseColor;
@@ -54,7 +29,6 @@ article.grid-examples {
 		padding: 10px;
 		height: 120px;
 		margin-bottom: 2%;
-
 
 		background: darken($baseColor, 5%);
 		border: 1px solid darken($baseColor, 6%);
@@ -127,8 +101,4 @@ article.grid-examples {
 			}
 		}
 	}
-}
-
-footer {
-	@include columns(12);
 }

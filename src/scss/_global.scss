@@ -1,0 +1,19 @@
+//
+// Global Settigns
+// --------------------------------------------------
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	@include container()
+}
+
+.error {
+	color: $errorColor; 
+}
+
+.success { 
+	color: $successColor; 
+}

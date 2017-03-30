@@ -1,0 +1,157 @@
+// Custom Buttons
+// -------------------
+
+@mixin button-style($customColor, $customTextColor){
+	background-color: $customColor;
+	color: $customTextColor;
+	
+	 &:hover {
+		background-color: darken($customColor, 3%);
+		text-decoration: none;
+	}
+		
+	&:active {
+		background: darken($customColor, 6%);
+	}
+
+	&.disabled {
+		background-color: lighten($customColor, 2.5%);
+		color: darken($customColor, 15%);
+		cursor: default;
+	}
+}
+
+// Breakpoints
+// --------------------------------------------------
+
+@mixin respond-to($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media #{inspect(map-get($breakpoints, $breakpoint))} {
+			@content;
+		}
+	}
+
+	@else {
+		@error 'No value found for `#{$breakpoint}`. '
+				+ 'Please make sure it is defined in `$breakpoints` map.';
+	}
+}
+
+// Shortcuts
+// -------------------
+
+@mixin size($height, $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin hide-text() {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+}
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin center() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin reset-center() {
+	position: relative;
+	top: auto;
+	left: auto;
+	transform: none;
+}
+
+@mixin center-vertically() {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin reset-center-vertically() {
+	position: relative;
+	top: auto;
+	transform: none;
+}
+
+@mixin clearfix-float(){
+    float: left;
+    width: 100%;
+}
+
+@mixin iconify($content){
+    content: $content;
+    font-family: "entypo";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+}
+
+@mixin placeholder {
+	::-webkit-input-placeholder {@content}
+	:-moz-placeholder           {@content}
+	::-moz-placeholder          {@content}
+	:-ms-input-placeholder      {@content}  
+}
+
+@mixin font-size($targetSize: 16) {    
+    font-size: $targetSize + px;
+    font-size: ($targetSize / $baseFontSize) + rem;
+}
+
+@mixin line-height($targetSize: 16) {    
+    line-height: $targetSize + px;
+    line-height: ($targetSize / $baseFontSize) + rem;
+}
+
+// Useful Visual Elements
+// -------------------
+
+@mixin arrow-up($size: 5px, $color: #000) {
+	width: 0; 
+	height: 0; 
+	border-left: $size solid transparent;
+	border-right: $size solid transparent;
+	border-bottom: $size solid $color;
+}
+@mixin arrow-down($size: 5px, $color: #000) {
+	width: 0; 
+	height: 0; 
+	border-left: $size solid transparent;
+	border-right: $size solid transparent;
+	border-top: $size solid $color;
+}
+@mixin arrow-left($size: 5px, $color: #000) {
+	width: 0; 
+	height: 0; 
+	border-top: $size solid transparent;
+	border-bottom: $size solid transparent; 
+	border-right: $size solid $color; 
+}
+@mixin arrow-right($size: 5px, $color: #000) {
+	width: 0; 
+	height: 0; 
+	border-top: $size solid transparent;
+	border-bottom: $size solid transparent;
+	border-left: $size solid $color;
+}

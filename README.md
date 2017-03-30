@@ -18,48 +18,42 @@ Getting started building websites with Base is easy. You can:
 When you download Base you'll see a boilerplate `index.html` file and a folder structure like this:
 
 <pre>
-├── <b>js</b>
-│   ├── site.js
-│   ├── <b>modules</b>
-│   │   └── theme.js
-│   └── <b>plugins</b>
-└── <b>scss</b>
-    ├── _fonts.scss
-    ├── _layout.scss
-    ├── _reset.scss
-    ├── _tooltips.scss
-    ├── _type.scss
-    ├── _variables.scss
-    ├── base.scss
-    ├── <b>components</b>
-    │   ├── _buttons.scss
-    │   ├── _forms.scss
-    │   └── _menus.scss
-    └── <b>mixins</b>
-        ├── _grid.scss
-        └── _helpers.scss
+   js
+    │   ├── <b>modules</b>
+    │   │   └── theme.js
+    │   ├── <b>plugins</b>
+    │   └── site.js
+    └── scss
+        ├── _fonts.scss
+        ├── _global.scss
+        ├── _reset.scss
+        ├── _type.scss
+        ├── _variables.scss
+        ├── base.scss
+        ├── <b>components</b>
+        │   ├── _buttons.scss
+        │   ├── _forms.scss
+        │   ├── _menus.scss
+        │   └── _tooltips.scss
+        ├── <b>mixins</b>
+        │   ├── _grid.scss
+        │   └── _helpers.scss
+        └── <b>partials</b>
+            ├── _footer.scss
+            └── _grid.scss
 
 </pre>
 
-### Compiling with Grunt
+### Installation
 
-[Grunt](http://gruntjs.com/) is an automated Javascript task-runner installed and managed by [npm](https://npmjs.org/) (the Node.js package manager). If you're unfamiliar with `npm` you can install it from the [Node.js website](http://nodejs.org/download/).
+```
+git clone https://github.com/agency/base
+cd base
+npm install 
+gulp dev
+```
 
-**In the command line**
-
-1. Install `grunt-cli` with `npm install -g grunt-cli`
-2. Navigate to your Base install and run `npm install` to load dependencies.
-3. Run `grunt dev` to start watching and compiling files
-
-`grunt dev` will run the following tasks:
-- Compile `base.scss` into `site.min.css` and create source maps
-- Autoprefix CSS properties that require vendor prefixes
-- Compile Javascript modules with [Browserify](https://github.com/substack/node-browserify) into `site.min.js`
-- Compile ES6 with [Babel](https://babeljs.io/)
-- Create Javascript source maps
-- Concatenate and uglify Javascript files
-- Watch for changes and automatically synchronise browsers and devices with [Browsersync](https://www.browsersync.io/docs/grunt/)
-
+Update your development workflow, view, and make changes to gulp tasks in `gulpfile.js`
 
 ## Using Base
 
@@ -78,13 +72,22 @@ Grid settings can be found and updated in `_variables.scss`. You can add as many
 $breakpoints: (
 	'mobile': (max-width: 736px),
 	'tablet': (max-width: 1024px),
+	'desktop': (min-width: 1200px),
 );
+
+// Include gutter on outside 
+$gutterOnOutside: true;
 
 // Breakpoints Grid Settings
 // -------------------
 
 $grid-settings: (
 	base: (
+		container-columns: 12,
+		gutter: 1%,
+		max-width: 1100px,
+	),
+	desktop: (
 		container-columns: 12,
 		gutter: 1%,
 		max-width: 1200px,
@@ -95,11 +98,14 @@ $grid-settings: (
 	),
 	mobile: (
 		container-columns: 1,
-		gutter: 3%,
+		gutter: 5%,
 	)
 );
+
 ```
 
+There are two grid systems that you can use - one with outer gutters and one without. Update `$gutterOnOutside: true;` in `_variables.scss` value to change grid setttings. 
+ 
 Use `@include container();` to create centered container with an optional `max width` set in the breakpoint.
 
 `Base` and other breakpoints (mobile, tablet, etc) styles are automatically generated based on your grid settings.

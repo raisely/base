@@ -1,7 +1,48 @@
 //
 // Typography
 // --------------------------------------------------
+@mixin heading-font {
+	font-family: $headingFont;
+}
 
+@mixin paragraph-font {
+	font-family: $paragraphFont;
+}
+
+@mixin h1 {
+	@include heading-font();
+	@include font-size(40);
+}
+
+@mixin h2 {
+	@include heading-font();
+	@include font-size(32);
+}
+
+@mixin h3 {
+	@include heading-font();
+	@include font-size(26);
+}
+
+@mixin h4 {
+	@include heading-font();
+	@include font-size(22);
+}
+
+@mixin h5 {
+	@include heading-font();
+	@include font-size(20);
+}
+
+@mixin h6 {
+	@include heading-font();
+	@include font-size(16);
+}
+
+@mixin p {
+	@include paragraph-font();
+	@include font-size(16);
+}
 
 body {
 	color: $textColor;
@@ -9,9 +50,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 
 	font-size: 100%;
-	line-height: 1.4;
 }
-
 
 // Headings
 // -------------------
@@ -22,51 +61,41 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $headingFont;
-	font-weight: bold;
-	line-height: 1.4;
+
 }
 
 h1 {
-	font-size: 3rem;
-	margin-top: 0.75em;
-	margin-bottom: 0.25em;
+	@include h1();
 }
+
 h2 {
-	font-size: 2rem;
-	margin-top: 1em;
-	margin-bottom: 0.75em;
+	@include h2();
 }
+
 h3 {
-	font-size: 1.5rem;
-	margin-top: 1.25em;
-	margin-bottom: 0.5em;
-	font-weight: normal;
+	@include h3();
 }
+
 h4 {
-	font-size: 1.25rem;
-	margin-top: 1em;
-	margin-bottom: 0.5em;
-	font-weight: normal;
-	color: lighten($textColor, 30%);
+	@include h4();
 }
+
 h5 {
-	font-size: 1.125rem;
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
+	@include h5();
 }
+
 h6 {
-	font-size: 1rem;
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
+	@include h6();
 }
 
 // Paragraph
 // -------------------
 
 p {
+	@include p();
 	margin: 1em 0;
 }
+
 a {
 	color: $primaryColor;
 	text-decoration: none;

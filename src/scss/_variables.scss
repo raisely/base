@@ -23,6 +23,9 @@ $socialTwitter: #00ACED;
 $socialInstagram: #3F729B;
 $socialYoutube: #CD201F;
 
+$errorColor: #AA0000;
+$successColor: #00AA00;
+$baseFontSize: 16;
 
 // Breakpoints
 // -------------------
@@ -32,6 +35,9 @@ $breakpoints: (
 	'tablet': (max-width: 1024px),
 	'desktop': (min-width: 1200px),
 );
+
+// Include gutter on outside 
+$gutterOnOutside: true;
 
 // Breakpoints Grid Settings
 // -------------------
