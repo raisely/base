@@ -10,6 +10,8 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 
+dist/
+
 # Ignore npm/grunt modules
 node_modules
 npm-debug.log

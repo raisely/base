@@ -1,4 +1,4 @@
-[Base 2.1.0](http://base.gs/)
+[Base 2.2.0](http://base.gs/)
 ======
 
 **Base is a semantic, lightweight and extensible framework to power the next generation of responsive websites.**
@@ -18,29 +18,42 @@ Getting started building websites with Base is easy. You can:
 When you download Base you'll see a boilerplate `index.html` file and a folder structure like this:
 
 <pre>
-   js
-    │   ├── <b>modules</b>
-    │   │   └── theme.js
-    │   ├── <b>plugins</b>
-    │   └── site.js
-    └── scss
-        ├── _fonts.scss
-        ├── _global.scss
-        ├── _reset.scss
-        ├── _type.scss
-        ├── _variables.scss
-        ├── base.scss
-        ├── <b>components</b>
-        │   ├── _buttons.scss
-        │   ├── _forms.scss
-        │   ├── _menus.scss
-        │   └── _tooltips.scss
-        ├── <b>mixins</b>
-        │   ├── _grid.scss
-        │   └── _helpers.scss
-        └── <b>partials</b>
-            ├── _footer.scss
-            └── _grid.scss
+├── grid.html
+├── gulpfile.js
+├── index.html
+└── src
+   ├── fonts
+   │   ├── entypo.eot
+   │   ├── entypo.svg
+   │   ├── entypo.ttf
+   │   └── entypo.woff
+   ├── img
+   │   ├── 1.jpg
+   │   ├── 2.jpg
+   │   ├── 3.jpg
+   │   └── 4.jpg
+   ├── js
+   │   ├── modules
+   │   │   └── theme.js
+   │   └── site.js
+   └── scss
+       ├── base.scss
+       ├── components
+       │   ├── _buttons.scss
+       │   ├── _forms.scss
+       │   ├── _menus.scss
+       │   └── _tooltips.scss
+       ├── _fonts.scss
+       ├── _global.scss
+       ├── mixins
+       │   ├── _grid.scss
+       │   └── _helpers.scss
+       ├── partials
+       │   ├── _footer.scss
+       │   └── _grid.scss
+       ├── _reset.scss
+       ├── _type.scss
+       └── _variables.scss
 
 </pre>
 
@@ -49,8 +62,8 @@ When you download Base you'll see a boilerplate `index.html` file and a folder s
 ```
 git clone https://github.com/agency/base
 cd base
-npm install 
-gulp dev
+npm install
+npm start
 ```
 
 Update your development workflow, view, and make changes to gulp tasks in `gulpfile.js`
@@ -58,6 +71,10 @@ Update your development workflow, view, and make changes to gulp tasks in `gulpf
 ## Using Base
 
 Base is easiest to learn by playing with the code. The default `index.html` file contains a quick reference for the reset and grid mixins and `grid.html` contains grid examples. For more detail view the instructions below.
+
+To run the development server, simply run `npm start` from the command line. This will compile assets and load
+a BrowserSync instance on localhost. BrowserSync, as well as many aspects of the build process can be configured
+directly in the gulpfile.
 
 ### Grid
 
@@ -75,7 +92,7 @@ $breakpoints: (
 	'desktop': (min-width: 1200px),
 );
 
-// Include gutter on outside 
+// Include gutter on outside
 $gutterOnOutside: true;
 
 // Breakpoints Grid Settings
@@ -104,8 +121,8 @@ $grid-settings: (
 
 ```
 
-There are two grid systems that you can use - one with outer gutters and one without. Update `$gutterOnOutside: true;` in `_variables.scss` value to change grid setttings. 
- 
+There are two grid systems that you can use - one with outer gutters and one without. Update `$gutterOnOutside: true;` in `_variables.scss` value to change grid setttings.
+
 Use `@include container();` to create centered container with an optional `max width` set in the breakpoint.
 
 `Base` and other breakpoints (mobile, tablet, etc) styles are automatically generated based on your grid settings.
@@ -233,6 +250,7 @@ Base is maintained through the `master` branch, bundled into releases as require
 * [Katia Shatoba](https://github.com/katiaeirin) / [@KatiaEirin](https://twitter.com/KatiaEirin)
 * [Scott Sanders](https://twitter.com/scottsanders)
 * [Murray Bunton](http://murraybunton.com/) / [@murraybunton](https://twitter.com/murraybunton)
+* [Flynn Buckingham](https://flynnbuckingham.com) / [@flynnbuckingham](https://twitter.com/flynnbuckingham)
 
 ## Copyright
 

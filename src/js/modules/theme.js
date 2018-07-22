@@ -18,11 +18,11 @@
 
 		init: function() {
 
-			// Init 
+			// Init
 
 		}
 	};
-	
+
 	module.exports = Theme;
 
 })(jQuery);

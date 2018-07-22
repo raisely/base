@@ -1,169 +1,193 @@
-'use strict';
-
-const $           = require('gulp-load-plugins')();
-const gulp        = require('gulp');
-const browserSync = require('browser-sync').create();
-
-let debug = true;
-let proxy = 'base.dev';
-let staticSrc = 'src/**/*.{webm,svg,eot,ttf,woff,woff2,otf,mp4,json,pdf,ico}';
-
-/*  
- * Clean
+/**
+ * Gulp build process (with Webpack v4 for js bundling)
  */
-gulp.task('clean', () => {
-	
-	return gulp.src('dist', {read: false})
-		.pipe($.clean());
+
+const gulp = require('gulp');
+const browserSync = require('browser-sync').create();
+const webpackStream = require('webpack-stream');
+const sequence = require('run-sequence');
+
+// gulp plugins
+const imagemin = require('gulp-imagemin');
+const pipeIf = require('gulp-if');
+const sass = require('gulp-sass');
+const sassGlob = require('gulp-sass-glob');
+const cssPrefixer = require('gulp-autoprefixer');
+const rn = require('gulp-rename');
+const notify = require('gulp-notify');
+
+// generate static src path for static extensions
+const staticSrc = `src/**/*.{${
+	/**
+	 * File extensions that are statically copied over during the copy task
+	 * @type {Array}
+	 */
+	['webm', 'svg', 'eot', 'ttf', 'woff', 'woff2', 'otf', 'mp4', 'json', 'pdf', 'ico'].join(',')
+}}`;
+
+// generate statuc src path for image extensions
+const staticImgSrc = `src/img/**/*.{${[
+	/**
+	 * File extensions for images that are optimized and copied during build phase
+	 * @type {Array}
+	 */
+	'jpeg', 'jpg', 'png',
+]}}`;
+
+/**
+ * Stream error handler
+ * @param  {Error} e Gulp Stream Error
+ */
+function handleError(e) {
+	notify.onError(e.message);
+	console.error(e);
+	// close stream
+	this.emit('end');
+}
+
+/**
+ * Environment setting functions
+ */
+gulp.task('set:prod', () => {
+	process.env.NODE_ENV = 'production';
 });
 
-/*  
+gulp.task('set:dev', () => {
+	process.env.NODE_ENV = 'development';
+});
+
+/**
  * Copy static files
  */
-gulp.task('copy', () => {
-	
-	return gulp.src(staticSrc)
-	.pipe(gulp.dest('dist/'))
-})
+gulp.task('copy', () => gulp.src(staticSrc)
+	.pipe(gulp.dest('dist/')));
 
-/*  
- * SASS
+/**
+ * Sass to CSS build task
  */
-gulp.task("sass", () => {
+gulp.task('sass', () => {
+	// get mode for conditional piping
+	const isDev = process.env.NODE_ENV === 'development';
 
-	let out = gulp.src('src/scss/base.scss')
-		.pipe( $.cssGlobbing({
-			extensions: ['.scss']
-		})); 
-
-	// Create Sourmaps for develop
-	if (debug) {
-
-		return out.pipe($.sourcemaps.init())
-			.pipe($.sass({ style: 'compressed', sourcemap: true}))
-			.on('error', $.sass.logError)
-			.on('error', (err) => {
-				$.notify().write(err);
-			})
-			.pipe( $.autoprefixer({
-				browsers: ['last 2 versions','ie >= 9'],
-				cascade: false
-			}))
-			.pipe($.rename('site.min.css'))
-			.pipe($.sourcemaps.write('./'))
-			.pipe(gulp.dest('./dist/css'))
-			.pipe(browserSync.stream({match: '**/*.css'}));
-
-		}
-
-	// Remove sourcemaps and minify for production
-	else {
-		return out.pipe($.sass({ style: 'compressed'}))
-			.on('error', $.sass.logError)
-			.on('error', (err) => {
-				$.notify().write(err);
-			})
-			.pipe( $.autoprefixer({
-				browsers: ['last 2 versions','ie >= 9'],
-				cascade: false
-			}))
-			.pipe($.rename('site.min.css'))
-			.pipe(gulp.dest('./dist/css'));
-	}
-
+	return gulp.src('src/scss/base.scss')
+		.pipe(sassGlob())
+		.pipe(sass({ style: 'compressed' }))
+		.on('error', handleError)
+		.pipe(cssPrefixer({
+			/**
+			 * Configuration for CSS autoprefixer (via gulp-autoprefixer)
+			 * @type {Object}
+			 */
+			browsers: ['last 2 versions','ie >= 9'],
+			cascade: false,
+		}))
+		.pipe(rn('site.min.css'))
+		.pipe(gulp.dest('./dist/css'))
+		// conditionally stream compiled css to browserSync
+		.pipe(pipeIf(isDev, browserSync
+				.stream({ match: '**/*.css' }))
+		);
 });
 
-/*  
- * Javascript
+/**
+ * Bundle site js and modules
  */
 gulp.task('js', () => {
-	
-	// Development 
-	if (debug) {
-		return gulp.src('src/js/site.js')
-			.pipe($.sourcemaps.init())
-			.pipe($.browserify({
-				insertGlobals : true,
-				debug : debug
-			}))
-			.on('error', (err) => {
-				$.notify().write(err);
-			})
-			.pipe($.babel({
-				presets: ['es2015']
-			}))
-			.pipe($.sourcemaps.write('./'))
-			.pipe(gulp.dest('dist/js'))
-	}
-	// Production 
-	else {
-		return gulp.src('src/js/site.js')
-			.pipe($.browserify({
-				insertGlobals : true,
-				debug : debug
-			}))
-			.on('error', (err) => {
-				$.notify().write(err);
-			})
-			.pipe($.babel({
-				presets: ['es2015']
-			}))
-			.pipe(gulp.dest('dist/js'))
-	}
+	// get mode for webpack configuration file
+	const mode = process.env.NODE_ENV;
 
+	return gulp.src('src/js/site.js')
+		.pipe(webpackStream({
+			/**
+			 * The webpack configuration used when stream the main entry file 'site.js'
+			 * @type {Function} returns config with mode (based on process.env.NODE_ENV)
+			 */
+			mode,
+			module: {
+				rules: [
+					{
+						test: /\.js$/,
+						use: {
+							loader: 'babel-loader',
+							options: {
+								/**
+								 * Babel presets for transpiling JavaScript code
+								 *   to various versions
+								 * @type {Array}
+								 */
+								presets: ['es2015', 'react'],
+							}
+						}
+					},
+				],
+			},
+			/**
+			 * Export file path
+			 * @type {Object}
+			 */
+			output: {
+				filename: 'site.min.js',
+			},
+			/**
+			 * (external) Global dependency mapping, useful for loading external js code
+			 *    without breaking modules
+			 * @type {Object}
+			 */
+			externals: {
+				// require module name: window[moduleName]
+				'jquery': 'jQuery',
+			},
+		}))
+		.on('error', handleError)
+		.pipe(gulp.dest('dist/js'));
 });
 
-
-/*  
- * Javascript watch
+/**
+ * Image optimisation task
  */
-gulp.task('js-watch', ['js'], (done) => {
-	
-	browserSync.reload();
-	done();
-});
+gulp.task('images', () => gulp.src(staticImgSrc)
 
-/*  
- * Image optimisation
+	.pipe(imagemin({
+		/**
+		 * Image optimization library configuration (empty by default)
+		 * @type {Object}
+		 */
+	}))
+	.on('error', handleError)
+	.pipe(gulp.dest('./dist/img/')));
+
+/**
+ * browserSync implementation
  */
-gulp.task('images', () => {
-  
-	return gulp.src(['./src/img/**/*.jpg', './src/img/**/*.png', './src/img/**/*.jpeg'])
-		.pipe($.image())
-		.pipe(gulp.dest('./dist/img/'));
-});
-
-/*  
- * Serve and watch for changes
- */
-gulp.task( "dev", ['copy', 'sass', 'js'], () => {
-
-	// Serve
+gulp.task('browsersync:init', () =>
 	browserSync.init({
-		proxy: proxy,
-		ghostMode: false
-	});
+		/**
+		 * BrowserSync configuration for development (npm run dev)
+		 * @type {Object}
+		 */
+		 server: {
+			 baseDir: './',
+		 },
+	}));
 
-	// Watch
-	gulp.watch('src/img/**/*', ['images']);
+gulp.task('browsersync:reload', () => browserSync.reload());
+
+/**
+ * Development build task (and watchers)
+ */
+gulp.task('dev', ['set:dev', 'images', 'copy', 'sass', 'js'], () => {
+	// start browserSync
+	gulp.start('browsersync:init');
+
+	// run watcher tasks
 	gulp.watch('src/scss/**/*.scss', ['sass']);
-	gulp.watch('src/js/**/*.js', ['js-watch']);
-	gulp.watch(['./**/*.html']).on('change', browserSync.reload);
+	gulp.watch(staticImgSrc, ['images']);
+	gulp.watch('src/js/**/*.js', () => sequence('js', 'browsersync:reload'));
+	gulp.watch('./**/*.html', ['browsersync:reload']);
 	gulp.watch(staticSrc, ['copy']);
-
-	gulp.watch([
-		'dist/**/*.js',
-		'dist/**/*.css'
-	]);
 });
 
-/*  
- * Set debug mode to false
+/**
+ * Production build task
  */
-gulp.task('production', () => {
-
-	debug = false;
-	console.log(`Set debug to: ${debug}`);
-})
-
-gulp.task('build', ['production', 'images', 'copy', 'sass', 'js']);
+gulp.task('build', ['set:prod', 'copy', 'images', 'sass', 'js']);
