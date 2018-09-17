@@ -183,7 +183,7 @@ gulp.task('dev', ['set:dev', 'images', 'copy', 'sass', 'js'], () => {
 	gulp.watch('src/scss/**/*.scss', ['sass']);
 	gulp.watch(staticImgSrc, ['images']);
 	gulp.watch('src/js/**/*.js', () => sequence('js', 'browsersync:reload'));
-	gulp.watch('./**/*.html', ['browsersync:reload']);
+	gulp.watch('dist/**/*.html', ['browsersync:reload']);
 	gulp.watch(staticSrc, ['copy']);
 });
 
